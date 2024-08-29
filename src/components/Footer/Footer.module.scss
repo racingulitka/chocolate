@@ -1,5 +1,142 @@
-.wrapper{
-    width:100%;
-    height:100px;
-    background: #2A181A;
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  background: #2a181a;
+  padding: 0 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  .wrapper {
+    width: min(1606px, 100%);
+    padding: 62px 0 37px;
+    color: #ede8e2;
+    font-family: "Corsica LX";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    .topBlock {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 175px;
+      .topLeftBlock {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 35px;
+        .logoContainer {
+          position: relative;
+          width: 215px;
+          height: 28px;
+        }
+        .mainInfo {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 10px;
+          & p {
+            color: #dfc7b7;
+            font-family: "Corsica LX";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+      }
+      .topRightBlock {
+        max-width: 1190px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 60px;
+        column-gap: 60px;
+        .category {
+          width: fit-content;
+          height: auto;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 35px;
+          .title {
+            width: fit-content;
+            color: #ede8e2;
+            font-family: "Corsica LX";
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+          .links {
+            width: fit-content;
+            height: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 15px;
+            & p {
+              color: #dfc7b7;
+              font-family: "Corsica LX";
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+    .splitter {
+      width: 100%;
+      height: 1px;
+      background: #7e7e7e;
+      margin: 39px 0 32px;
+    }
+    .bottomBlock {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      .bottomLeftBlock {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 60px;
+        .logoBottomContainer {
+          position: relative;
+          width: 147px;
+          height: 19px;
+        }
+        & p {
+          color: #dfc7b7;
+          font-family: "Corsica LX";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }

@@ -15,3 +15,23 @@
 @media (min-width: 701px) and (max-width: 1120px) {
 
 }
+
+@font-face {
+  font-family: 'Corsica LX';
+  src: url('../fonts/corsica/CorsicaLX-Bold.ttf');
+  src: local('Corsica LX'),
+      url('../fonts/corsica/CorsicaLX-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Corsica LX';
+  src: url('../fonts/corsica/CorsicaLX-Book.ttf');
+  src: local('Corsica LX'),
+      url('../fonts/corsica/CorsicaLX-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
