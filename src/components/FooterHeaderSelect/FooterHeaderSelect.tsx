@@ -33,8 +33,7 @@ export default function FooterHeaderSelect(props: Props) {
                 setCurrency(newCurrency.id)
             }
         }
-        setSheetOpen(false)
-        console.log('hello')
+        //setSheetOpen(false)
     }
 
     const closeDropdown = () => {
