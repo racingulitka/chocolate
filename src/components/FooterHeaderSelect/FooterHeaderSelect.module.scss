@@ -1,3 +1,131 @@
-.wrapper{
-    
+@mixin font {
+  font-family: "Corsica LX";
+  font-style: normal;
+  line-height: normal;
+}
+
+.wrapper {
+  width: fit-content;
+  height: 28px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+  .value {
+    width: fit-content;
+    height: auto;
+    .currentValueText {
+      @include font();
+      color: #dfc7b7;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .currentImageContainer {
+      position: relative;
+      width: 31px;
+      height: 22px;
+    }
+  }
+  .arrowContainer {
+    width: 10px;
+    height: 5px;
+    position: relative;
+    object-fit: contain;
+    &Active {
+      rotate: 180deg;
+    }
+  }
+  .selectList {
+    position: absolute;
+    left: 50%;
+    translate: 0 -100%;
+    width: fit-content;
+    height: auto;
+    border-radius: 7px;
+    background: #fff;
+    padding: 20px 30px 20px 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    &Header {
+      bottom: -1px;
+      translate: -50% 100%;
+    }
+    &Footer {
+      top: -1px;
+      translate: -50% -100%;
+    }
+    .listWrapper {
+      width: fit-content;
+      height: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      .checkWrapper {
+        position: relative;
+        width: 15px;
+        aspect-ratio: 1/1;
+      }
+      .iconWrapper {
+        position: relative;
+        width: 31px;
+        height: 22px;
+      }
+      .title {
+        @include font();
+        color: #2c1417;
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.selectList {
+  position:relative;
+  width: fit-content;
+  height: auto;
+  border-radius: 7px;
+  background: #fff;
+  padding: 20px 30px 20px 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  z-index:100;
+  .listWrapper {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    .checkWrapper {
+      position: relative;
+      width: 15px;
+      aspect-ratio: 1/1;
+    }
+    .iconWrapper {
+      position: relative;
+      width: 31px;
+      height: 22px;
+    }
+    .title {
+      @include font();
+      color: #2c1417;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
 }

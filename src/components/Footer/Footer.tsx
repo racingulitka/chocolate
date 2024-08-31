@@ -1,28 +1,42 @@
-import React, {useContext} from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './Footer.module.scss'
 import logo from './assets/Logo.svg'
 import Image from 'next/image'
 import { footerCategories } from './Footer.config'
 import Link from 'next/link'
 // import {context as currency} from '@/pages/_app'
-import {context as currencyContext} from '@/pages/_app'
+import { context as currencyContext } from '@/pages/_app'
+import FooterHeaderSelect from '../FooterHeaderSelect/FooterHeaderSelect'
+import { currencyArr } from '../FooterHeaderSelect/FooterHeaderSelect.config'
+import i18n from 'i18next';
+import { useTranslation } from 'react-i18next'
 
-export default function Footer() {
+export default function Footer({
+    isMobile,
+}: {
+    isMobile: boolean,
+}) {
 
-    // const context = useContext(currency)
-
-        // Получаем значение валюты и функцию для изменения из контекста
-        const { currency, setCurrency } = useContext(currencyContext);
-
-        // Пример функции для смены валюты
-        const switchCurrency = () => {
-            const newCurrency = currency === 'RU' ? 'USD' : 'RU';
-            setCurrency(newCurrency);
-        };
+    const { t, i18n } = useTranslation()
 
     return (
         <div className={styles.mainWrapper}>
-             <div className={styles.wrapper}>
+            <div className={styles.wrapper}>
+                {
+                    isMobile &&
+                    <div className={styles.mobileSelectors}>
+                        <FooterHeaderSelect
+                            isMobile={isMobile}
+                            type='currency'
+                            position='header'
+                        />
+                        <FooterHeaderSelect
+                            isMobile={isMobile}
+                            type='lang'
+                            position='header'
+                        />
+                    </div>
+                }
                 <div className={styles.topBlock}>
                     <div className={styles.topLeftBlock}>
                         <Link href='/'>
@@ -65,11 +79,23 @@ export default function Footer() {
                             <Image src={logo} alt='logo' layout='fill' />
                         </div>
                         <Link href="#">
-                            <p>Пользовательское соглашение</p>
+                            <p>{/* Пользовательское соглашение */}{t('footer.userAgreement')}</p>
                         </Link>
                         <Link href="#">
                             <p>Политика конфенденциальности</p>
                         </Link>
+                    </div>
+                    <div className={styles.bottomRightBlock}>
+                        <FooterHeaderSelect
+                            isMobile={isMobile}
+                            type='currency'
+                            position='footer'
+                        />
+                        <FooterHeaderSelect
+                            isMobile={isMobile}
+                            type='lang'
+                            position='footer'
+                        />
                     </div>
                 </div>
             </div>

@@ -27,7 +27,7 @@ export default function PageLayout({
             </Head>
             <main className={`${styles.main} ${inter.className}`}>
                 {children}
-                <Footer />
+                <Footer isMobile={isMobile} />
             </main>
         </>
     )

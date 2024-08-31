@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -16,6 +18,21 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    @media(max-width:$mobile-size){
+        gap:35px;
+    }
+    .mobileSelectors{
+        width:100%;
+        height:auto;
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
     .topBlock {
       width: 100%;
       height: auto;
@@ -24,6 +41,11 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 175px;
+      @media(max-width:$mobile-size){
+        flex-flow:column nowrap;
+        flex-direction: column-reverse;
+        gap:35px;
+      }
       .topLeftBlock {
         display: flex;
         flex-flow: column nowrap;
@@ -34,6 +56,10 @@
           position: relative;
           width: 215px;
           height: 28px;
+          @media(max-width:$mobile-size){
+            width:159px;
+            height:21px;
+          }
         }
         .mainInfo {
           width: 100%;
@@ -61,6 +87,10 @@
         align-items: flex-start;
         row-gap: 60px;
         column-gap: 60px;
+        @media(max-width:$mobile-size){
+            gap:35px;
+            flex-flow:column nowrap;
+        }
         .category {
           width: fit-content;
           height: auto;
@@ -77,6 +107,9 @@
             font-style: normal;
             font-weight: 600;
             line-height: normal;
+            @media(max-width:$mobile-size){
+                font-size: 20px;
+            }
           }
           .links {
             width: fit-content;
@@ -93,6 +126,9 @@
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+              @media(max-width:$mobile-size){
+                font-size: 16px;
+              }
               &:hover{
                 text-decoration: underline;
               }
@@ -106,6 +142,9 @@
       height: 1px;
       background: #7e7e7e;
       margin: 39px 0 32px;
+      @media(max-width:$mobile-size){
+        display:none;
+      }
     }
     .bottomBlock {
       width: 100%;
@@ -120,10 +159,18 @@
         justify-content: flex-start;
         align-items: center;
         gap: 60px;
+        @media(max-width:$mobile-size){
+            gap:20px;
+            flex-flow:column nowrap;
+            align-items: flex-start;
+        }
         .logoBottomContainer {
           position: relative;
           width: 147px;
           height: 19px;
+          @media(max-width:$mobile-size){
+            display:none;
+          }
         }
         & p {
           color: #dfc7b7;
@@ -132,9 +179,24 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          @media(max-width:$mobile-size){
+            font-size: 16px;
+          }
           &:hover{
             text-decoration: underline;
           }
+        }
+      }
+      .bottomRightBlock{
+        width:fit-content;
+        height:auto;
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap:35px;
+        @media(max-width:$mobile-size){
+            display:none;
         }
       }
     }
