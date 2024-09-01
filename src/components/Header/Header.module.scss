@@ -14,19 +14,25 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+  @media(max-width:$mobile-size){
+    padding:0;
+  }
   .wrapper {
-    @include font();
-    width: min(1366px, 100%);
-    color: #ede8e2;
-    font-size: 28px;
-    font-weight: 600;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 25px;
-    .topBlock {
-      width: 100%;
+      @include font();
+      width: min(1366px, 100%);
+      color: #ede8e2;
+      font-size: 28px;
+      font-weight: 600;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 25px;
+      @media(max-width:$mobile-size){
+        padding:10px 20px;
+      }
+      .topBlock {
+          width: 100%;
       height: auto;
       display: flex;
       flex-flow: row wrap;
@@ -40,6 +46,9 @@
         justify-content: flex-start;
         align-items: center;
         gap: 25px;
+        @media(max-width:$mobile-size){
+            gap:10px;
+        }
       }
       .logo {
         position: relative;
@@ -56,6 +65,11 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
+        @media(max-width:$mobile-size){
+            height:30px;
+            width:46px;
+            gap:5px;
+        }
         &:hover {
           cursor: pointer;
           background: #d0ccc7;
@@ -64,11 +78,18 @@
           position: relative;
           width: 35px;
           aspect-ratio: 1/1;
+          @media(max-width:$mobile-size){
+            width:18px;
+            height:17px;
+          }
         }
         .sideMenuIconHumanContainer {
           position: relative;
           width: 25px;
           aspect-ratio: 1/1;
+          @media(max-width:$mobile-size){
+            width:11px;
+          }
         }
       }
     }
@@ -87,12 +108,18 @@
         justify-content: flex-start;
         align-items: center;
         gap: 30px;
+        @media(max-width:$mobile-size){
+          gap:15px;
+        }
         .category {
           display: flex;
           flex-flow: row nowrap;
           justify-content: flex-start;
           align-items: center;
           gap: 14px;
+          @media(max-width:$mobile-size){
+            gap:5px;
+          }
           &:hover {
             cursor: pointer;
           }
@@ -100,6 +127,10 @@
             position: relative;
             width: 28px;
             height: 28px;
+            @media(max-width:$mobile-size){
+              width:11px;
+              height:11px;
+            }
           }
           .categoryTitle {
             @include font();
@@ -108,6 +139,9 @@
             font-weight: 600;
             &Active {
               color: #2a181a;
+            }
+            @media(max-width:$mobile-size){
+              font-size: 8px;
             }
           }
         }
@@ -143,6 +177,9 @@
         justify-content: flex-start;
         align-items: center;
         gap: 35px;
+        @media(max-width:$mobile-size){
+          gap:15px;
+        }
       }
     }
   }

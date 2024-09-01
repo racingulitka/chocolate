@@ -23,11 +23,14 @@ export default function Header({
         <header className={styles.mainWrapper}>
             <div className={styles.wrapper}>
                 <div className={styles.topBlock}>
-                    <div className={styles.logo}>
-                        <Image src={logo} alt='logo' layout='fill' />
-                    </div>
+                    {
+                        !isMobile &&
+                        <div className={styles.logo}>
+                            <Image src={logo} alt='logo' layout='fill' />
+                        </div>
+                    }
                     <div className={styles.topRightBlock}>
-                        <GoodsSearch />
+                        <GoodsSearch isMobile={isMobile} />
                         <div className={styles.sideMenuButton}>
                             <div className={styles.sideMenuIconSortContainer}>
                                 <Image src={sideMenuIconSort} alt='sortIcon' layout='fill' />
@@ -53,7 +56,7 @@ export default function Header({
                             })
                         }
                         {
-                            pageType === PageType.main &&
+                            pageType === PageType.main && !isMobile &&
                             <Link href='#'>
                                 <div className={styles.instagramButton}>
                                     <div className={styles.instagramIconContainer}>

@@ -1,0 +1,18 @@
+@import "../../../styles/variables.scss";
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  padding: 0 20px;
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  .wrapper {
+    width: min(100%, 1366px);
+    height:100px;
+    margin: 45px 0;
+    border-radius: 30px;
+    background: #ede8e2;
+  }
+}
