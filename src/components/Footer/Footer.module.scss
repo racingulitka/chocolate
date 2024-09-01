@@ -1,4 +1,9 @@
 @import '../../styles/variables.scss';
+@mixin font(){
+  font-family: "Corsica LX";
+  font-style: normal;
+  line-height: normal;
+}
 
 .mainWrapper {
   width: 100%;
@@ -10,14 +15,12 @@
   justify-content: flex-start;
   align-items: center;
   .wrapper {
+    @include font();
     width: min(1606px, 100%);
     padding: 62px 0 37px;
     color: #ede8e2;
-    font-family: "Corsica LX";
     font-size: 28px;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
     display:flex;
     flex-flow:column nowrap;
     justify-content: flex-start;
@@ -70,12 +73,10 @@
           align-items: flex-start;
           gap: 10px;
           & p {
+            @include font();
             color: #dfc7b7;
-            font-family: "Corsica LX";
             font-size: 20px;
-            font-style: normal;
             font-weight: 400;
-            line-height: normal;
           }
         }
       }
@@ -100,13 +101,11 @@
           align-items: flex-start;
           gap: 35px;
           .title {
+            @include font();
             width: fit-content;
             color: #ede8e2;
-            font-family: "Corsica LX";
             font-size: 28px;
-            font-style: normal;
             font-weight: 600;
-            line-height: normal;
             @media(max-width:$mobile-size){
                 font-size: 20px;
             }
@@ -120,12 +119,10 @@
             align-items: flex-start;
             gap: 15px;
             & p {
+              @include font();
               color: #dfc7b7;
-              font-family: "Corsica LX";
               font-size: 20px;
-              font-style: normal;
               font-weight: 400;
-              line-height: normal;
               @media(max-width:$mobile-size){
                 font-size: 16px;
               }
@@ -173,12 +170,10 @@
           }
         }
         & p {
+          @include font();
           color: #dfc7b7;
-          font-family: "Corsica LX";
           font-size: 20px;
-          font-style: normal;
           font-weight: 400;
-          line-height: normal;
           @media(max-width:$mobile-size){
             font-size: 16px;
           }

@@ -16,7 +16,7 @@
 
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Corsica LX';
   src: url('../fonts/corsica/CorsicaLX-Bold.ttf');
   src: local('Corsica LX'),
@@ -24,7 +24,34 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
+} */
+
+@font-face {
+  font-family: 'Corsica LX';
+  src: url('../fonts/corsica/CorsicaLX-SemiBold.eot');
+  src: local('Corsica LX SemiBold'), local('CorsicaLX-SemiBold'),
+      url('../fonts/corsica/CorsicaLX-SemiBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/corsica/CorsicaLX-SemiBold.woff2') format('woff2'),
+      url('../fonts/corsica/CorsicaLX-SemiBold.woff') format('woff'),
+      url('../fonts/corsica/CorsicaLX-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'Corsica LX';
+  src: url('../fonts/corsica/CorsicaLX-Medium.eot');
+  src: local('Corsica LX Medium'), local('CorsicaLX-Medium'),
+      url('../fonts/corsica/CorsicaLX-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/corsica/CorsicaLX-Medium.woff2') format('woff2'),
+      url('../fonts/corsica/CorsicaLX-Medium.woff') format('woff'),
+      url('../fonts/corsica/CorsicaLX-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 @font-face {
   font-family: 'Corsica LX';
@@ -32,6 +59,19 @@
   src: local('Corsica LX'),
       url('../fonts/corsica/CorsicaLX-Book.ttf') format('truetype');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Corsica LX';
+  src: url('../fonts/corsica/CorsicaLX-Light.eot');
+  src: local('Corsica LX Light'), local('CorsicaLX-Light'),
+      url('../fonts/corsica/CorsicaLX-Light.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/corsica/CorsicaLX-Light.woff2') format('woff2'),
+      url('../fonts/corsica/CorsicaLX-Light.woff') format('woff'),
+      url('../fonts/corsica/CorsicaLX-Light.ttf') format('truetype');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }

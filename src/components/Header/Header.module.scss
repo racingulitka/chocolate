@@ -1,0 +1,149 @@
+@import "../../styles/variables.scss";
+@mixin font() {
+  font-family: "Corsica LX";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background: $mainBackgroundColor;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  .wrapper {
+    @include font();
+    width: min(1366px, 100%);
+    color: #ede8e2;
+    font-size: 28px;
+    font-weight: 600;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    .topBlock {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      .topRightBlock {
+        width: fit-content;
+        height: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+      }
+      .logo {
+        position: relative;
+        width: 215px;
+        height: 28px;
+      }
+      .sideMenuButton {
+        width: 90px;
+        height: 55px;
+        border-radius: 10px;
+        background: #ede8e2;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        &:hover {
+          cursor: pointer;
+          background: #d0ccc7;
+        }
+        .sideMenuIconSortContainer {
+          position: relative;
+          width: 35px;
+          aspect-ratio: 1/1;
+        }
+        .sideMenuIconHumanContainer {
+          position: relative;
+          width: 25px;
+          aspect-ratio: 1/1;
+        }
+      }
+    }
+    .bottomBlock {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      .categories {
+        width: fit-content;
+        height: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        .category {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 14px;
+          &:hover {
+            cursor: pointer;
+          }
+          .categoryIcon {
+            position: relative;
+            width: 28px;
+            height: 28px;
+          }
+          .categoryTitle {
+            @include font();
+            color: #898989;
+            font-size: 22px;
+            font-weight: 600;
+            &Active {
+              color: #2a181a;
+            }
+          }
+        }
+        .instagramButton {
+          width: 309px;
+          height: 48px;
+          border-radius: 60px;
+          background: #ede8e2;
+          padding:10px 20px;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 14px;
+          .instagramIconContainer {
+            width: 24px;
+            aspect-ratio: 1/1;
+            position: relative;
+          }
+          & p {
+            @include font();
+            color: #898989;
+            font-size: 22px;
+            font-weight: 600;
+          }
+        }
+      }
+      .bottomRightBlock {
+        width: fit-content;
+        height: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 35px;
+      }
+    }
+  }
+}

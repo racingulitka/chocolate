@@ -1,0 +1,39 @@
+@import "@/styles/variables.scss";
+@mixin font() {
+  font-family: "Corsica LX";
+  font-style: normal;
+  line-height: normal;
+}
+
+.wrapper {
+    position:relative;
+  .input {
+    @include font();
+    width: 410px;
+    height: 59px;
+    padding: 10px 20px 10px 73px;
+    border-radius: 10px;
+    border: 1.5px solid #ababab;
+    background: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    &:hover{
+        border:1.5px solid transparent;
+    }
+  }
+  .iconWrapper {
+    position: absolute;
+    top:50%;
+    left:20px;
+    translate:0 -50%;
+    width: 39px;
+    aspect-ratio: 1/1;
+  }
+}

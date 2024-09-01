@@ -6,6 +6,7 @@ import PageLayout from "@/components/PageLayout/PageLayout";
 import { getIsSsrMobile } from "@/utils/isSsrMobile";
 import { GetServerSidePropsContext } from "next";
 import Footer from "@/components/Footer/Footer";
+import { PageType } from "@/components/PageLayout/PageLayout.typings";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
@@ -31,6 +32,7 @@ export default function Home({
         isMobile={isMobile}
         title='Главная'
         description='description'
+        pageType={PageType.main}
       >
         dsklfjlksdj
       </PageLayout>

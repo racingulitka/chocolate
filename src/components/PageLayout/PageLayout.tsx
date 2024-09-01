@@ -3,6 +3,8 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { Inter } from "next/font/google";
 import Footer from '../Footer/Footer';
+import Header from '../Header/Header'
+import { PageType } from './PageLayout.typings';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +13,13 @@ export default function PageLayout({
     isMobile,
     title,
     description,
+    pageType,
 }: {
     children: React.ReactNode,
     isMobile: boolean,
     title: string,
     description: string,
+    pageType:PageType,
 }) {
     return (
         <>
@@ -26,6 +30,10 @@ export default function PageLayout({
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={`${styles.main} ${inter.className}`}>
+                <Header
+                    isMobile={isMobile}
+                    pageType={pageType}
+                />
                 {children}
                 <Footer isMobile={isMobile} />
             </main>

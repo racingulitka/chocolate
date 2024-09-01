@@ -1,6 +1,7 @@
 import React, { useState, useContext, useRef } from 'react'
 import styles from './FooterHeaderSelect.module.scss'
 import arrow from './assets/arrow.svg'
+import arrowHeader from './assets/arrowHeader.svg'
 import Image from 'next/image'
 import { langArr, currencyArr } from './FooterHeaderSelect.config'
 import cn from 'classnames'
@@ -83,7 +84,7 @@ export default function FooterHeaderSelect(props: Props) {
             <div className={styles.value}>
                 {
                     props.type === 'currency' ?
-                        <div className={styles.currentValueText}>{currencyArr.find(item => item.id === currency)?.title}</div>
+                        <div className={cn(styles.currentValueText, props.position === 'header' && styles.currentValueTextHeader)}>{currencyArr.find(item => item.id === currency)?.title}</div>
                         :
                         <div className={styles.currentImageContainer}>
                             <Image src={langArr.find(item => item.id === activeLanguage)?.icon} alt='icon' layout='fill' />
@@ -116,7 +117,7 @@ export default function FooterHeaderSelect(props: Props) {
                 }
             </div>
             <div className={cn(styles.arrowContainer, isOpen && styles.arrowContainerActive)}>
-                <Image src={arrow} alt='arrow' layout='fill' />
+                <Image src={props.position === 'footer' ? arrow : arrowHeader} alt='arrow' layout='fill' />
             </div>
         </div>
     )
