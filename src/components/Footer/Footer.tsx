@@ -28,12 +28,12 @@ export default function Footer({
                         <FooterHeaderSelect
                             isMobile={isMobile}
                             type='currency'
-                            position='header'
+                            position='footer'
                         />
                         <FooterHeaderSelect
                             isMobile={isMobile}
                             type='lang'
-                            position='header'
+                            position='footer'
                         />
                     </div>
                 }

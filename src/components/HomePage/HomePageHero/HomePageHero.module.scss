@@ -1,18 +1,122 @@
 @import "../../../styles/variables.scss";
+@mixin font() {
+  font-family: "Corsica LX";
+  font-style: normal;
+  line-height: normal;
+}
 
 .mainWrapper {
   width: 100%;
   height: auto;
   padding: 0 20px;
-  display:flex;
-  flex-flow:column nowrap;
+  display: flex;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
   .wrapper {
     width: min(100%, 1366px);
-    height:100px;
+    height: 475px;
     margin: 45px 0;
     border-radius: 30px;
     background: #ede8e2;
+    position: relative;
+    padding: 57px 10px 10px 61px;
+    .leftBlock {
+      .title {
+        @include font();
+        color: #2c1417;
+        font-size: 62px;
+        font-weight: 700;
+        width: 593px;
+      }
+      .inputContainer {
+        position: relative;
+        margin: 73px 0 0 0;
+        .geolocation {
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          width: 30px;
+          height: 30px;
+          translate: 0 -50%;
+        }
+        .input {
+          width: 710px;
+          height: 50px;
+          border-radius: 10px;
+          border: 1.5px solid #ababab;
+          background: #fff;
+          padding: 0 20px 0 60px;
+          @include font();
+          color: #636363;
+          font-size: 22px;
+          font-weight: 500;
+          &:focus {
+            outline: none;
+          }
+          &::placeholder {
+            font-size: 20px;
+          }
+        }
+      }
+      .confirmBlock {
+        width: fit-content;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        margin: 35px 0 0 0;
+        & p {
+          @include font();
+          color: #636363;
+          font-size: 20px;
+          font-weight: 500;
+        }
+        .faqContainer {
+          width: 25px;
+          height: 25px;
+          position: relative;
+          &:hover {
+            cursor: pointer;
+          }
+          .tooltip {
+            width: 340px;
+            height: 130px;
+            position: absolute;
+            bottom: 0;
+            left: -230px;
+            translate: 0 100%;
+            padding: 36px 37px 0 20px;
+            background: url(./assets/tooltip.svg) center / contain no-repeat;
+            @include font();
+            color: #383838;
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+      .additionalText {
+        margin: 6px 0 0 40px;
+        @include font();
+        color: #aaa;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+    .rightImage {
+      width: 396px;
+      aspect-ratio: 1/1;
+      position: absolute;
+      right: 28px;
+      top: 14px;
+    }
+    .leftImage {
+      width: 319px;
+      aspect-ratio: 1/1;
+      position: absolute;
+      right: 216px;
+      top: 165px;
+    }
   }
 }

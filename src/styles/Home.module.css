@@ -75,3 +75,13 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('../fonts/geometria/geometria_medium.otf');
+  src: local('Geometria'), local('Geometria'),
+      url('../fonts/geometria/geometria_medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

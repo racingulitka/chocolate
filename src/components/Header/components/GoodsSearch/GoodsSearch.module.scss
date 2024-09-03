@@ -6,8 +6,10 @@
 }
 
 .wrapper {
-    position:relative;
-    height:30px;
+  position: relative;
+  @media (max-width: $mobile-size) {
+    height: 30px;
+  }
   .input {
     @include font();
     width: 410px;
@@ -18,11 +20,11 @@
     background: #fff;
     font-size: 22px;
     font-weight: 400;
-    @media(max-width:$mobile-size){
-        width:30px;
-        height:30px;
-        padding:0;
-        vertical-align: top;
+    @media (max-width: $mobile-size) {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      vertical-align: top;
     }
     &:focus {
       outline: none;
@@ -31,21 +33,21 @@
       font-size: 20px;
       font-weight: 500;
     }
-    &:hover{
-        border:1.5px solid transparent;
+    &:hover {
+      border: 1.5px solid transparent;
     }
   }
   .iconWrapper {
     position: absolute;
-    top:50%;
-    left:20px;
-    translate:0 -50%;
+    top: 50%;
+    left: 20px;
+    translate: 0 -50%;
     width: 39px;
     aspect-ratio: 1/1;
-    @media(max-width:$mobile-size){
-        width:20px;
-        left:50%;
-        translate:-50% -50%;
+    @media (max-width: $mobile-size) {
+      width: 20px;
+      left: 50%;
+      translate: -50% -50%;
     }
   }
 }

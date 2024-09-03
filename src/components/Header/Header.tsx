@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Header.module.scss'
 import GoodsSearch from './components/GoodsSearch/GoodsSearch'
 import sideMenuIconSort from './assets/sideMenuIconSort.svg'
@@ -11,6 +11,27 @@ import cn from 'classnames'
 import { PageType } from '../PageLayout/PageLayout.typings'
 import instagramIcon from './assets/Instagram.png'
 import Link from 'next/link'
+import arrow from './assets/arrow.svg'
+import MapModal from './components/MapModal/MapModal'
+import Modal from 'react-modal'
+
+
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        border:'none',
+        padding:0,
+        background:'transparent',
+    },
+    overlay:{
+        background:'rgba(0, 0, 0, 0.61)'
+    }
+};
 
 export default function Header({
     isMobile,
@@ -19,10 +40,49 @@ export default function Header({
     isMobile: boolean,
     pageType: PageType,
 }) {
+
+    const [isModalOpen, setModalOpen] = useState<boolean>(false)
+
+    const openModal = () => {
+        setModalOpen(true)
+        document.body.style.overflow = 'hidden';
+    }
+
+    const closeModal = () => {
+        setModalOpen(false)
+    }
+
+    const afterModalOpen = () => {
+        console.log('modal open')
+    }
+
     return (
         <header className={styles.mainWrapper}>
+            <Modal
+                isOpen={isModalOpen}
+                onAfterOpen={afterModalOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Example Modal"
+            >
+                <MapModal />
+            </Modal>
             <div className={styles.wrapper}>
                 <div className={styles.topBlock}>
+                    <div className={styles.topLeftBlock}>
+                        <div className={styles.hurryUp}>
+                            <p>Как можно скорее</p>
+                            <div className={styles.arrowContainer}>
+                                <Image src={arrow} alt='arrow' fill />
+                            </div>
+                        </div>
+                        <div className={styles.hurryUp} onClick={() => openModal()}>
+                            <p>Укажите адрес доставки</p>
+                            <div className={styles.arrowContainer}>
+                                <Image src={arrow} alt='arrow' fill />
+                            </div>
+                        </div>
+                    </div>
                     {
                         !isMobile &&
                         <div className={styles.logo}>

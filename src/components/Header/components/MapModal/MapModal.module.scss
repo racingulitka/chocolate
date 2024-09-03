@@ -1,0 +1,42 @@
+.wrapper {
+  width: 1225px;
+  height: 780px;
+  border-radius: 45px;
+  background: #ede8e2;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 81px 75px;
+  .titleBlock {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    .title {
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .subtitle {
+      color: #757575;
+      font-family: "Corsica LX";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+  .inputBlock{
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

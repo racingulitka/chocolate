@@ -14,30 +14,62 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  @media(max-width:$mobile-size){
-    padding:0;
+  @media (max-width: $mobile-size) {
+    padding: 0;
   }
   .wrapper {
-      @include font();
-      width: min(1366px, 100%);
-      color: #ede8e2;
-      font-size: 28px;
-      font-weight: 600;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 25px;
-      @media(max-width:$mobile-size){
-        padding:10px 20px;
-      }
-      .topBlock {
-          width: 100%;
+    @include font();
+    width: min(1366px, 100%);
+    color: #ede8e2;
+    font-size: 28px;
+    font-weight: 600;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    @media (max-width: $mobile-size) {
+      padding: 10px 20px;
+      gap: 10px;
+    }
+    .topBlock {
+      width: 100%;
       height: auto;
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
       align-items: center;
+      .topLeftBlock {
+        width: fit-content;
+        height: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        .hurryUp {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 10px;
+          &:hover{
+            cursor:pointer;
+          }
+          & p {
+            @include font();
+            color: #4b2d2b;
+            font-size: 16px;
+            font-weight: 600;
+          }
+          .arrowContainer{
+            position:relative;
+            width:10px;
+            height:5px;
+            margin-top:3px;
+          }
+        }
+      }
       .topRightBlock {
         width: fit-content;
         height: auto;
@@ -46,8 +78,8 @@
         justify-content: flex-start;
         align-items: center;
         gap: 25px;
-        @media(max-width:$mobile-size){
-            gap:10px;
+        @media (max-width: $mobile-size) {
+          gap: 10px;
         }
       }
       .logo {
@@ -65,10 +97,10 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-        @media(max-width:$mobile-size){
-            height:30px;
-            width:46px;
-            gap:5px;
+        @media (max-width: $mobile-size) {
+          height: 30px;
+          width: 46px;
+          gap: 5px;
         }
         &:hover {
           cursor: pointer;
@@ -78,17 +110,17 @@
           position: relative;
           width: 35px;
           aspect-ratio: 1/1;
-          @media(max-width:$mobile-size){
-            width:18px;
-            height:17px;
+          @media (max-width: $mobile-size) {
+            width: 18px;
+            height: 17px;
           }
         }
         .sideMenuIconHumanContainer {
           position: relative;
           width: 25px;
           aspect-ratio: 1/1;
-          @media(max-width:$mobile-size){
-            width:11px;
+          @media (max-width: $mobile-size) {
+            width: 11px;
           }
         }
       }
@@ -108,8 +140,8 @@
         justify-content: flex-start;
         align-items: center;
         gap: 30px;
-        @media(max-width:$mobile-size){
-          gap:15px;
+        @media (max-width: $mobile-size) {
+          gap: 15px;
         }
         .category {
           display: flex;
@@ -117,8 +149,8 @@
           justify-content: flex-start;
           align-items: center;
           gap: 14px;
-          @media(max-width:$mobile-size){
-            gap:5px;
+          @media (max-width: $mobile-size) {
+            gap: 5px;
           }
           &:hover {
             cursor: pointer;
@@ -127,9 +159,9 @@
             position: relative;
             width: 28px;
             height: 28px;
-            @media(max-width:$mobile-size){
-              width:11px;
-              height:11px;
+            @media (max-width: $mobile-size) {
+              width: 11px;
+              height: 11px;
             }
           }
           .categoryTitle {
@@ -140,7 +172,7 @@
             &Active {
               color: #2a181a;
             }
-            @media(max-width:$mobile-size){
+            @media (max-width: $mobile-size) {
               font-size: 8px;
             }
           }
@@ -150,7 +182,7 @@
           height: 48px;
           border-radius: 60px;
           background: #ede8e2;
-          padding:10px 20px;
+          padding: 10px 20px;
           display: flex;
           flex-flow: row nowrap;
           justify-content: flex-start;
@@ -177,8 +209,8 @@
         justify-content: flex-start;
         align-items: center;
         gap: 35px;
-        @media(max-width:$mobile-size){
-          gap:15px;
+        @media (max-width: $mobile-size) {
+          gap: 15px;
         }
       }
     }

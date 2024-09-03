@@ -1,0 +1,29 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+  .wrapper {
+    width: min(1366px, 100%);
+    height: auto;
+    & h1 {
+      color: #2a181a;
+      font-family: "Corsica LX";
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      & span {
+        color: #4b2d2b;
+        font-family: "Corsica LX";
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+  }
+}

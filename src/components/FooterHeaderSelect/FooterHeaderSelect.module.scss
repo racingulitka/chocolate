@@ -13,6 +13,9 @@
   align-items: center;
   gap: 10px;
   position: relative;
+  &HeaderMobile{
+    height:auto;
+  }
   &:hover {
     cursor: pointer;
   }
@@ -27,11 +30,18 @@
       &Header{
         color:#898989;
       }
+      &Mobile{
+        font-size: 8px;
+      }
     }
     .currentImageContainer {
       position: relative;
       width: 31px;
       height: 22px;
+      &Mobile{
+        width:11px;
+        height:8px;
+      }
     }
   }
   .arrowContainer {

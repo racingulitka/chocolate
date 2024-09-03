@@ -8,6 +8,7 @@ import { GetServerSidePropsContext } from "next";
 import Footer from "@/components/Footer/Footer";
 import { PageType } from "@/components/PageLayout/PageLayout.typings";
 import HomePageHero from "@/components/HomePage/HomePageHero/HomePageHero";
+import HomePageSlider from "@/components/HomePage/HomePageSlider/HomePageSlider";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
@@ -35,7 +36,8 @@ export default function Home({
         description='description'
         pageType={PageType.main}
       >
-        <HomePageHero />
+        {!isMobile && <HomePageHero />}
+        <HomePageSlider />
       </PageLayout>
     </>
   );

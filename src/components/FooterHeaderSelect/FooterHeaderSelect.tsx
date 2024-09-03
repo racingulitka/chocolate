@@ -78,15 +78,27 @@ export default function FooterHeaderSelect(props: Props) {
     return (
         <div
             ref={ref}
-            className={styles.wrapper}
+            className={cn(
+                styles.wrapper,
+                props.isMobile && props.position === 'header' && styles.wrapperHeaderMobile
+            )}
             onClick={() => onClickWrapper()}
         >
             <div className={styles.value}>
                 {
                     props.type === 'currency' ?
-                        <div className={cn(styles.currentValueText, props.position === 'header' && styles.currentValueTextHeader)}>{currencyArr.find(item => item.id === currency)?.title}</div>
+                        <div className={cn(
+                            styles.currentValueText,
+                            props.position === 'header' && styles.currentValueTextHeader,
+                            props.position === 'header' && props.isMobile && styles.currentValueTextMobile
+                        )}>
+                            {currencyArr.find(item => item.id === currency)?.title}
+                        </div>
                         :
-                        <div className={styles.currentImageContainer}>
+                        <div className={cn(
+                            styles.currentImageContainer,
+                            props.position === 'header' && props.isMobile && styles.currentImageContainerMobile
+                        )}>
                             <Image src={langArr.find(item => item.id === activeLanguage)?.icon} alt='icon' layout='fill' />
                         </div>
                 }

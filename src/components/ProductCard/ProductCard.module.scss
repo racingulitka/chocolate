@@ -1,0 +1,163 @@
+@mixin fontCorsica(){
+  font-family: "Corsica LX";
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin fontGeometria(){
+  font-family: Geometria;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.wrapper {
+  width: 285px;
+  height: 435px;
+  border-radius: 15px;
+  background: #ede8e2;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.15);
+  padding: 0 0 15px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  .topBlock {
+    width: 100%;
+    height: 285px;
+    position: relative;
+    .heartBlock {
+      position: absolute;
+      top: 16px;
+      right: 13px;
+      filter: drop-shadow(0px 0px 9.8px rgba(0, 0, 0, 0.15));
+      background: #fff;
+      width: 35px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .heart {
+      width: 21px;
+      height: 21px;
+    }
+  }
+  .bottomBlock {
+    width: 100%;
+    height: 107px;
+    padding: 0 23px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      @include fontCorsica();
+      color: #2a181a;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .bottomDigitBlock {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      .rating {
+        width: 95px;
+        height: 25px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        &:hover{
+            cursor:pointer;
+        }
+        .starContainer {
+          width: 25px;
+          height: 25px;
+          position: relative;
+        }
+        .ratingMetric {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 3px;
+          .rate {
+            @include fontGeometria();
+            color: #2a181a;
+            font-size: 16px;
+          }
+          .reviewsNumber {
+            @include fontGeometria();
+            color: #aaa;
+            font-size: 10px;
+          }
+        }
+      }
+      .priceBlock {
+        width: 129px;
+        height: 39px;
+        border-radius: 5px;
+        background: #f7f3f0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        overflow: hidden;
+        position:relative;
+        &:hover .buy{
+            display:flex;
+            cursor:pointer;
+        }
+        .buy {
+          @include fontCorsica();
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 500;
+          background: #383838;
+          display:none;
+          z-index:1;
+        }
+        .currentPrice {
+          @include fontGeometria();
+          color: #2a181a;
+          font-size: 16px;
+        }
+        .oldPrice {
+          @include fontGeometria();
+          color: #aaa;
+          font-size: 10px;
+          position: relative;
+          &:before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            rotate: 345deg;
+            background: #aaa;
+          }
+        }
+      }
+    }
+  }
+}

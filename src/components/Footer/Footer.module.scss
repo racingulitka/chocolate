@@ -16,17 +16,15 @@
   align-items: center;
   .wrapper {
     @include font();
-    width: min(1606px, 100%);
-    padding: 62px 0 37px;
+    width: min(var(--contentSize), 100%);
+    padding: var(--gap-4xl) 0 var(--gap-2xl);
     color: #ede8e2;
-    font-size: 28px;
-    font-weight: 600;
     display:flex;
     flex-flow:column nowrap;
     justify-content: flex-start;
     align-items: center;
     @media(max-width:$mobile-size){
-        gap:35px;
+        gap:var(--gap-xl);
     }
     .mobileSelectors{
         width:100%;
@@ -43,25 +41,25 @@
       flex-flow: row nowrap;
       justify-content: flex-start;
       align-items: flex-start;
-      gap: 175px;
+      gap: var(--gap-8xl);
       @media(max-width:$mobile-size){
         flex-flow:column nowrap;
         flex-direction: column-reverse;
-        gap:35px;
+        gap:var(--gap-2xl);
       }
       .topLeftBlock {
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: flex-start;
-        gap: 35px;
+        gap: var(--gap-2xl);
         .logoContainer {
           position: relative;
-          width: 215px;
-          height: 28px;
+          width: 172px;
+          height: 22px;
           @media(max-width:$mobile-size){
-            width:159px;
-            height:21px;
+            width:127px;
+            height:17px;
           }
         }
         .mainInfo {
@@ -71,25 +69,25 @@
           flex-flow: column nowrap;
           justify-content: flex-start;
           align-items: flex-start;
-          gap: 10px;
+          gap: var(--gap-s);
           & p {
             @include font();
             color: #dfc7b7;
-            font-size: 20px;
+            font-size: var(--font-size-l);
             font-weight: 400;
           }
         }
       }
       .topRightBlock {
-        max-width: 1190px;
+        max-width: 952px;
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-start;
         align-items: flex-start;
-        row-gap: 60px;
-        column-gap: 60px;
+        row-gap: var(--gap-4xl);
+        column-gap: var(--gap-4xl);
         @media(max-width:$mobile-size){
-            gap:35px;
+            gap:var(--gap-2xl);
             flex-flow:column nowrap;
         }
         .category {
@@ -99,15 +97,15 @@
           flex-flow: column nowrap;
           justify-content: flex-start;
           align-items: flex-start;
-          gap: 35px;
+          gap: var(--gap-xl);
           .title {
             @include font();
             width: fit-content;
             color: #ede8e2;
-            font-size: 28px;
+            font-size: var(--font-size-xl);
             font-weight: 600;
             @media(max-width:$mobile-size){
-                font-size: 20px;
+                font-size: var(--gap-m);
             }
           }
           .links {
@@ -117,14 +115,14 @@
             flex-flow: column nowrap;
             justify-content: flex-start;
             align-items: flex-start;
-            gap: 15px;
+            gap: var(--gap-s);
             & p {
               @include font();
               color: #dfc7b7;
-              font-size: 20px;
+              font-size: var(--font-size-m);
               font-weight: 400;
               @media(max-width:$mobile-size){
-                font-size: 16px;
+                font-size: var(--font-size-s);
               }
               &:hover{
                 text-decoration: underline;
@@ -138,7 +136,7 @@
       width: 100%;
       height: 1px;
       background: #7e7e7e;
-      margin: 39px 0 32px;
+      margin: var(--gap-2xl) 0 var(--gap-xl);
       @media(max-width:$mobile-size){
         display:none;
       }
@@ -155,16 +153,16 @@
         flex-flow: row wrap;
         justify-content: flex-start;
         align-items: center;
-        gap: 60px;
+        gap: var(--gap-4xl);
         @media(max-width:$mobile-size){
-            gap:20px;
+            gap:var(--gap-m);
             flex-flow:column nowrap;
             align-items: flex-start;
         }
         .logoBottomContainer {
           position: relative;
-          width: 147px;
-          height: 19px;
+          width: 118px;
+          height: 15px;
           @media(max-width:$mobile-size){
             display:none;
           }
@@ -172,10 +170,10 @@
         & p {
           @include font();
           color: #dfc7b7;
-          font-size: 20px;
+          font-size: var(--font-size-m);
           font-weight: 400;
           @media(max-width:$mobile-size){
-            font-size: 16px;
+            font-size: var(--font-size-s);
           }
           &:hover{
             text-decoration: underline;
@@ -189,7 +187,7 @@
         flex-flow:row nowrap;
         justify-content: flex-start;
         align-items: center;
-        gap:35px;
+        gap:var(--gap-2xl);
         @media(max-width:$mobile-size){
             display:none;
         }
