@@ -12,12 +12,12 @@
 }
 
 .wrapper {
-  width: 285px;
-  height: 435px;
-  border-radius: 15px;
+  width: 228px;
+  height: 348px;
+  border-radius: 12px;
   background: #ede8e2;
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.15);
-  padding: 0 0 15px 0;
+  padding: 0 0 var(--gap-s) 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -25,15 +25,15 @@
   overflow: hidden;
   .topBlock {
     width: 100%;
-    height: 285px;
+    height: 228px;
     position: relative;
     .heartBlock {
       position: absolute;
-      top: 16px;
-      right: 13px;
+      top: 13px;
+      right: 10px;
       filter: drop-shadow(0px 0px 9.8px rgba(0, 0, 0, 0.15));
       background: #fff;
-      width: 35px;
+      width: 28px;
       aspect-ratio: 1/1;
       border-radius: 50%;
       display: flex;
@@ -44,14 +44,14 @@
       }
     }
     .heart {
-      width: 21px;
-      height: 21px;
+      width: 17px;
+      height: 17px;
     }
   }
   .bottomBlock {
     width: 100%;
-    height: 107px;
-    padding: 0 23px;
+    height: 86px;
+    padding: 0 var(--gap-l);
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -59,7 +59,7 @@
     .title {
       @include fontCorsica();
       color: #2a181a;
-      font-size: 16px;
+      font-size: var(--font-size-s);
       font-weight: 600;
     }
     .bottomDigitBlock {
@@ -69,21 +69,21 @@
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
-      gap: 15px;
+      gap: var(--gap-s);
       .rating {
-        width: 95px;
-        height: 25px;
+        width: 76px;
+        height: 20px;
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
-        gap: 10px;
+        gap: var(--gap-xs);
         &:hover{
             cursor:pointer;
         }
         .starContainer {
-          width: 25px;
-          height: 25px;
+          width: 20px;
+          height: 20px;
           position: relative;
         }
         .ratingMetric {
@@ -94,19 +94,19 @@
           .rate {
             @include fontGeometria();
             color: #2a181a;
-            font-size: 16px;
+            font-size: var(--font-size-s);
           }
           .reviewsNumber {
             @include fontGeometria();
             color: #aaa;
-            font-size: 10px;
+            font-size: 8px;
           }
         }
       }
       .priceBlock {
-        width: 129px;
-        height: 39px;
-        border-radius: 5px;
+        width: 103px;
+        height: 31px;
+        border-radius: 4px;
         background: #f7f3f0;
         display: flex;
         flex-flow: row nowrap;
@@ -129,7 +129,7 @@
           justify-content: center;
           align-items: center;
           color: #fff;
-          font-size: 16px;
+          font-size: var(--font-size-s);
           font-weight: 500;
           background: #383838;
           display:none;
@@ -138,12 +138,12 @@
         .currentPrice {
           @include fontGeometria();
           color: #2a181a;
-          font-size: 16px;
+          font-size: var(--font-size-s);
         }
         .oldPrice {
           @include fontGeometria();
           color: #aaa;
-          font-size: 10px;
+          font-size: 8px;
           position: relative;
           &:before {
             content: "";

@@ -6,12 +6,12 @@
 
 .wrapper {
   width: fit-content;
-  height: 28px;
+  height: 23px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  gap: var(--gap-xs);
   position: relative;
   &HeaderMobile{
     height:auto;
@@ -25,23 +25,17 @@
     .currentValueText {
       @include font();
       color: #dfc7b7;
-      font-size: 22px;
+      font-size: var(--font-size-l);
       font-weight: 600;
       &Header{
         color:#898989;
       }
-      &Mobile{
-        font-size: 8px;
-      }
     }
     .currentImageContainer {
       position: relative;
-      width: 31px;
-      height: 22px;
-      &Mobile{
-        width:11px;
-        height:8px;
-      }
+      width: 25px;
+      height: 18px;
+      filter: drop-shadow(0px 0px 5.5px rgba(0, 0, 0, 0.25));
     }
   }
   .arrowContainer {
@@ -59,14 +53,14 @@
     translate: 0 -100%;
     width: fit-content;
     height: auto;
-    border-radius: 7px;
+    border-radius: 6px;
     background: #fff;
-    padding: 20px 30px 20px 10px;
+    padding: var(--gap-m) var(--gap-xl) var(--gap-m) var(--gap-xs);
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 15px;
+    gap: var(--gap-s);
     &Header {
       bottom: -1px;
       translate: -50% 100%;
@@ -82,21 +76,21 @@
       flex-flow: row nowrap;
       justify-content: flex-start;
       align-items: center;
-      gap: 10px;
+      gap: var(--gap-xs);
       .checkWrapper {
         position: relative;
-        width: 15px;
+        width: var(--gap-s);
         aspect-ratio: 1/1;
       }
       .iconWrapper {
         position: relative;
-        width: 31px;
-        height: 22px;
+        width: 25px;
+        height: 18px;
       }
       .title {
         @include font();
         color: #2c1417;
-        font-size: 20px;
+        font-size: var(--font-size-m);
         font-weight: 500;
       }
     }
@@ -107,14 +101,14 @@
   position:relative;
   width: fit-content;
   height: auto;
-  border-radius: 7px;
+  border-radius: 6px;
   background: #fff;
-  padding: 20px 30px 20px 10px;
+  padding: var(--gap-m) var(--gap-xl) var(--gap-m) var(--gap-xs);
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 15px;
+  gap: var(--gap-s);
   z-index:100;
   .listWrapper {
     width: fit-content;
@@ -123,21 +117,22 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: var(--gap-xs);
     .checkWrapper {
       position: relative;
-      width: 15px;
+      width: 12px;
       aspect-ratio: 1/1;
     }
     .iconWrapper {
       position: relative;
-      width: 31px;
-      height: 22px;
+      width: 25px;
+      height: 18px;
+      filter: drop-shadow(0px 0px 5.5px rgba(0, 0, 0, 0.25));
     }
     .title {
       @include font();
       color: #2c1417;
-      font-size: 20px;
+      font-size: var(--font-size-m);
       font-weight: 500;
     }
   }

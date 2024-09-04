@@ -3,6 +3,8 @@
   --foreground-rgb: #F7F3F0;
   --mainFontColor:#000;
   --contentSize:1000px;
+  --mainBackgroundColor:#F7F3F0;
+  --mobile-size:480px;
   
   --gap-3xs: 2px;
   --gap-2xs: 4px;

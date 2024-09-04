@@ -8,29 +8,29 @@
 .mainWrapper {
   width: 100%;
   height: auto;
-  padding: 20px;
-  background: $mainBackgroundColor;
+  padding: var(--gap-l);
+  background: var(--mainBackgroundColor);
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  @media (max-width: $mobile-size) {
+  @media (max-width: var(--mobile-size)) {
     padding: 0;
   }
   .wrapper {
     @include font();
-    width: min(1366px, 100%);
+    width: min(var(--contentSize), 100%);
     color: #ede8e2;
-    font-size: 28px;
+    font-size: var(--font-size-xl);
     font-weight: 600;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 25px;
-    @media (max-width: $mobile-size) {
-      padding: 10px 20px;
-      gap: 10px;
+    gap: var(--gap-l);
+    @media (max-width: var(--mobile-size)) {
+      padding: var(--gap-xs) var(--gap-l);
+      gap: var(--gap-xs);
     }
     .topBlock {
       width: 100%;
@@ -46,20 +46,20 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
-        gap: 30px;
+        gap: var(--gap-xl);
         .hurryUp {
           display: flex;
           flex-flow: row nowrap;
           justify-content: flex-start;
           align-items: center;
-          gap: 10px;
+          gap: var(--gap-xs);
           &:hover{
             cursor:pointer;
           }
           & p {
             @include font();
             color: #4b2d2b;
-            font-size: 16px;
+            font-size: var(--font-size-s);
             font-weight: 600;
           }
           .arrowContainer{
@@ -77,27 +77,27 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
-        gap: 25px;
-        @media (max-width: $mobile-size) {
+        gap: var(--gap-l);
+        @media (max-width: var(--mobile-size)) {
           gap: 10px;
         }
       }
       .logo {
         position: relative;
-        width: 215px;
-        height: 28px;
+        width: 172px;
+        height: 22px;
       }
       .sideMenuButton {
-        width: 90px;
-        height: 55px;
-        border-radius: 10px;
+        width: 72px;
+        height: 44px;
+        border-radius: 8px;
         background: #ede8e2;
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        gap: 10px;
-        @media (max-width: $mobile-size) {
+        gap: var(--gap-xs);
+        @media (max-width: var(--mobile-size)) {
           height: 30px;
           width: 46px;
           gap: 5px;
@@ -108,16 +108,15 @@
         }
         .sideMenuIconSortContainer {
           position: relative;
-          width: 35px;
+          width: 28px;
           aspect-ratio: 1/1;
-          @media (max-width: $mobile-size) {
+          @media (max-width: var(--mobile-size)) {
             width: 18px;
-            height: 17px;
           }
         }
         .sideMenuIconHumanContainer {
           position: relative;
-          width: 25px;
+          width: 20px;
           aspect-ratio: 1/1;
           @media (max-width: $mobile-size) {
             width: 11px;
@@ -139,8 +138,8 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
-        gap: 30px;
-        @media (max-width: $mobile-size) {
+        gap: var(--gap-xl);
+        @media (max-width: var(--mobile-size)) {
           gap: 15px;
         }
         .category {
@@ -148,8 +147,8 @@
           flex-flow: row nowrap;
           justify-content: flex-start;
           align-items: center;
-          gap: 14px;
-          @media (max-width: $mobile-size) {
+          gap: var(--gap-s);
+          @media (max-width: var(--mobile-size)) {
             gap: 5px;
           }
           &:hover {
@@ -157,9 +156,9 @@
           }
           .categoryIcon {
             position: relative;
-            width: 28px;
-            height: 28px;
-            @media (max-width: $mobile-size) {
+            width: 22px;
+            height: 22px;
+            @media (max-width: var(--mobile-size)) {
               width: 11px;
               height: 11px;
             }
@@ -167,36 +166,36 @@
           .categoryTitle {
             @include font();
             color: #898989;
-            font-size: 22px;
+            font-size: var(--font-size-l);
             font-weight: 600;
             &Active {
               color: #2a181a;
             }
-            @media (max-width: $mobile-size) {
+            @media (max-width: var(--mobile-size)) {
               font-size: 8px;
             }
           }
         }
         .instagramButton {
-          width: 309px;
-          height: 48px;
-          border-radius: 60px;
+          width: 247px;
+          height: 38px;
+          border-radius: 48px;
           background: #ede8e2;
-          padding: 10px 20px;
+          padding: var(--gap-xs) var(--gap-m);
           display: flex;
           flex-flow: row nowrap;
           justify-content: flex-start;
           align-items: center;
-          gap: 14px;
+          gap: var(--gap-s);
           .instagramIconContainer {
-            width: 24px;
+            width: 19px;
             aspect-ratio: 1/1;
             position: relative;
           }
           & p {
             @include font();
             color: #898989;
-            font-size: 22px;
+            font-size: var(--font-size-m);
             font-weight: 600;
           }
         }
@@ -208,8 +207,8 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
-        gap: 35px;
-        @media (max-width: $mobile-size) {
+        gap: var(--gap-xl);
+        @media (max-width: var(--mobile-size)) {
           gap: 15px;
         }
       }

@@ -90,14 +90,12 @@ export default function FooterHeaderSelect(props: Props) {
                         <div className={cn(
                             styles.currentValueText,
                             props.position === 'header' && styles.currentValueTextHeader,
-                            props.position === 'header' && props.isMobile && styles.currentValueTextMobile
                         )}>
                             {currencyArr.find(item => item.id === currency)?.title}
                         </div>
                         :
                         <div className={cn(
                             styles.currentImageContainer,
-                            props.position === 'header' && props.isMobile && styles.currentImageContainerMobile
                         )}>
                             <Image src={langArr.find(item => item.id === activeLanguage)?.icon} alt='icon' layout='fill' />
                         </div>

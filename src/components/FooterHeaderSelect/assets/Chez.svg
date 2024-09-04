@@ -1,21 +1,5 @@
-<svg width="32" height="27" viewBox="0 0 32 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="icon/chex">
-<g id="Vector" filter="url(#filter0_d_120_12984)">
-<path d="M6.76833 20.1512C7.16205 20.5205 7.68242 20.7247 8.22222 20.7218H23.7778C25.005 20.7218 26 19.7268 26 18.2218V13.4996H15.7222L6.76833 20.1512Z" fill="#D7141A"/>
-<path d="M23.7778 6.27734H8.22222C7.68029 6.2772 7.15717 6.47609 6.75222 6.83623L15.7222 13.4996H26L26 8.49957C26 7.9102 25.7659 7.34497 25.3491 6.92822C24.9324 6.51147 24.3671 6.27734 23.7778 6.27734Z" fill="#EEEEEE"/>
-<path d="M6.76833 20.1512L15.7222 13.4996L6.75222 6.83623C6.51579 7.04407 6.3264 7.29993 6.19669 7.58676C6.06698 7.87358 5.99992 8.18477 6 8.49957V18.2218C6 19.044 6.29833 19.7123 6.76833 20.1512Z" fill="#11457E"/>
-</g>
-</g>
-<defs>
-<filter id="filter0_d_120_12984" x="0.5" y="0.777344" width="31" height="25.4443" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="2.75"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_120_12984"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_120_12984" result="shape"/>
-</filter>
-</defs>
+<svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.768333 14.1512C1.16205 14.5205 1.68242 14.7247 2.22222 14.7218H17.7778C19.005 14.7218 20 13.7268 20 12.2218V7.49957H9.72222L0.768333 14.1512Z" fill="#D7141A"/>
+<path d="M17.7778 0.277344H2.22222C1.68029 0.2772 1.15717 0.476086 0.752222 0.836233L9.72222 7.49957H20L20 2.49957C20 1.9102 19.7659 1.34497 19.3491 0.928218C18.9324 0.51147 18.3671 0.277344 17.7778 0.277344Z" fill="#EEEEEE"/>
+<path d="M0.768333 14.1512L9.72222 7.49957L0.752222 0.836233C0.515792 1.04407 0.326402 1.29993 0.196689 1.58676C0.0669754 1.87358 -7.87184e-05 2.18477 6.93503e-08 2.49957V12.2218C6.93503e-08 13.044 0.298333 13.7123 0.768333 14.1512Z" fill="#11457E"/>
 </svg>

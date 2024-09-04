@@ -7,20 +7,20 @@
 
 .wrapper {
   position: relative;
-  @media (max-width: $mobile-size) {
+  @media (max-width: var(--mobile-size)) {
     height: 30px;
   }
   .input {
     @include font();
-    width: 410px;
-    height: 59px;
-    padding: 10px 20px 10px 73px;
-    border-radius: 10px;
+    width: 328px;
+    height: 44px;
+    padding: var(--gap-xs) var(--gap-m) var(--gap-xs) var(--gap-5xl);
+    border-radius: 8px;
     border: 1.5px solid #ababab;
     background: #fff;
-    font-size: 22px;
+    font-size: var(--font-size-l);
     font-weight: 400;
-    @media (max-width: $mobile-size) {
+    @media (max-width: var(--mobile-size)) {
       width: 30px;
       height: 30px;
       padding: 0;
@@ -30,7 +30,7 @@
       outline: none;
     }
     &::placeholder {
-      font-size: 20px;
+      font-size: var(--font-size-m);
       font-weight: 500;
     }
     &:hover {
@@ -42,9 +42,9 @@
     top: 50%;
     left: 20px;
     translate: 0 -50%;
-    width: 39px;
+    width: 31px;
     aspect-ratio: 1/1;
-    @media (max-width: $mobile-size) {
+    @media (max-width: var(--mobile-size)) {
       width: 20px;
       left: 50%;
       translate: -50% -50%;
