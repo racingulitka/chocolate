@@ -37,7 +37,7 @@ export default function Home({
         pageType={PageType.main}
       >
         {!isMobile && <HomePageHero />}
-        <HomePageSlider />
+        <HomePageSlider isMobile={isMobile}/>
       </PageLayout>
     </>
   );
