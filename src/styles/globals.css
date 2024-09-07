@@ -33,7 +33,7 @@
   --font-size-4xl: 48px;
 }
 
-@media(max-width:480px){
+/*@media(max-width:480px){
   :root{
   --gap-3xs: 2px;
   --gap-2xs: 4px;
@@ -45,23 +45,23 @@
   --gap-xl: 24px;
   --gap-2xl: 32px;
   --gap-3xl: 40px;
-  --gap-4xl: 48px;
+  --gap-4xl: 20px;
   --gap-5xl: 64px;
-  --gap-6xl: 72px;
+  --gap-6xl: 24px;
   --gap-7xl: 96px;
   --gap-8xl: 128px;
 
   --font-size-xxs: 11px;
   --font-size-xs: 12px;
-  --font-size-s: 13px;
+  --font-size-s: 6px;
   --font-size-m: 16px;
   --font-size-l: 18px;
   --font-size-xl: 22px;
   --font-size-2xl: 30px;
-  --font-size-3xl: 40px;
+  --font-size-3xl: 14px;
   --font-size-4xl: 48px;
   }
-}
+}*/
 
 * {
   box-sizing: border-box;

@@ -7,7 +7,7 @@
 
 .wrapper {
   position: relative;
-  @media (max-width: var(--mobile-size)) {
+  @media (max-width: $mobile-size) {
     height: 30px;
   }
   .input {
@@ -20,7 +20,7 @@
     background: #fff;
     font-size: var(--font-size-l);
     font-weight: 400;
-    @media (max-width: var(--mobile-size)) {
+    @media (max-width: $mobile-size) {
       width: 30px;
       height: 30px;
       padding: 0;
@@ -44,7 +44,7 @@
     translate: 0 -50%;
     width: 31px;
     aspect-ratio: 1/1;
-    @media (max-width: var(--mobile-size)) {
+    @media (max-width: $mobile-size) {
       width: 20px;
       left: 50%;
       translate: -50% -50%;

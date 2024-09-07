@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 @mixin font(){
   font-family: "Corsica LX";
   font-size: var(--font-size-3xl);
@@ -20,9 +22,15 @@
     & h1 {
       @include font();
       color: #2a181a;
+      @media(max-width:$mobile-size){
+        font-size:14px;
+      }
       & span {
         @include font();
         color: #4b2d2b;
+        @media(max-width:$mobile-size){
+          font-size:14px;
+        }
       }
     }
     .sliderWrapper {
@@ -30,6 +38,9 @@
       height: auto;
       margin: var(--gap-4xl) 0;
       position:relative;
+      @media(max-width:$mobile-size){
+        margin:20px 0;
+      }
       &::-webkit-scrollbar{
         display:none;
       }

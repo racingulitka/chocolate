@@ -1,6 +1,7 @@
 import { StaticImageData } from "next/image";
 
-export interface Props{
+export interface ProductCard{
+    id:number,
     image:StaticImageData,
     isFavourite:boolean,
     title:string,

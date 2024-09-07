@@ -1,0 +1,59 @@
+@import "../../styles/variables.scss";
+
+.wrapper {
+  width: min(100%, var(--contentSize));
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--gap-4xl);
+  @media (max-width: $mobile-size) {
+    flex-flow: column nowrap;
+    gap: 20px;
+  }
+  .titleBlock {
+    width: 273px;
+    color: #2a181a;
+    font-family: "Corsica LX";
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    .seeAllButton {
+      width: 165px;
+      height: 37px;
+      border-radius: 10px;
+      background: #ede8e2;
+      margin: var(--gap-xl) 0 0 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #2a181a;
+      font-family: "Corsica LX";
+      font-size: var(--font-size-s);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      .arrowContainer{
+        position:relative;
+        width:10px;
+        aspect-ratio: 1/1;
+      }
+      &:hover{
+        cursor:pointer;
+        opacity:0.9;
+      }
+    }
+  }
+  .cardsBlock {
+    width: calc(100% - 273px - var(--gap-4xl));
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--gap-s);
+    row-gap: var(--gap-2xl);
+  }
+}

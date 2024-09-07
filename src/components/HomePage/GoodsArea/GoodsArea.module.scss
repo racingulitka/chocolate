@@ -1,0 +1,15 @@
+@import '../../../styles/variables.scss';
+
+.mainWrapper{
+    width:100%;
+    height:auto;
+    padding:0 20px;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap:var(--gap-6xl);
+    @media(max-width:$mobile-size){
+        gap:20px;
+    }
+}

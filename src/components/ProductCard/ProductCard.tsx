@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from './ProductCard.module.scss'
-import { Props } from './ProductCard.typings'
+import { ProductCard as ProductCardTypings } from './ProductCard.typings'
 import Heart from './assets/Heart'
 import star from './assets/star.svg'
 import Image from 'next/image'
 
-export default function ProductCard(props: Props) {
+export default function ProductCard(props: ProductCardTypings) {
     return (
         <div className={styles.wrapper}>
-            <div className={styles.topBlock} style={{ background: `url(${props.image.src})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+            <div className={styles.topBlock} style={{ background: `url(${props.image.src})`, backgroundSize: 'contain', backgroundPosition: 'center top', backgroundRepeat: 'no-repeat' }}>
                 <div className={styles.heartBlock} onClick={() => console.log('setFavourite')}>
                     <Heart isFavourite={props.isFavourite} />
                 </div>

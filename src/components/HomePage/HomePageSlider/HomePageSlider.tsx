@@ -12,16 +12,6 @@ export default function HomePageSlider({
     isMobile: boolean,
 }) {
 
-    const cardParams = {
-        image: exampleCardImage,
-        isFavourite: false,
-        title: 'Упаковка “Клубника в шоколаде”',
-        rating: 4.9,
-        reviewsNumber: 180,
-        oldPrice: 3300,
-        currentPrice: 3300,
-    }
-
     const sliderBodyRef = useRef<HTMLDivElement | null>(null)
     const [slideWidth, setSlideWidth] = useState<number | null>(null);
     const [sliderShift, setSliderShift] = useState<number>(0)
@@ -101,9 +91,6 @@ export default function HomePageSlider({
                         </div>
                     }
                 </div>
-                <ProductCard
-                    {...cardParams}
-                />
             </div>
         </div>
     )
