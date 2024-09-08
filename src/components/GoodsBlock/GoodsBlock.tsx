@@ -5,7 +5,13 @@ import ProductCard from '../ProductCard/ProductCard'
 import arrow from './assets/arrow.svg'
 import Image from 'next/image'
 
-export default function GoodsBlock(props: GoodsArr) {
+export default function GoodsBlock({
+    props,
+    isMobile,
+}: {
+    props: GoodsArr,
+    isMobile: boolean,
+}) {
 
     const [isOpen, setOpen] = useState<boolean>(false)
 
@@ -14,7 +20,7 @@ export default function GoodsBlock(props: GoodsArr) {
             <div className={styles.titleBlock}>
                 {props.title}
                 {
-                    props.isSeeAll &&
+                    props.isSeeAll && !isMobile &&
                     <div className={styles.seeAllButton}>
                         Смотреть все
                         <div className={styles.arrowContainer}>
@@ -30,12 +36,25 @@ export default function GoodsBlock(props: GoodsArr) {
                             return (
                                 <ProductCard key={card.id} {...card} />
                             )
-                        } else if(index < 6) {
+                        } else if (index < 6) {
                             return (
                                 <ProductCard key={card.id} {...card} />
                             )
                         }
                     })
+                }
+                {
+                    !props.isSeeAll &&
+                    <div className={styles.showMore}>Показать еще</div>
+                }
+                {
+                    props.isSeeAll && isMobile &&
+                    <div className={styles.seeAllButton}>
+                        Смотреть все
+                        <div className={styles.arrowContainer}>
+                            <Image src={arrow} alt='see all' fill />
+                        </div>
+                    </div>
                 }
             </div>
         </div>

@@ -277,7 +277,7 @@ export default function Home({
       >
         {!isMobile && <HomePageHero />}
         <HomePageSlider isMobile={isMobile}/>
-        <GoodsArea goodsArr={goodsArr} />
+        <GoodsArea goodsArr={goodsArr} isMobile={isMobile} />
       </PageLayout>
     </>
   );

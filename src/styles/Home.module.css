@@ -47,12 +47,12 @@
       url('../fonts/corsica/CorsicaLX-Medium.woff2') format('woff2'),
       url('../fonts/corsica/CorsicaLX-Medium.woff') format('woff'),
       url('../fonts/corsica/CorsicaLX-Medium.ttf') format('truetype');
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-
+/* 
 @font-face {
   font-family: 'Corsica LX';
   src: url('../fonts/corsica/CorsicaLX-Book.ttf');
@@ -61,7 +61,7 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 @font-face {
   font-family: 'Corsica LX';

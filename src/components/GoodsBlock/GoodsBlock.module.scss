@@ -20,6 +20,10 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    @media(max-width:$mobile-size){
+        width:100%;
+        font-size: var(--font-size-m);
+    }
     .seeAllButton {
       width: 165px;
       height: 37px;
@@ -37,14 +41,20 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      .arrowContainer{
-        position:relative;
-        width:10px;
-        aspect-ratio: 1/1;
+      @media(max-width:$mobile-size){
+        width:100%;
       }
-      &:hover{
-        cursor:pointer;
-        opacity:0.9;
+      .arrowContainer {
+        position: relative;
+        width: 10px;
+        aspect-ratio: 1/1;
+        @media(max-width:$mobile-size){
+            width:5px;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        opacity: 0.9;
       }
     }
   }
@@ -55,5 +65,61 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: var(--gap-s);
     row-gap: var(--gap-2xl);
+    @media(max-width:$mobile-size){
+        width:100%;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--gap-xs);
+        row-gap: var(--gap-xs);
+    }
+    .showMore {
+      width: 100%;
+      height: 42px;
+      border-radius: 4px;
+      background: #D8D8D8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      grid-column: span 3;
+      @media(max-width:$mobile-size){
+        grid-column: span 2;
+        margin:var(--gap-s) 0 0 0;
+        height:20px;
+        font-size: 8px;
+      }
+    }
+    .seeAllButton {
+        width: 100%;
+        height: 20px;
+        border-radius: 5px;
+        background: #ede8e2;
+        margin:var(--gap-s) 0 0 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: var(--gap-2xs);
+        color: #2a181a;
+        font-family: "Corsica LX";
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        grid-column: span 2;
+        .arrowContainer {
+          position: relative;
+          width: 5px;
+          aspect-ratio: 1/1;
+        }
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+        }
+      }
   }
 }

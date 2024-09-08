@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 @mixin fontCorsica(){
   font-family: "Corsica LX";
   font-style: normal;
@@ -39,6 +41,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @media(max-width:$mobile-size){
+        top:5px;
+        right:7px;
+        width:15px;
+        padding:3px;
+      }
       &:hover {
         cursor: pointer;
       }
@@ -46,6 +54,10 @@
     .heart {
       width: 17px;
       height: 17px;
+      @media(max-width:$mobile-size){
+        width:9px;
+        height:9px;
+      }
     }
   }
   .bottomBlock {
@@ -56,11 +68,17 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
+    @media(max-width:$mobile-size){
+      padding:0 var(--gap-s);
+    }
     .title {
       @include fontCorsica();
       color: #2a181a;
       font-size: var(--font-size-s);
       font-weight: 600;
+      @media(max-width:$mobile-size){
+        font-size: 8px;
+      }
     }
     .bottomDigitBlock {
       width: 100%;
@@ -70,6 +88,10 @@
       justify-content: center;
       align-items: center;
       gap: var(--gap-s);
+      @media(max-width:$mobile-size){
+        gap:var(--gap-2s);
+        justify-content: space-between;
+      }
       .rating {
         width: 76px;
         height: 20px;
@@ -78,6 +100,11 @@
         justify-content: flex-start;
         align-items: center;
         gap: var(--gap-xs);
+        @media(max-width:$mobile-size){
+          gap:var(--gap-2xs);
+          height:11px;
+          width:fit-content;
+        }
         &:hover{
             cursor:pointer;
         }
@@ -85,6 +112,10 @@
           width: 20px;
           height: 20px;
           position: relative;
+          @media(max-width:$mobile-size){
+            width:11px;
+            height:11px;
+          }
         }
         .ratingMetric {
           display: flex;
@@ -95,11 +126,17 @@
             @include fontGeometria();
             color: #2a181a;
             font-size: var(--font-size-s);
+            @media(max-width:$mobile-size){
+              font-size: 8px;
+            }
           }
           .reviewsNumber {
             @include fontGeometria();
             color: #aaa;
             font-size: 8px;
+            @media(max-width:$mobile-size){
+              font-size: 5px;
+            }
           }
         }
       }
@@ -115,6 +152,11 @@
         gap: 3px;
         overflow: hidden;
         position:relative;
+        @media(max-width:$mobile-size){
+          height:19px;
+          width:fit-content;
+          padding:0 var(--gap-s);
+        }
         &:hover .buy{
             display:flex;
             cursor:pointer;
@@ -139,12 +181,18 @@
           @include fontGeometria();
           color: #2a181a;
           font-size: var(--font-size-s);
+          @media(max-width:$mobile-size){
+            font-size:8px;
+          }
         }
         .oldPrice {
           @include fontGeometria();
           color: #aaa;
           font-size: 8px;
           position: relative;
+          @media(max-width:$mobile-size){
+            font-size:5px;
+          }
           &:before {
             content: "";
             width: 100%;
