@@ -14,14 +14,27 @@ export default function GoodsBlock({
 }) {
 
     const [isOpen, setOpen] = useState<boolean>(false)
+    const [showMoreRate, setShowMoreRate] = useState<number>(1)
+    const arrLength = props.goodsCard.length
+
+    const handleShowMore = () => {
+        setShowMoreRate(prev => ++prev)
+    }
+
+    const handleSeeAll = () => {
+        setOpen(true)
+    }
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.titleBlock}>
                 {props.title}
                 {
-                    props.isSeeAll && !isMobile &&
-                    <div className={styles.seeAllButton}>
+                    props.isSeeAll && !isMobile && !isOpen &&
+                    <div
+                        className={styles.seeAllButton}
+                        onClick={() => handleSeeAll()}
+                    >
                         Смотреть все
                         <div className={styles.arrowContainer}>
                             <Image src={arrow} alt='see all' fill />
@@ -36,7 +49,7 @@ export default function GoodsBlock({
                             return (
                                 <ProductCard key={card.id} {...card} />
                             )
-                        } else if (index < 6) {
+                        } else if (index < showMoreRate * 6) {
                             return (
                                 <ProductCard key={card.id} {...card} />
                             )
@@ -44,12 +57,20 @@ export default function GoodsBlock({
                     })
                 }
                 {
-                    !props.isSeeAll &&
-                    <div className={styles.showMore}>Показать еще</div>
+                    !props.isSeeAll && arrLength > showMoreRate * 6 &&
+                    <div
+                        className={styles.showMore}
+                        onClick={() => handleShowMore()}
+                    >
+                        Показать еще
+                    </div>
                 }
                 {
-                    props.isSeeAll && isMobile &&
-                    <div className={styles.seeAllButton}>
+                    props.isSeeAll && isMobile && !isOpen &&
+                    <div
+                        className={styles.seeAllButton}
+                        onClick={() => handleSeeAll()}
+                    >
                         Смотреть все
                         <div className={styles.arrowContainer}>
                             <Image src={arrow} alt='see all' fill />
