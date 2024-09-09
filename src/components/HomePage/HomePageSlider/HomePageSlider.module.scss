@@ -15,7 +15,7 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 var(--gap-l);
+  padding: var(--gap-4xl) var(--gap-l);
   .wrapper {
     width: min(var(--contentSize), 100%);
     height: auto;

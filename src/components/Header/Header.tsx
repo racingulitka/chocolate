@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Header.module.scss'
 import GoodsSearch from './components/GoodsSearch/GoodsSearch'
 import sideMenuIconSort from './assets/sideMenuIconSort.svg'
@@ -14,6 +14,7 @@ import Link from 'next/link'
 import arrow from './assets/arrow.svg'
 import MapModal from './components/MapModal/MapModal'
 import Modal from 'react-modal'
+import { motion, AnimatePresence } from 'framer-motion'
 
 
 const customStyles = {
@@ -24,12 +25,12 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        border:'none',
-        padding:0,
-        background:'transparent',
+        border: 'none',
+        padding: 0,
+        background: 'transparent',
     },
-    overlay:{
-        background:'rgba(0, 0, 0, 0.61)'
+    overlay: {
+        background: 'rgba(0, 0, 0, 0.61)'
     }
 };
 
@@ -42,6 +43,23 @@ export default function Header({
 }) {
 
     const [isModalOpen, setModalOpen] = useState<boolean>(false)
+    const [isWindowScrolled, setWindowScrolled] = useState<boolean>(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setWindowScrolled(true)
+            } else {
+                setWindowScrolled(false)
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const openModal = () => {
         setModalOpen(true)
@@ -101,46 +119,57 @@ export default function Header({
                         </div>
                     </div>
                 </div>
-                <div className={styles.bottomBlock}>
-                    <div className={styles.categories}>
-                        {
-                            categoriesArr.map(category => {
-                                return (
-                                    <div className={styles.category} key={category.id}>
-                                        <div className={styles.categoryIcon}>
-                                            <Image src={category.icon} alt='category icon' layout='fill' />
+                <AnimatePresence>
+                    {
+                        !isWindowScrolled &&
+                        <motion.div
+                            className={cn(styles.bottomBlock)}
+                            initial={{translateY:-50, opacity:0, height:0}}
+                            animate={{translateY:0, opacity:1, height:'auto'}}
+                            transition={{ duration: 0.2, ease: 'easeInOut' }}
+                            exit={{translateY:-50, opacity:0, height:0}}
+                        >
+                            <div className={styles.categories}>
+                                {
+                                    categoriesArr.map(category => {
+                                        return (
+                                            <div className={styles.category} key={category.id}>
+                                                <div className={styles.categoryIcon}>
+                                                    <Image src={category.icon} alt='category icon' layout='fill' />
+                                                </div>
+                                                <div className={cn(styles.categoryTitle)}>{category.title}</div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                                {
+                                    pageType === PageType.main && !isMobile &&
+                                    <Link href='#'>
+                                        <div className={styles.instagramButton}>
+                                            <div className={styles.instagramIconContainer}>
+                                                <Image src={instagramIcon} alt='instagram' layout='fill' />
+                                            </div>
+                                            <p>Посмотреть Instagram</p>
                                         </div>
-                                        <div className={cn(styles.categoryTitle)}>{category.title}</div>
-                                    </div>
-                                )
-                            })
-                        }
-                        {
-                            pageType === PageType.main && !isMobile &&
-                            <Link href='#'>
-                                <div className={styles.instagramButton}>
-                                    <div className={styles.instagramIconContainer}>
-                                        <Image src={instagramIcon} alt='instagram' layout='fill' />
-                                    </div>
-                                    <p>Посмотреть Instagram</p>
-                                </div>
-                            </Link>
-                        }
-                    </div>
-                    <div className={styles.bottomRightBlock}>
-                        <FooterHeaderSelect
-                            isMobile={isMobile}
-                            type='currency'
-                            position='header'
-                        />
-                        <FooterHeaderSelect
-                            isMobile={isMobile}
-                            type='lang'
-                            position='header'
-                        />
+                                    </Link>
+                                }
+                            </div>
+                            <div className={styles.bottomRightBlock}>
+                                <FooterHeaderSelect
+                                    isMobile={isMobile}
+                                    type='currency'
+                                    position='header'
+                                />
+                                <FooterHeaderSelect
+                                    isMobile={isMobile}
+                                    type='lang'
+                                    position='header'
+                                />
 
-                    </div>
-                </div>
+                            </div>
+                        </motion.div>
+                    }
+                </AnimatePresence>
             </div>
         </header>
     )

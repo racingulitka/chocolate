@@ -20,9 +20,9 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    @media(max-width:$mobile-size){
-        width:100%;
-        font-size: var(--font-size-m);
+    @media (max-width: $mobile-size) {
+      width: 100%;
+      font-size: var(--font-size-m);
     }
     .seeAllButton {
       width: 165px;
@@ -41,15 +41,15 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      @media(max-width:$mobile-size){
-        width:100%;
+      @media (max-width: $mobile-size) {
+        width: 100%;
       }
       .arrowContainer {
         position: relative;
         width: 10px;
         aspect-ratio: 1/1;
-        @media(max-width:$mobile-size){
-            width:5px;
+        @media (max-width: $mobile-size) {
+          width: 5px;
         }
       }
       &:hover {
@@ -65,17 +65,17 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: var(--gap-s);
     row-gap: var(--gap-2xl);
-    @media(max-width:$mobile-size){
-        width:100%;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: var(--gap-xs);
-        row-gap: var(--gap-xs);
+    @media (max-width: $mobile-size) {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: var(--gap-xs);
+      row-gap: var(--gap-xs);
     }
     .showMore {
       width: 100%;
       height: 42px;
       border-radius: 4px;
-      background: #ECECEC;
+      background: #ececec;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -86,45 +86,62 @@
       font-weight: 400;
       line-height: normal;
       grid-column: span 3;
-      &:hover{
-        cursor:pointer;
-        opacity:0.9;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.9;
       }
-      @media(max-width:$mobile-size){
-        background: #D8D8D8;
+      @media (max-width: $mobile-size) {
+        background: #d8d8d8;
         grid-column: span 2;
-        margin:var(--gap-s) 0 0 0;
-        height:20px;
+        margin: var(--gap-s) 0 0 0;
+        height: 20px;
         font-size: 8px;
       }
     }
     .seeAllButton {
-        width: 100%;
-        height: 20px;
-        border-radius: 5px;
-        background: #ede8e2;
-        margin:var(--gap-s) 0 0 0;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        gap: var(--gap-2xs);
-        color: #2a181a;
-        font-family: "Corsica LX";
-        font-size: 8px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        grid-column: span 2;
-        .arrowContainer {
-          position: relative;
-          width: 5px;
-          aspect-ratio: 1/1;
-        }
-        &:hover {
-          cursor: pointer;
-          opacity: 0.9;
-        }
+      width: 100%;
+      height: 20px;
+      border-radius: 5px;
+      background: #ede8e2;
+      margin: var(--gap-s) 0 0 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--gap-2xs);
+      color: #2a181a;
+      font-family: "Corsica LX";
+      font-size: 8px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      grid-column: span 2;
+      .arrowContainer {
+        position: relative;
+        width: 5px;
+        aspect-ratio: 1/1;
       }
+      &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.modalCustomStyles {
+  content {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+  overlay {
+    background: rgba(0, 0, 0, 0.61);
   }
 }

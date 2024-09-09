@@ -4,6 +4,8 @@ import { GoodsArr } from '../HomePage/GoodsArea/GoodsArea.typings'
 import ProductCard from '../ProductCard/ProductCard'
 import arrow from './assets/arrow.svg'
 import Image from 'next/image'
+import Modal from 'react-modal'
+import ProductCardModal from '../ProductCardModal/ProductCardModal'
 
 export default function GoodsBlock({
     props,
@@ -16,6 +18,7 @@ export default function GoodsBlock({
     const [isOpen, setOpen] = useState<boolean>(false)
     const [showMoreRate, setShowMoreRate] = useState<number>(1)
     const arrLength = props.goodsCard.length
+    const [selectedCard, setSelectedCard] = useState<number | null>(null)
 
     const handleShowMore = () => {
         setShowMoreRate(prev => ++prev)
@@ -25,8 +28,37 @@ export default function GoodsBlock({
         setOpen(true)
     }
 
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            border:'none',
+            padding:0,
+            background:'transparent',
+        },
+        overlay:{
+            background:'rgba(0, 0, 0, 0.61)'
+        }
+    };
+
     return (
         <div className={styles.wrapper}>
+            {
+                selectedCard && props.goodsCard.find(item => item.id === selectedCard) &&
+                <Modal
+                isOpen={!!selectedCard}
+                //onAfterOpen={afterModalOpen}
+                onRequestClose={() => setSelectedCard(null)}
+                style={customStyles}
+                contentLabel="Example Modal"
+            >
+                <ProductCardModal props={props.goodsCard.find(item => item.id === selectedCard)!}/>
+            </Modal>
+            }
             <div className={styles.titleBlock}>
                 {props.title}
                 {
@@ -47,11 +79,11 @@ export default function GoodsBlock({
                     props.goodsCard.map((card, index) => {
                         if (isOpen) {
                             return (
-                                <ProductCard key={card.id} {...card} />
+                                <ProductCard key={card.id} props={card} setSelectedCard={setSelectedCard} />
                             )
                         } else if (index < showMoreRate * 6) {
                             return (
-                                <ProductCard key={card.id} {...card} />
+                                <ProductCard key={card.id} props={card} setSelectedCard={setSelectedCard} />
                             )
                         }
                     })

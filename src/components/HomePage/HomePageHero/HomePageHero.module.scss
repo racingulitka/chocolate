@@ -13,40 +13,40 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+  margin: 144px 0 0 0;
+  background: #ede8e2;
   .wrapper {
     width: min(100%, var(--contentSize));
-    height: 380px;
-    margin: var(--gap-2xl) 0;
-    border-radius: 24px;
-    background: #ede8e2;
+    height: 377px;
+    //margin: var(--gap-3xl) 0;
     position: relative;
-    padding: var(--gap-4xl) var(--gap-xs) var(--gap-xs) var(--gap-4xl);
+    padding: var(--gap-3xl) 0 0 0;
     .leftBlock {
       .title {
         @include font();
         color: #2c1417;
-        font-size: var(--font-size-4xl);
+        font-size: var(--font-size-5xl);
         font-weight: 700;
         width: 565px;
       }
       .inputContainer {
         position: relative;
-        margin: var(--gap-5xl) 0 0 0;
+        margin: var(--gap-2xl) 0 0 0;
         .geolocation {
           position: absolute;
           top: 50%;
-          left: 16px;
+          left: 20px;
           width: 24px;
           height: 24px;
           translate: 0 -50%;
         }
         .input {
-          width: 530px;
-          height: 40px;
-          border-radius: 8px;
+          width: 493px;
+          height: 58px;
+          border-radius: 10px;
           border: 1.5px solid #ababab;
           background: #fff;
-          padding: 0 var(--gap-m) 0 var(--gap-4xl);
+          padding: 0 var(--gap-l) 0 54px;
           @include font();
           color: #636363;
           font-size: var(--font-size-l);
@@ -58,6 +58,26 @@
             font-size: var(--font-size-m);
           }
         }
+        .showButton {
+          @include font();
+          width: 180px;
+          height: 60px;
+          border-radius: 10px;
+          background: #383838;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 600;
+          position:absolute;
+          top:50%;
+          left:503px;
+          translate: 0 -50%;
+          &:hover{
+            cursor:pointer;
+          }
+        }
       }
       .confirmBlock {
         width: fit-content;
@@ -66,7 +86,7 @@
         justify-content: flex-start;
         align-items: center;
         gap: var(--gap-s);
-        margin: var(--gap-xl) 0 0 0;
+        margin: var(--gap-m) 0 0 0;
         & p {
           @include font();
           color: #636363;
@@ -74,30 +94,30 @@
           font-weight: 500;
         }
         .faqContainer {
-          width: 20px;
-          height: 20px;
+          width: 25px;
+          height: 25px;
           position: relative;
           &:hover {
             cursor: pointer;
           }
           .tooltip {
-            width: 272px;
-            height: 104px;
+            width: 340px;
+            height: 130px;
             position: absolute;
             bottom: 0;
-            left: -184px;
+            left: -230px;
             translate: 0 100%;
-            padding: var(--gap-2xl) var(--gap-2xl) 0 var(--gap-m);
+            padding: var(--gap-3xl) var(--gap-3xl) var(--gap-l) var(--gap-l);
             background: url(./assets/tooltip.svg) center / contain no-repeat;
             @include font();
             color: #383838;
-            font-size: var(--font-size-xxs);
+            font-size: var(--font-size-s);
             font-weight: 500;
           }
         }
       }
       .additionalText {
-        margin: var(--gap-2xs) 0 0 var(--gap-2xl);
+        margin: var(--gap-xs) 0 0 var(--gap-2xl);
         @include font();
         color: #aaa;
         font-size: var(--font-size-s);
@@ -105,18 +125,18 @@
       }
     }
     .rightImage {
-      width: 317px;
+      width: 227px;
       aspect-ratio: 1/1;
       position: absolute;
-      right: 22px;
-      top: 11px;
+      right: 0px;
+      top: 46px;
     }
     .leftImage {
-      width: 255px;
+      width: 168px;
       aspect-ratio: 1/1;
       position: absolute;
-      right: 173px;
-      top: 132px;
+      right: 108px;
+      top: 133px;
     }
   }
 }

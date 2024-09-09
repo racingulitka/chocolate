@@ -4,12 +4,33 @@ import { ProductCard as ProductCardTypings } from './ProductCard.typings'
 import Heart from './assets/Heart'
 import star from './assets/star.svg'
 import Image from 'next/image'
+import { getCurrency } from '@/utils/getCurrency'
 
-export default function ProductCard(props: ProductCardTypings) {
+export default function ProductCard({
+    props,
+    setSelectedCard,
+}: {
+    props: ProductCardTypings,
+    setSelectedCard: React.Dispatch<React.SetStateAction<number | null>>,
+}) {
+
+    const handleFavourite = (e:React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation()
+        console.log('setFavourite')
+    }
+
+    const handleBuy = (e:React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation()
+        console.log('buy')
+    }
+
     return (
-        <div className={styles.wrapper}>
+        <div
+            className={styles.wrapper}
+            onClick={() => setSelectedCard(props.id)}
+        >
             <div className={styles.topBlock} style={{ background: `url(${props.image.src})`, backgroundSize: 'contain', backgroundPosition: 'center top', backgroundRepeat: 'no-repeat' }}>
-                <div className={styles.heartBlock} onClick={() => console.log('setFavourite')}>
+                <div className={styles.heartBlock} onClick={(e) => handleFavourite(e)}>
                     <Heart isFavourite={props.isFavourite} />
                 </div>
             </div>
@@ -26,10 +47,15 @@ export default function ProductCard(props: ProductCardTypings) {
                         </div>
                     </div>
                     <div className={styles.priceBlock}>
-                        <div className={styles.buy}>Купить</div>
-                        <div className={styles.currentPrice}>{props.currentPrice} ₸</div>
+                        <div
+                            className={styles.buy}
+                            onClick={(e)=> handleBuy(e)}
+                        >
+                            Купить
+                        </div>
+                        <div className={styles.currentPrice}>{props.currentPrice} {getCurrency()}</div>
                         <div className={styles.oldPrice}>
-                            {props.oldPrice} ₸
+                            {props.oldPrice} {getCurrency()}
                         </div>
                     </div>
                 </div>

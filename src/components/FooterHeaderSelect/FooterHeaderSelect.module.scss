@@ -6,7 +6,7 @@
 
 .wrapper {
   width: fit-content;
-  height: 23px;
+  height: 17px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -25,7 +25,7 @@
     .currentValueText {
       @include font();
       color: #dfc7b7;
-      font-size: var(--font-size-l);
+      font-size: var(--font-size-m);
       font-weight: 600;
       &Header{
         color:#898989;
@@ -33,7 +33,7 @@
     }
     .currentImageContainer {
       position: relative;
-      width: 25px;
+      width: 26px;
       height: 18px;
       filter: drop-shadow(0px 0px 5.5px rgba(0, 0, 0, 0.25));
     }
@@ -53,14 +53,14 @@
     translate: 0 -100%;
     width: fit-content;
     height: auto;
-    border-radius: 6px;
+    border-radius: 7px;
     background: #fff;
-    padding: var(--gap-m) var(--gap-xl) var(--gap-m) var(--gap-xs);
+    padding: var(--gap-l) var(--gap-2xl) var(--gap-l) var(--gap-s);
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: var(--gap-s);
+    gap: var(--gap-2s);
     &Header {
       bottom: -1px;
       translate: -50% 100%;
@@ -79,18 +79,18 @@
       gap: var(--gap-xs);
       .checkWrapper {
         position: relative;
-        width: var(--gap-s);
+        width: 15px;
         aspect-ratio: 1/1;
       }
       .iconWrapper {
         position: relative;
-        width: 25px;
-        height: 18px;
+        width: 20px;
+        height: 15px;
       }
       .title {
         @include font();
         color: #2c1417;
-        font-size: var(--font-size-m);
+        font-size: var(--font-size-s);
         font-weight: 500;
       }
     }
@@ -101,14 +101,14 @@
   position:relative;
   width: fit-content;
   height: auto;
-  border-radius: 6px;
+  border-radius: 7px;
   background: #fff;
-  padding: var(--gap-m) var(--gap-xl) var(--gap-m) var(--gap-xs);
+  padding: var(--gap-l) var(--gap-2xl) var(--gap-l) var(--gap-s);
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: var(--gap-s);
+  gap: var(--gap-2s);
   z-index:100;
   .listWrapper {
     width: fit-content;
@@ -120,19 +120,19 @@
     gap: var(--gap-xs);
     .checkWrapper {
       position: relative;
-      width: 12px;
+      width: 15px;
       aspect-ratio: 1/1;
     }
     .iconWrapper {
       position: relative;
-      width: 25px;
-      height: 18px;
+      width: 20px;
+      height: 15px;
       filter: drop-shadow(0px 0px 5.5px rgba(0, 0, 0, 0.25));
     }
     .title {
       @include font();
       color: #2c1417;
-      font-size: var(--font-size-m);
+      font-size: var(--font-size-s);
       font-weight: 500;
     }
   }

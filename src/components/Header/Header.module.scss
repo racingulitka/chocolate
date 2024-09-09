@@ -8,12 +8,16 @@
 .mainWrapper {
   width: 100%;
   height: auto;
-  padding: var(--gap-l);
+  padding: 0 var(--gap-l);
   background: var(--mainBackgroundColor);
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:100;
   @media (max-width: $mobile-size) {
     padding: 0;
   }
@@ -27,18 +31,21 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    gap: var(--gap-l);
+    gap: var(--gap-m);
     @media (max-width: $mobile-size) {
       padding: var(--gap-xs) var(--gap-l);
       gap: var(--gap-xs);
     }
     .topBlock {
       width: 100%;
-      height: auto;
+      height: 60px;
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
       align-items: center;
+      background: var(--mainBackgroundColor);
+      position:relative;
+      z-index:100;
       .topLeftBlock {
         width: fit-content;
         height: auto;
@@ -46,7 +53,7 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
-        gap: var(--gap-xl);
+        gap: var(--gap-2xl);
         @media(max-width:$mobile-size){
           flex-flow:column nowrap;
           align-items: flex-start;
@@ -64,7 +71,7 @@
           & p {
             @include font();
             color: #4b2d2b;
-            font-size: var(--font-size-s);
+            font-size: var(--font-size-m);
             font-weight: 600;
           }
           .arrowContainer{
@@ -89,13 +96,13 @@
       }
       .logo {
         position: relative;
-        width: 172px;
-        height: 22px;
+        width: 113px;
+        height: 16px;
       }
       .sideMenuButton {
-        width: 72px;
-        height: 44px;
-        border-radius: 8px;
+        width:69px;
+        height: 40px;
+        border-radius: 10px;
         background: #ede8e2;
         display: flex;
         flex-flow: row nowrap;
@@ -113,7 +120,7 @@
         }
         .sideMenuIconSortContainer {
           position: relative;
-          width: 28px;
+          width: 22px;
           aspect-ratio: 1/1;
           @media (max-width: $mobile-size) {
             width: 18px;
@@ -121,7 +128,7 @@
         }
         .sideMenuIconHumanContainer {
           position: relative;
-          width: 20px;
+          width: 17px;
           aspect-ratio: 1/1;
           @media (max-width: $mobile-size) {
             width: 11px;
@@ -136,6 +143,9 @@
       flex-flow: row wrap;
       justify-content: space-between;
       align-items: center;
+      background: var(--mainBackgroundColor);
+      position:relative;
+      z-index:99;
       .categories {
         width: fit-content;
         height: auto;
@@ -152,7 +162,7 @@
           flex-flow: row nowrap;
           justify-content: flex-start;
           align-items: center;
-          gap: var(--gap-s);
+          gap: var(--gap-2s);
           @media (max-width: $mobile-size) {
             gap: 5px;
           }
@@ -171,7 +181,7 @@
           .categoryTitle {
             @include font();
             color: #898989;
-            font-size: var(--font-size-l);
+            font-size: var(--font-size-s);
             font-weight: 600;
             &Active {
               color: #2a181a;
@@ -182,16 +192,16 @@
           }
         }
         .instagramButton {
-          width: 247px;
-          height: 38px;
-          border-radius: 48px;
+          width: 192px;
+          height: 28px;
+          border-radius: 60px;
           background: #ede8e2;
-          padding: var(--gap-xs) var(--gap-m);
+          padding: var(--gap-xs) var(--gap-s);
           display: flex;
           flex-flow: row nowrap;
           justify-content: flex-start;
           align-items: center;
-          gap: var(--gap-s);
+          gap: var(--gap-2xs);
           .instagramIconContainer {
             width: 19px;
             aspect-ratio: 1/1;
@@ -200,7 +210,7 @@
           & p {
             @include font();
             color: #898989;
-            font-size: var(--font-size-m);
+            font-size: var(--font-size-s);
             font-weight: 600;
           }
         }
@@ -212,7 +222,7 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
-        gap: var(--gap-xl);
+        gap: var(--gap-l);
         @media (max-width: $mobile-size) {
           gap: 15px;
         }

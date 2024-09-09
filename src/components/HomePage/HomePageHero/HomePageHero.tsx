@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './HomePageHero.module.scss'
 import rightImage from './assets/rightImage.png'
 import leftImage from './assets/leftImage.png'
@@ -26,6 +26,7 @@ export default function HomePageHero() {
                             <Image src={geolocation} alt='image' layout='fill' />
                         </div>
                         <input type="text" className={styles.input} placeholder='Укажите адрес доставки' />
+                        <div className={styles.showButton}>Показать</div>
                     </div>
                     <div className={styles.confirmBlock}>
                         <Checkbox
@@ -45,7 +46,7 @@ export default function HomePageHero() {
                         </div>
                     </div>
                     <div className={styles.additionalText}>
-                    Укажите только город, куда хотите отправить подарок, остальное узнаем сами
+                        Укажите только город, куда хотите отправить подарок, остальное узнаем сами
                     </div>
                 </div>
                 <div className={styles.rightImage}>
