@@ -75,7 +75,7 @@ export default function Header({
     }
 
     return (
-        <header className={styles.mainWrapper}>
+        <header className={cn(styles.mainWrapper, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.mainWrapperStartBackground)}>
             <Modal
                 isOpen={isModalOpen}
                 onAfterOpen={afterModalOpen}
@@ -86,7 +86,7 @@ export default function Header({
                 <MapModal />
             </Modal>
             <div className={styles.wrapper}>
-                <div className={styles.topBlock}>
+                <div className={cn(styles.topBlock, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.topBlockStartBackground)}>
                     <div className={styles.topLeftBlock}>
                         <div className={styles.hurryUp}>
                             <p>Как можно скорее</p>
@@ -109,7 +109,7 @@ export default function Header({
                     }
                     <div className={styles.topRightBlock}>
                         <GoodsSearch isMobile={isMobile} />
-                        <div className={styles.sideMenuButton}>
+                        <div className={cn(styles.sideMenuButton, pageType === PageType.main && !isWindowScrolled && styles.sideMenuButtonStartBackground)}>
                             <div className={styles.sideMenuIconSortContainer}>
                                 <Image src={sideMenuIconSort} alt='sortIcon' layout='fill' />
                             </div>
@@ -121,9 +121,9 @@ export default function Header({
                 </div>
                 <AnimatePresence>
                     {
-                        !isWindowScrolled &&
+                        (!isWindowScrolled || isMobile) &&
                         <motion.div
-                            className={cn(styles.bottomBlock)}
+                            className={cn(styles.bottomBlock, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.bottomBlockStartBackground)}
                             initial={{translateY:-50, opacity:0, height:0}}
                             animate={{translateY:0, opacity:1, height:'auto'}}
                             transition={{ duration: 0.2, ease: 'easeInOut' }}

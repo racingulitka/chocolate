@@ -1,0 +1,32 @@
+@mixin font() {
+  color: #2c1417;
+  font-family: "Corsica LX";
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.wrapper {
+  border-radius: 5px;
+  background: #ede8e2;
+  padding: 0 15px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  .operator {
+    @include font();
+    user-select: none;
+    padding:0 5px;
+    &Inactive{
+        color:#AAA
+    }
+    &:hover{
+        cursor:pointer;
+    }
+  }
+  .value{
+    @include font();
+    user-select: none;
+  }
+}

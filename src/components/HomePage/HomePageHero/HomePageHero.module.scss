@@ -8,17 +8,15 @@
 .mainWrapper {
   width: 100%;
   height: auto;
-  padding: 0 var(--gap-l);
+  padding: 144px var(--gap-l) 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  margin: 144px 0 0 0;
   background: #ede8e2;
   .wrapper {
     width: min(100%, var(--contentSize));
     height: 377px;
-    //margin: var(--gap-3xl) 0;
     position: relative;
     padding: var(--gap-3xl) 0 0 0;
     .leftBlock {
@@ -94,8 +92,8 @@
           font-weight: 500;
         }
         .faqContainer {
-          width: 25px;
-          height: 25px;
+          width: 18px;
+          height: 18px;
           position: relative;
           &:hover {
             cursor: pointer;

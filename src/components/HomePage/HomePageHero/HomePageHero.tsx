@@ -35,7 +35,7 @@ export default function HomePageHero() {
                             setChecked={handleCheck}
                         />
                         <p>Уточнить адрес у получателя</p>
-                        <div className={styles.faqContainer} onClick={() => setFaq(prev => !prev)}>
+                        <div className={styles.faqContainer} onMouseEnter={()=> setFaq(true)} onMouseLeave={() => setFaq(false)} >
                             <Image src={faqIcon} alt='faq' fill />
                             {
                                 isFaq &&

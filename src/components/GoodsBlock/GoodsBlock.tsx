@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './GoodsBlock.module.scss'
 import { GoodsArr } from '../HomePage/GoodsArea/GoodsArea.typings'
 import ProductCard from '../ProductCard/ProductCard'
@@ -28,6 +28,14 @@ export default function GoodsBlock({
         setOpen(true)
     }
 
+    useEffect(() => {
+        if (selectedCard) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'unset';
+        }
+      }, [selectedCard]);
+
     const customStyles = {
         content: {
             top: '50%',
@@ -36,12 +44,15 @@ export default function GoodsBlock({
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            border:'none',
-            padding:0,
-            background:'transparent',
+            border: 'none',
+            padding: 0,
+            background: 'transparent',
+            borderRadius:'25px',
+            zIndex:52,
         },
-        overlay:{
-            background:'rgba(0, 0, 0, 0.61)'
+        overlay: {
+            background: 'rgba(0, 0, 0, 0.61)',
+            zIndex:51,
         }
     };
 
@@ -50,14 +61,14 @@ export default function GoodsBlock({
             {
                 selectedCard && props.goodsCard.find(item => item.id === selectedCard) &&
                 <Modal
-                isOpen={!!selectedCard}
-                //onAfterOpen={afterModalOpen}
-                onRequestClose={() => setSelectedCard(null)}
-                style={customStyles}
-                contentLabel="Example Modal"
-            >
-                <ProductCardModal props={props.goodsCard.find(item => item.id === selectedCard)!}/>
-            </Modal>
+                    isOpen={!!selectedCard}
+                    //onAfterOpen={afterModalOpen}
+                    onRequestClose={() => setSelectedCard(null)}
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                >
+                    <ProductCardModal props={props.goodsCard.find(item => item.id === selectedCard)!} />
+                </Modal>
             }
             <div className={styles.titleBlock}>
                 {props.title}

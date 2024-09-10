@@ -80,13 +80,13 @@ export default function HomePageSlider({
                     </div>
                     {
                         !isMobile &&
-                        <div className={styles.slideButton} style={{ left: '0px', translate: '-50% -50%', rotate: '180deg', opacity: sliderShift >= 0 ? '0.1' : '1' }} onClick={() => slideLeft()}>
+                        <div className={styles.slideButton} style={{ left: '0px', translate: '-50% -50%', rotate: '180deg', opacity: sliderShift >= 0 ? '0' : '1' }} onClick={() => slideLeft()}>
                             <Image src={arrowRight} alt='arrowLeft' width={25} />
                         </div>
                     }
                     {
                         !isMobile &&
-                        <div className={styles.slideButton} style={{ right: '0px', translate: '50% -50%', opacity: stopShift === null ? '1' : stopShift * -1 < sliderShift ? '1' : '0.1' }} onClick={() => slideRight()}>
+                        <div className={styles.slideButton} style={{ right: '0px', translate: '50% -50%', opacity: stopShift === null ? '1' : stopShift * -1 < sliderShift ? '1' : '0' }} onClick={() => slideRight()}>
                             <Image src={arrowRight} alt='arrow right' width={25} />
                         </div>
                     }

@@ -16,6 +16,9 @@
   justify-content: flex-start;
   align-items: center;
   padding: var(--gap-4xl) var(--gap-l);
+  @media(max-width:$mobile-size){
+    padding: var(--gap-8xl) var(--gap-l) var(--gap-m);
+  }
   .wrapper {
     width: min(var(--contentSize), 100%);
     height: auto;

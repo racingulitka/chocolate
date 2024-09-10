@@ -3,29 +3,102 @@
 .wrapper {
   width: 820px;
   height: min(910px, 90vh);
-  border-radius: 25px;
+  //border-radius: 25px;
   background: #fff;
-  position:relative;
-  .topBlock{
-    width:100%;
-    height:calc(100% - 89px);
-    overflow:scroll;
+  position: relative;
+  z-index: 51;
+  .topBlock {
+    width: 100%;
+    height: calc(100% - 70px);
+    overflow: scroll;
     scrollbar-width: none;
-    &::-webkit-scrollbar{
-        display:none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .mainInfo {
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      .mainLeft {
+        width: fit-content;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        .moreInfoButton {
+          width: 380px;
+          height: 45px;
+          border-radius: 7px;
+          border: 1px solid #383838;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
     }
   }
-  .footer{
-    position:absolute;
-    width:100%;
-    height:70px;
-    bottom:0px;
-    left:0px;
+  .footer {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0px;
+    left: 0px;
     background: #fff;
-    display:flex;
-    flex-flow:row nowrap;
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding:0 25px;
+    padding: 0 25px;
+    box-shadow: 0px 5px 32.4px 0px rgba(0, 0, 0, 0.25);
+    .priceBlock {
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .rightSide {
+      width: fit-content;
+      height: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      .counter {
+        margin: 0 15px 0 0;
+      }
+      .button {
+        width: 250px;
+        height: 50px;
+        border-radius: 7px;
+        border: 1px solid #383838;
+        background: #fff;
+        color: #2c1417;
+        font-family: "Corsica LX";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        &ToCart {
+          background: #383838;
+          margin: 0 5px 0 0;
+          color: #fff;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
