@@ -42,7 +42,7 @@ export default function Home({
         {
           id:1,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -52,7 +52,7 @@ export default function Home({
         {
           id:2,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -62,7 +62,7 @@ export default function Home({
         {
           id:3,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -72,7 +72,7 @@ export default function Home({
         {
           id:4,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -82,7 +82,7 @@ export default function Home({
         {
           id:5,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -92,7 +92,7 @@ export default function Home({
         {
           id:6,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -102,7 +102,7 @@ export default function Home({
         {
           id:7,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -119,7 +119,7 @@ export default function Home({
         {
           id:1,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -129,7 +129,7 @@ export default function Home({
         {
           id:2,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -139,7 +139,7 @@ export default function Home({
         {
           id:3,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -149,7 +149,7 @@ export default function Home({
         {
           id:4,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -159,7 +159,7 @@ export default function Home({
         {
           id:5,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -169,7 +169,7 @@ export default function Home({
         {
           id:6,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -179,7 +179,7 @@ export default function Home({
         {
           id:7,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -196,7 +196,7 @@ export default function Home({
         {
           id:1,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -206,7 +206,7 @@ export default function Home({
         {
           id:2,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -216,7 +216,7 @@ export default function Home({
         {
           id:3,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -226,7 +226,7 @@ export default function Home({
         {
           id:4,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -236,7 +236,7 @@ export default function Home({
         {
           id:5,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -246,7 +246,7 @@ export default function Home({
         {
           id:6,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
@@ -256,7 +256,7 @@ export default function Home({
         {
           id:7,
           title:'Упаковка “Клубника в шоколаде”',
-          image:exampleCardImage,
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
