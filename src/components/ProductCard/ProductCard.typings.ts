@@ -9,4 +9,5 @@ export interface ProductCard{
     reviewsNumber:number,
     oldPrice:number,
     currentPrice:number,
+    dimensions?:[number, number],
 }

@@ -42,12 +42,13 @@ export default function Home({
         {
           id:1,
           title:'Упаковка “Клубника в шоколаде”',
-          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
+          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:true,
+          dimensions:[10, 20],
         },
         {
           id:2,

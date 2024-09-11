@@ -24,7 +24,7 @@ export default function ProductCardModal({
             <div className={styles.topBlock}>
                 <div className={styles.mainInfo}>
                     <div className={styles.mainLeft}>
-                        <Slider />
+                        <Slider images={props.images} dimensions={props.dimensions ? props.dimensions : null}/>
                         <button className={styles.moreInfoButton}>Больше информации о товаре</button>
                     </div>
                 </div>
