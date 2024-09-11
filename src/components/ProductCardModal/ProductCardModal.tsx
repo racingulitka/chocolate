@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './ProductCardModal.module.scss'
 import { ProductCard } from '../ProductCard/ProductCard.typings'
-import { getCurrency } from '@/utils/getCurrency'
+import { useCurrency } from '@/utils/useCurrency'
 import Counter from './Counter/Counter'
 import cn from 'classnames'
 import Slider from './Slider/Slider'
@@ -30,7 +30,7 @@ export default function ProductCardModal({
                 </div>
             </div>
             <div className={styles.footer}>
-                <div className={styles.priceBlock}>{props.currentPrice} {getCurrency()}</div>
+                <div className={styles.priceBlock}>{props.currentPrice} {useCurrency()}</div>
                 <div className={styles.rightSide}>
                     <div className={styles.counter}>
                         <Counter

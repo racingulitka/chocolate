@@ -33,7 +33,7 @@ export default function HomePageSlider({
         return () => {
             window.removeEventListener('resize', calculateSlideWidth);
         };
-    }, []);
+    }, [isMobile]);
 
     const slideLeft = () => {
         if (slideWidth && sliderShift < 0) setSliderShift(prev => prev + slideWidth + 10)

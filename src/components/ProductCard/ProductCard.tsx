@@ -4,7 +4,7 @@ import { ProductCard as ProductCardTypings } from './ProductCard.typings'
 import Heart from './assets/Heart'
 import star from './assets/star.svg'
 import Image from 'next/image'
-import { getCurrency } from '@/utils/getCurrency'
+import { useCurrency } from '@/utils/useCurrency'
 
 export default function ProductCard({
     props,
@@ -53,9 +53,9 @@ export default function ProductCard({
                         >
                             Купить
                         </div>
-                        <div className={styles.currentPrice}>{props.currentPrice} {getCurrency()}</div>
+                        <div className={styles.currentPrice}>{props.currentPrice} {useCurrency()}</div>
                         <div className={styles.oldPrice}>
-                            {props.oldPrice} {getCurrency()}
+                            {props.oldPrice} {useCurrency()}
                         </div>
                     </div>
                 </div>
