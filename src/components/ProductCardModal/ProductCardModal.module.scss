@@ -30,6 +30,7 @@
         justify-content: flex-start;
         align-items: center;
         .moreInfoButton {
+          margin: var(--gap-s) 0 0 0;
           width: 380px;
           height: 45px;
           border-radius: 7px;
@@ -43,6 +44,78 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          background: #fff;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .mainRight {
+        margin: 0 var(--gap-l) 0 0;
+        width: 330px;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .header {
+          width: 100%;
+          margin: var(--gap-xl) 0 0 0;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          align-items: center;
+          .availableConfirm {
+            color: #5898e4;
+            font-family: "Corsica LX";
+            font-size: var(--font-size-3xs);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+          .headerIcons {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: var(--gap-s);
+            .iconContainer {
+              position: relative;
+              width: 18px;
+              height: 18px;
+              &:hover {
+                cursor: pointer;
+              }
+              .heartIcon {
+                width: 18px;
+                aspect-ratio: 1/1;
+              }
+            }
+          }
+        }
+        .title {
+          margin:var(--gap-2s) 0 0 0;
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: var(--font-size-xl);
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+        .ratingBlock{
+          margin:var(--gap-xs) 0 0 0;
+          display:flex;
+          flex-flow:row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap:var(--gap-2xs);
+          .stars{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap:var(--gap-3xs);
+          }
         }
       }
     }

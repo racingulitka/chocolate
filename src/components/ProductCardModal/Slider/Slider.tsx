@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './Slider.module.scss';
 import Image, { StaticImageData } from 'next/image';
-import arrowLeft from './assets/arrowLeft.svg';
+//import arrowLeft from './assets/arrowLeft.svg';
 import xIcon from './assets/xIcon.svg';
 import yIcon from './assets/yIcon.svg';
 
@@ -9,7 +9,7 @@ export default function Slider({
     images,
     dimensions,
 }: {
-    images: StaticImageData[],
+    images: (string | StaticImageData)[],
     dimensions: [number, number] | null,
 }) {
     const mainImageWidth = 440;
@@ -18,7 +18,7 @@ export default function Slider({
     const [isDragging, setIsDragging] = useState<boolean>(false);
     const [translateX, setTranslateX] = useState<number>(0);
     const heroRef = useRef<HTMLDivElement | null>(null);
-    
+
     // Для прокрутки блока с иконками
     const iconsRef = useRef<HTMLDivElement | null>(null);
     const [startIconsX, setStartIconsX] = useState<number | null>(null);
@@ -171,7 +171,15 @@ export default function Slider({
                                     transition: isDragging ? 'none' : '0.5s',
                                 }}
                             >
-                                <Image src={mainImage} alt='main image' fill />
+                                {
+                                    typeof (mainImage) === 'string' ?
+                                        <video width="440" controls={false} autoPlay loop>
+                                            <source src={mainImage} type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        :
+                                        <Image src={mainImage} alt='main image' fill />
+                                }
                             </div>
                         );
                     })
@@ -206,8 +214,21 @@ export default function Slider({
                 <div className={styles.icons}>
                     {
                         images.map((icon, index) => (
-                            <div className={styles.iconContainer} key={index}>
-                                <Image src={icon} alt='icon' fill />
+                            <div className={styles.iconContainer} key={index} onClick={() => setMainImageShift(index)}>
+                                {/* <Image src={icon} alt='icon' fill /> */}
+                                {
+                                    typeof (icon) === 'string' ?
+                                        <video width="70" controls={false}>
+                                            <source src={icon} type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        :
+                                        <Image src={icon} alt='main image' fill />
+                                }
+                                {
+                                    index !== mainImageShift &&
+                                    <div className={styles.filter}></div>
+                                }
                             </div>
                         ))
                     }

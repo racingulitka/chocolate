@@ -33,6 +33,8 @@ export default function Home({
 
   const isMobile = isSSRMobile
 
+  const exampleVideo = '/centrzrenija_desktop.mp4'
+
   const [goodsArr, setGoodsArr] = useState<GoodsArr[]>([
     {
       id:1,
@@ -42,13 +44,14 @@ export default function Home({
         {
           id:1,
           title:'Упаковка “Клубника в шоколаде”',
-          images:[exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
+          images:[exampleVideo, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
           rating:4.5,
           reviewsNumber:124,
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:true,
           dimensions:[10, 20],
+          availableConfirm: new Date('2024-01-01:15:25'),
         },
         {
           id:2,
@@ -59,6 +62,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:3,
@@ -69,6 +73,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:4,
@@ -79,6 +84,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:5,
@@ -89,6 +95,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:6,
@@ -99,6 +106,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:7,
@@ -109,6 +117,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
       ]
     },
@@ -126,6 +135,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:2,
@@ -136,6 +146,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:3,
@@ -146,6 +157,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:4,
@@ -156,6 +168,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:5,
@@ -166,6 +179,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:6,
@@ -176,6 +190,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:7,
@@ -186,6 +201,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
       ]
     },
@@ -203,6 +219,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:2,
@@ -213,6 +230,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:3,
@@ -223,6 +241,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:4,
@@ -233,6 +252,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:5,
@@ -243,6 +263,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:6,
@@ -253,6 +274,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
         {
           id:7,
@@ -263,6 +285,7 @@ export default function Home({
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:false,
+          availableConfirm: new Date('2024-01-01:20:25'),
         },
       ]
     },

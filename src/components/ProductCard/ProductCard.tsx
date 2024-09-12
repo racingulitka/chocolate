@@ -29,7 +29,7 @@ export default function ProductCard({
             className={styles.wrapper}
             onClick={() => setSelectedCard(props.id)}
         >
-            <div className={styles.topBlock} style={{ background: `url(${props.images[0].src})`, backgroundSize: 'contain', backgroundPosition: 'center top', backgroundRepeat: 'no-repeat' }}>
+            <div className={styles.topBlock} style={{ background: `url(${typeof(props.images[0]) === 'string' ? props.images[1].src : props.images[0].src})`, backgroundSize: 'contain', backgroundPosition: 'center top', backgroundRepeat: 'no-repeat' }}>
                 <div className={styles.heartBlock} onClick={(e) => handleFavourite(e)}>
                     <Heart isFavourite={props.isFavourite} />
                 </div>

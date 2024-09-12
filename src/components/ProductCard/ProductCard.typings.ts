@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 
 export interface ProductCard{
     id:number,
-    images:StaticImageData[],
+    images:(string | StaticImageData)[],
     isFavourite:boolean,
     title:string,
     rating:number,
@@ -10,4 +10,5 @@ export interface ProductCard{
     oldPrice:number,
     currentPrice:number,
     dimensions?:[number, number],
+    availableConfirm: Date,
 }
