@@ -12,7 +12,8 @@ export default function Slider({
     images: (string | StaticImageData)[],
     dimensions: [number, number] | null,
 }) {
-    const mainImageWidth = 440;
+    const mainImageWidth = 520;
+    //const mainImageWidth = 440;
     const [mainImageShift, setMainImageShift] = useState<number>(0);
     const [startX, setStartX] = useState<number | null>(null);
     const [isDragging, setIsDragging] = useState<boolean>(false);
@@ -173,7 +174,7 @@ export default function Slider({
                             >
                                 {
                                     typeof (mainImage) === 'string' ?
-                                        <video width="440" controls={false} autoPlay loop>
+                                        <video /*width="440"*/ width='520' controls={false} autoPlay loop>
                                             <source src={mainImage} type="video/mp4" />
                                             Your browser does not support the video tag.
                                         </video>

@@ -45,13 +45,51 @@ export default function Home({
           id:1,
           title:'Упаковка “Клубника в шоколаде”',
           images:[exampleVideo, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage, exampleCardImage,],
-          rating:4.5,
+          rating:4.3,
           reviewsNumber:124,
           oldPrice:4400,
           currentPrice:3300,
           isFavourite:true,
           dimensions:[10, 20],
           availableConfirm: new Date('2024-01-01:15:25'),
+          composition:[
+            {
+              id:1,
+              title:'Клубника в шоколаде',
+              value:12,
+              unit:'шт.'
+            },
+            {
+              id:2,
+              title:'Упаковка под конфету',
+              value:12,
+              unit:'шт.'
+            },
+            {
+              id:3,
+              title:'Упаковка (бокс)',
+              value:1,
+              unit:'шт.'
+            },
+            {
+              id:4,
+              title:'Упаковка (бокс)',
+              value:1,
+              unit:'шт.'
+            },
+            {
+              id:5,
+              title:'Упаковка (бокс)',
+              value:1,
+              unit:'шт.'
+            },
+            {
+              id:6,
+              title:'Упаковка (бокс)',
+              value:1,
+              unit:'шт.'
+            },
+          ]
         },
         {
           id:2,

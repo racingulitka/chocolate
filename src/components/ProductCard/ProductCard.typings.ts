@@ -11,4 +11,10 @@ export interface ProductCard{
     currentPrice:number,
     dimensions?:[number, number],
     availableConfirm: Date,
+    composition?:{
+        id:number;
+        title:string,
+        value:number,
+        unit:string,
+    }[]
 }
