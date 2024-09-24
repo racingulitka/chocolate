@@ -89,6 +89,22 @@ export default function Home({
               value:1,
               unit:'шт.'
             },
+          ],
+          reviews:[
+            {
+              id:1,
+              name:'Евгений',
+              avatar:null,
+              date: new Date('2024-09-24'),
+              service:5,
+              priceQuality:5,
+              delivery:5,
+              match:5,
+              images:[
+                exampleCardImage,
+                exampleCardImage
+              ]
+            }
           ]
         },
         {
