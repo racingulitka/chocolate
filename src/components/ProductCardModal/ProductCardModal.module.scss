@@ -10,9 +10,10 @@
   z-index: 51;
   .topBlock {
     width: 100%;
-    height: calc(100% - 70px);
+    height: 100%;
     overflow: scroll;
     scrollbar-width: none;
+    padding:0 0 70px 0;
     &::-webkit-scrollbar {
       display: none;
     }

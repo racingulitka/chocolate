@@ -4,10 +4,7 @@ export interface Reviews {
   name: string;
   avatar: null | StaticImageData;
   date: Date;
-  service: number;
-  priceQuality: number;
-  delivery: number;
-  match: number;
+  rates:number[],
   images: StaticImageData[];
 }
 

@@ -96,15 +96,34 @@ export default function Home({
               name:'Евгений',
               avatar:null,
               date: new Date('2024-09-24'),
-              service:5,
-              priceQuality:5,
-              delivery:5,
-              match:5,
+              rates:[5, 5, 5, 5],
               images:[
                 exampleCardImage,
                 exampleCardImage
               ]
-            }
+            },
+            {
+              id:2,
+              name:'Евгений',
+              avatar:null,
+              date: new Date('2024-09-24'),
+              rates:[4, 5, 4, 5],
+              images:[
+                exampleCardImage,
+                exampleCardImage
+              ]
+            },
+            {
+              id:3,
+              name:'Евгений',
+              avatar:null,
+              date: new Date('2024-09-24'),
+              rates:[5, 5, 1, 5],
+              images:[
+                exampleCardImage,
+                exampleCardImage
+              ]
+            },
           ]
         },
         {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styles from './ProductCardModal.module.scss'
 import { ProductCard } from '../ProductCard/ProductCard.typings'
 import { useCurrency } from '@/utils/useCurrency'
@@ -29,6 +29,8 @@ export default function ProductCardModal({
 
     const [counterValue, setCounterValue] = useState<number>(1)
     const [isBlockSizingOpen, setBlockSizingOpen] = useState<boolean>(false)
+    const [isFooterShown, setFooterShown] = useState<boolean>(false)
+    const mainInfoRef = useRef<null | HTMLDivElement>(null)
 
     const handleCounter = (operator: boolean) => {
         if (operator && counterValue <= 100) setCounterValue(prev => ++prev)
@@ -46,9 +48,24 @@ export default function ProductCardModal({
 
     }
 
+    useEffect(() => {
+        const mainInfoId = mainInfoRef.current
+        if (mainInfoId) {
+            const handleScroll = () => {
+                const currentScroll = mainInfoId.scrollTop
+                if(currentScroll > 300) setFooterShown(true)
+                    else setFooterShown(false)
+            }
+            mainInfoId.addEventListener('scroll', handleScroll)
+            return () => mainInfoId.removeEventListener('scroll', handleScroll)
+        }
+
+
+    }, [])
+
     return (
         <div className={styles.wrapper}>
-            <div className={styles.topBlock}>
+            <div className={styles.topBlock} ref={mainInfoRef}>
                 <div className={styles.mainInfo}>
                     <div className={styles.mainLeft}>
                         <Slider images={props.images} dimensions={props.dimensions ? props.dimensions : null} />
@@ -200,20 +217,23 @@ export default function ProductCardModal({
                     </div>
                 </div>
             </div>
-            <div className={styles.footer}>
-                <div className={styles.priceBlock}>{props.currentPrice} <span>{useCurrency()}</span></div>
-                <div className={styles.rightSide}>
-                    <div className={styles.counter}>
-                        <Counter
-                            size={130}
-                            value={counterValue}
-                            onChange={handleCounter}
-                        />
+            {
+                isFooterShown &&
+                <div className={styles.footer}>
+                    <div className={styles.priceBlock}>{props.currentPrice} <span>{useCurrency()}</span></div>
+                    <div className={styles.rightSide}>
+                        <div className={styles.counter}>
+                            <Counter
+                                size={130}
+                                value={counterValue}
+                                onChange={handleCounter}
+                            />
+                        </div>
+                        <button className={cn(styles.button, styles.buttonToCart)}>Добавить в корзину</button>
+                        <button className={cn(styles.button)}>Купить сейчас</button>
                     </div>
-                    <button className={cn(styles.button, styles.buttonToCart)}>Добавить в корзину</button>
-                    <button className={cn(styles.button)}>Купить сейчас</button>
                 </div>
-            </div>
+            }
         </div>
     )
 }
