@@ -63,6 +63,8 @@ export default function ProductCardModal({
 
     }, [])
 
+    const currency = useCurrency()
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.topBlock} ref={mainInfoRef}>
@@ -99,7 +101,7 @@ export default function ProductCardModal({
                             <Link href='#' className={styles.numberOfReviews}>{props.reviewsNumber} оценки о товаре</Link>
                         </div>
                         <div className={styles.priceAndCount}>
-                            <div className={styles.priceBlock}>{props.currentPrice} <span>{useCurrency()}</span></div>
+                            <div className={styles.priceBlock}>{props.currentPrice} <span>{currency}</span></div>
                             <Counter
                                 size={130}
                                 value={counterValue}
@@ -220,7 +222,7 @@ export default function ProductCardModal({
             {
                 isFooterShown &&
                 <div className={styles.footer}>
-                    <div className={styles.priceBlock}>{props.currentPrice} <span>{useCurrency()}</span></div>
+                    <div className={styles.priceBlock}>{props.currentPrice} <span>{currency}</span></div>
                     <div className={styles.rightSide}>
                         <div className={styles.counter}>
                             <Counter
