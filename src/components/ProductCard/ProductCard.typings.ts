@@ -10,6 +10,7 @@ export interface Reviews {
 
 export interface ProductCard {
   id: number;
+  slug: string,
   images: (string | StaticImageData)[];
   isFavourite: boolean;
   title: string;

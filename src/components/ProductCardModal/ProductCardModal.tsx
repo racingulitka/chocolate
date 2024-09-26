@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import styles from './ProductCardModal.module.scss'
+import stylesDefault from './ProductCardModal.module.scss'
 import { ProductCard } from '../ProductCard/ProductCard.typings'
 import { useCurrency } from '@/utils/useCurrency'
 import Counter from './Counter/Counter'
@@ -23,9 +23,13 @@ import Reviews from './Reviews/Reviews'
 
 export default function ProductCardModal({
     props,
+    className,
 }: {
     props: ProductCard,
+    className?:Record<string, string>,
 }) {
+
+    const styles = className ?? stylesDefault
 
     const [counterValue, setCounterValue] = useState<number>(1)
     const [isBlockSizingOpen, setBlockSizingOpen] = useState<boolean>(false)
@@ -71,7 +75,7 @@ export default function ProductCardModal({
                 <div className={styles.mainInfo}>
                     <div className={styles.mainLeft}>
                         <Slider images={props.images} dimensions={props.dimensions ? props.dimensions : null} />
-                        <button className={styles.moreInfoButton}>Больше информации о товаре</button>
+                        <Link href={`/product/${props.slug}`}> <button className={styles.moreInfoButton}>Больше информации о товаре</button></Link>
                     </div>
                     <div className={styles.mainRight}>
                         <div className={styles.header}>
