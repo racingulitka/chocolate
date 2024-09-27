@@ -33,8 +33,8 @@ export default function ProductPage({
     }
 
     const router = useRouter()
-
     const itemSlug = findItemSlug()
+    const isMobile = isSsrMobile
 
     useEffect(()=> {
         document.body.style.overflow = 'unset';
@@ -50,7 +50,10 @@ export default function ProductPage({
             pageType={PageType.main}
         >
             <>
-                <BreadCrumbs currentPage={itemSlug.title} />
+            {
+                !isMobile &&
+                <BreadCrumbs currentPage={itemSlug.title}/>
+            }
                 <ProductCardModal className={productStyles} props={itemSlug} />
             </>
         </PageLayout>

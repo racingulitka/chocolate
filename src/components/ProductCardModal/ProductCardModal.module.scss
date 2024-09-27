@@ -84,14 +84,14 @@
             gap: var(--gap-s);
             .iconContainer {
               position: relative;
-              width: 18px;
-              height: 18px;
+              width: 24px;
+              height: 24px;
               &:hover {
                 cursor: pointer;
               }
               .heartIcon {
-                width: 18px;
-                aspect-ratio: 1/1;
+                width: 24px;
+                height:24px;
               }
             }
           }

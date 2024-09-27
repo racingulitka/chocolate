@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styles from './BreadCrumbs.module.scss'
 import Image from 'next/image'
 import arrowDown from './assets/arrowDown.svg'
 import { selectArr } from './BreadCrumbs.config'
 import Link from 'next/link'
+import useOnClickOutside from '@/utils/useOnClickOutside';
 
 export default function BreadCrumbs({
     currentPage,
@@ -12,9 +13,12 @@ export default function BreadCrumbs({
 }) {
 
     const [isSelectOpen, setSelectOpen] = useState<boolean>(false)
+    const wrapperRef = useRef<HTMLDivElement | null>(null)
+
+    useOnClickOutside(wrapperRef, () => setSelectOpen(false));
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} ref={wrapperRef}>
             <div className={styles.selector}>
                 <div className={styles.currentSelect} onClick={() => setSelectOpen(prev => !prev)}>
                     Клубника в шоколаде в Усть-Каменогорске

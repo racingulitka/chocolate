@@ -26,7 +26,7 @@ export default function ProductCardModal({
     className,
 }: {
     props: ProductCard,
-    className?:Record<string, string>,
+    className?: Record<string, string>,
 }) {
 
     const styles = className ?? stylesDefault
@@ -57,14 +57,24 @@ export default function ProductCardModal({
         if (mainInfoId) {
             const handleScroll = () => {
                 const currentScroll = mainInfoId.scrollTop
-                if(currentScroll > 300) setFooterShown(true)
-                    else setFooterShown(false)
+                if (currentScroll > 300) setFooterShown(true)
+                else setFooterShown(false)
             }
             mainInfoId.addEventListener('scroll', handleScroll)
             return () => mainInfoId.removeEventListener('scroll', handleScroll)
         }
+    }, [])
 
-
+    useEffect(() => {
+        if (className) {
+            const handleScroll = () => {
+                const currentScroll = window.scrollY
+                if (currentScroll > 450) setFooterShown(true)
+                else setFooterShown(false)
+            }
+            window.addEventListener('scroll', handleScroll)
+            return () => window.removeEventListener('scroll', handleScroll)
+        }
     }, [])
 
     const currency = useCurrency()
@@ -74,8 +84,11 @@ export default function ProductCardModal({
             <div className={styles.topBlock} ref={mainInfoRef}>
                 <div className={styles.mainInfo}>
                     <div className={styles.mainLeft}>
-                        <Slider images={props.images} dimensions={props.dimensions ? props.dimensions : null} />
-                        <Link href={`/product/${props.slug}`}> <button className={styles.moreInfoButton}>Больше информации о товаре</button></Link>
+                        <Slider images={props.images} dimensions={props.dimensions ? props.dimensions : null} fullScreen={className ? true : false} />
+                        {
+                            !className &&
+                            <Link href={`/product/${props.slug}`}> <button className={styles.moreInfoButton}>Больше информации о товаре</button></Link>
+                        }
                     </div>
                     <div className={styles.mainRight}>
                         <div className={styles.header}>

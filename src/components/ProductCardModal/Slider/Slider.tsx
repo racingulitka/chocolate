@@ -8,12 +8,13 @@ import yIcon from './assets/yIcon.svg';
 export default function Slider({
     images,
     dimensions,
+    fullScreen,
 }: {
     images: (string | StaticImageData)[],
     dimensions: [number, number] | null,
+    fullScreen:boolean,
 }) {
-    const mainImageWidth = 520;
-    //const mainImageWidth = 440;
+    const mainImageWidth = fullScreen ? 542+18 : 520;
     const [mainImageShift, setMainImageShift] = useState<number>(0);
     const [startX, setStartX] = useState<number | null>(null);
     const [isDragging, setIsDragging] = useState<boolean>(false);
@@ -147,9 +148,10 @@ export default function Slider({
     }, [isIconsDragging]);
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} style={{width:fullScreen ? 542 : 502}}>
             <div
                 className={styles.heroBlock}
+                style={{height:fullScreen ? 542 : 502, borderRadius:fullScreen ? '15px' : 0}}
                 ref={heroRef}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
@@ -174,7 +176,7 @@ export default function Slider({
                             >
                                 {
                                     typeof (mainImage) === 'string' ?
-                                        <video /*width="440"*/ width='520' controls={false} autoPlay loop>
+                                        <video width={fullScreen ? '542' : '502'} controls={false} autoPlay loop>
                                             <source src={mainImage} type="video/mp4" />
                                             Your browser does not support the video tag.
                                         </video>
