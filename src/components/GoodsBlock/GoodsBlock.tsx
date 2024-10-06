@@ -59,7 +59,7 @@ export default function GoodsBlock({
     return (
         <div className={styles.wrapper}>
             {
-                selectedCard && props.goodsCard.find(item => item.id === selectedCard) &&
+                (selectedCard && props.goodsCard.find(item => item.id === selectedCard) && !isMobile) &&
                 <Modal
                     isOpen={!!selectedCard}
                     //onAfterOpen={afterModalOpen}
@@ -67,7 +67,7 @@ export default function GoodsBlock({
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-                    <ProductCardModal props={props.goodsCard.find(item => item.id === selectedCard)!} />
+                    <ProductCardModal isMobile={isMobile} props={props.goodsCard.find(item => item.id === selectedCard)!} />
                 </Modal>
             }
             <div className={styles.titleBlock}>
@@ -90,11 +90,11 @@ export default function GoodsBlock({
                     props.goodsCard.map((card, index) => {
                         if (isOpen) {
                             return (
-                                <ProductCard key={card.id} props={card} setSelectedCard={setSelectedCard} />
+                                <ProductCard key={card.id} isMobile={isMobile} props={card} setSelectedCard={setSelectedCard} />
                             )
                         } else if (index < showMoreRate * 6) {
                             return (
-                                <ProductCard key={card.id} props={card} setSelectedCard={setSelectedCard} />
+                                <ProductCard key={card.id} isMobile={isMobile} props={card} setSelectedCard={setSelectedCard} />
                             )
                         }
                     })

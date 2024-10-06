@@ -20,11 +20,14 @@ import yIcon from './assets/yIcon.svg'
 import flagIcon from './assets/flagIcon.svg'
 import { customersInfo } from './ProductModal.config'
 import Reviews from './Reviews/Reviews'
+import SliderMobile from './SliderMobile/SliderMobile'
 
 export default function ProductCardModal({
+    isMobile,
     props,
     className,
 }: {
+    isMobile: boolean,
     props: ProductCard,
     className?: Record<string, string>,
 }) {
@@ -33,7 +36,7 @@ export default function ProductCardModal({
 
     const [counterValue, setCounterValue] = useState<number>(1)
     const [isBlockSizingOpen, setBlockSizingOpen] = useState<boolean>(false)
-    const [isFooterShown, setFooterShown] = useState<boolean>(false)
+    const [isFooterShown, setFooterShown] = useState<boolean>(isMobile)
     const mainInfoRef = useRef<null | HTMLDivElement>(null)
 
     const handleCounter = (operator: boolean) => {
@@ -52,9 +55,10 @@ export default function ProductCardModal({
 
     }
 
+
     useEffect(() => {
         const mainInfoId = mainInfoRef.current
-        if (mainInfoId) {
+        if (mainInfoId && !isMobile) {
             const handleScroll = () => {
                 const currentScroll = mainInfoId.scrollTop
                 if (currentScroll > 300) setFooterShown(true)
@@ -66,7 +70,11 @@ export default function ProductCardModal({
     }, [])
 
     useEffect(() => {
-        if (className) {
+        console.log(isFooterShown)
+    }, [isFooterShown])
+
+    useEffect(() => {
+        if (className && !isMobile) {
             const handleScroll = () => {
                 const currentScroll = window.scrollY
                 if (currentScroll > 450) setFooterShown(true)
@@ -84,7 +92,12 @@ export default function ProductCardModal({
             <div className={styles.topBlock} ref={mainInfoRef}>
                 <div className={styles.mainInfo}>
                     <div className={styles.mainLeft}>
-                        <Slider images={props.images} dimensions={props.dimensions ? props.dimensions : null} fullScreen={className ? true : false} />
+                        {
+                            isMobile ?
+                                <SliderMobile images={props.images} dimensions={props.dimensions ? props.dimensions : null} fullScreen={className ? true : false} />
+                                :
+                                <Slider images={props.images} dimensions={props.dimensions ? props.dimensions : null} fullScreen={className ? true : false} />
+                        }
                         {
                             !className &&
                             <Link href={`/product/${props.slug}`}> <button className={styles.moreInfoButton}>Больше информации о товаре</button></Link>
@@ -93,14 +106,17 @@ export default function ProductCardModal({
                     <div className={styles.mainRight}>
                         <div className={styles.header}>
                             <p className={styles.availableConfirm}>Наличие подтверждено {getAvailableConfirmValue()} назад</p>
-                            <div className={styles.headerIcons}>
-                                <div className={styles.iconContainer} onClick={() => console.log('setFavourite')}>
-                                    <HeartIcon isFavourite={props.isFavourite} />
+                            {
+                                !isMobile &&
+                                <div className={styles.headerIcons}>
+                                    <div className={styles.iconContainer} onClick={() => console.log('setFavourite')}>
+                                        <HeartIcon isFavourite={props.isFavourite} />
+                                    </div>
+                                    <div className={styles.iconContainer}>
+                                        <Image src={shareIcon} alt='share' fill />
+                                    </div>
                                 </div>
-                                <div className={styles.iconContainer}>
-                                    <Image src={shareIcon} alt='share' fill />
-                                </div>
-                            </div>
+                            }
                         </div>
                         <div className={styles.title}>Упаковка “Клубника в шоколаде”</div>
                         <div className={styles.ratingBlock}>
@@ -117,16 +133,25 @@ export default function ProductCardModal({
                             </div>
                             <Link href='#' className={styles.numberOfReviews}>{props.reviewsNumber} оценки о товаре</Link>
                         </div>
-                        <div className={styles.priceAndCount}>
-                            <div className={styles.priceBlock}>{props.currentPrice} <span>{currency}</span></div>
-                            <Counter
-                                size={130}
-                                value={counterValue}
-                                onChange={handleCounter}
-                            />
-                        </div>
-                        <button className={cn(styles.button, styles.buttonToCart)}>Добавить в корзину</button>
-                        <button className={cn(styles.button)}>Купить сейчас</button>
+                        {
+                            !isMobile &&
+                            <div className={styles.priceAndCount}>
+                                <div className={styles.priceBlock}>{props.currentPrice} <span>{currency}</span></div>
+                                <Counter
+                                    size={130}
+                                    value={counterValue}
+                                    onChange={handleCounter}
+                                />
+                            </div>
+                        }
+                        {
+                            !isMobile &&
+                            <button className={cn(styles.button, styles.buttonToCart)}>Добавить в корзину</button>
+                        }
+                        {
+                            !isMobile &&
+                            <button className={cn(styles.button)}>Купить сейчас</button>
+                        }
                         <div className={styles.additionalInfoBlock}>
                             <div className={styles.additionalInfo}>
                                 <div className={styles.iconWrapper}>
@@ -248,8 +273,21 @@ export default function ProductCardModal({
                                 onChange={handleCounter}
                             />
                         </div>
-                        <button className={cn(styles.button, styles.buttonToCart)}>Добавить в корзину</button>
-                        <button className={cn(styles.button)}>Купить сейчас</button>
+                        <button className={cn(styles.button, styles.buttonToCart)}>
+                            {
+                                isMobile ?
+                                    <div className={styles.mobileButton}>
+                                        <span>Добавить</span>
+                                        <span>
+                                            {props.currentPrice}
+                                            <span className={styles.currency}>{currency}</span>
+                                        </span>
+                                    </div>
+                                    :
+                                    'Добавить в корзину'
+                            }
+                        </button>
+                        {!isMobile && <button className={cn(styles.button)}>Купить сейчас</button>}
                     </div>
                 </div>
             }

@@ -12,7 +12,7 @@ import BreadCrumbs from '@/components/BreadCrumbs/BreadCrumbs'
 export async function getServerSideProps(context: GetServerSidePropsContext) {
     return {
       props: {
-        isSSRMobile: getIsSsrMobile(context),
+        isSsrMobile: getIsSsrMobile(context),
       },
     };
   }
@@ -24,6 +24,7 @@ export default function ProductPage({
     isSsrMobile:boolean
 }){
 
+    
     const findItemSlug = () => {
         for(const category of goodsArr){
             const foundItem = category.goodsCard.find(item => item.slug === router.query.slug)
@@ -31,14 +32,14 @@ export default function ProductPage({
         }
         return null
     }
-
     const router = useRouter()
+
     const itemSlug = findItemSlug()
     const isMobile = isSsrMobile
 
     useEffect(()=> {
         document.body.style.overflow = 'unset';
-    }, [])
+    }, [isSsrMobile])
 
     if(!itemSlug) return 'товар не найден'
 
@@ -47,14 +48,14 @@ export default function ProductPage({
             isMobile={isSsrMobile}
             title={itemSlug.title}
             description='dkjfldjfl'
-            pageType={PageType.main}
+            pageType={PageType.blog}
         >
             <>
             {
                 !isMobile &&
                 <BreadCrumbs currentPage={itemSlug.title}/>
             }
-                <ProductCardModal className={productStyles} props={itemSlug} />
+                <ProductCardModal className={productStyles} isMobile={isMobile} props={itemSlug} />
             </>
         </PageLayout>
     )

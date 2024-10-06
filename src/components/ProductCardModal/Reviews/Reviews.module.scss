@@ -10,6 +10,9 @@
   width: 770px;
   height: auto;
   margin: var(--gap-xl) 0 0 0;
+  @media(max-width:$mobile-size){
+    width:100%;
+  }
   .title {
     @include font();
     color: #2c1417;
@@ -26,6 +29,12 @@
     align-items: center;
     padding: 0 0 25px 0;
     border-bottom: 1px solid #aaa;
+    @media(max-width:$mobile-size){
+      flex-flow:column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap:15px;
+    }
     .info {
       width: 210px;
       height: auto;
@@ -129,6 +138,12 @@
       justify-content: flex-start;
       align-items: center;
       gap: var(--gap-xl);
+      @media(max-width:$mobile-size){
+        width:100%;
+        height:auto;
+        justify-content: space-between;
+        gap:8px;
+      }
       .imageContainer {
         width: 176px;
         height: 176px;

@@ -5,14 +5,19 @@ import Heart from './assets/Heart'
 import star from './assets/star.svg'
 import Image, { StaticImageData } from 'next/image'
 import { useCurrency } from '@/utils/useCurrency'
+import { useRouter } from 'next/router'
 
 export default function ProductCard({
+    isMobile,
     props,
     setSelectedCard,
 }: {
+    isMobile:boolean,
     props: ProductCardTypings,
     setSelectedCard: React.Dispatch<React.SetStateAction<number | null>>,
 }) {
+
+    const router = useRouter()
 
     const handleFavourite = (e:React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation()
@@ -24,10 +29,19 @@ export default function ProductCard({
         console.log('buy')
     }
 
+    const onPush = () => {
+        if(isMobile){
+            router.push(`/product/${props.slug}`)
+            console.log(props)
+        } else{
+            setSelectedCard(props.id)
+        }
+    }
+
     return (
         <div
             className={styles.wrapper}
-            onClick={() => setSelectedCard(props.id)}
+            onClick={() => onPush()}
         >
             <div className={styles.topBlock} style={{ background: `url(${typeof(props.images[0]) === 'string' ? (props.images[1] as StaticImageData).src : props.images[0].src})`, backgroundSize: 'contain', backgroundPosition: 'center top', backgroundRepeat: 'no-repeat' }}>
                 <div className={styles.heartBlock} onClick={(e) => handleFavourite(e)}>
