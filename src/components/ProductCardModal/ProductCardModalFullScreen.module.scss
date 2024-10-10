@@ -7,7 +7,7 @@
   position: relative;
   @media (max-width: $mobile-size) {
     width: 100%;
-    margin:117px 0 0 0;
+    margin:0 0 0 0;
   }
   .topBlock {
     width: 100%;
@@ -25,12 +25,15 @@
         justify-content: flex-start;
       }
       .mainLeft {
-        width: 100%;
+        width: 542px;
         height: auto;
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: center;
+        @media(max-width:$mobile-size){
+          width:100%;
+        }
         .moreInfoButton {
           margin: var(--gap-s) 0 0 0;
           width: 474px;

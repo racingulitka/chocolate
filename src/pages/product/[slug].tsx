@@ -48,7 +48,7 @@ export default function ProductPage({
             isMobile={isSsrMobile}
             title={itemSlug.title}
             description='dkjfldjfl'
-            pageType={PageType.blog}
+            pageType={PageType.slug}
         >
             <>
             {

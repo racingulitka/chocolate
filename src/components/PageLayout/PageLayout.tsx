@@ -19,8 +19,9 @@ export default function PageLayout({
     isMobile: boolean,
     title: string,
     description: string,
-    pageType:PageType,
+    pageType: PageType,
 }) {
+
     return (
         <>
             <Head>
@@ -30,10 +31,13 @@ export default function PageLayout({
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={`${styles.main} ${inter.className}`}>
-                <Header
-                    isMobile={isMobile}
-                    pageType={pageType}
-                />
+                {
+                    !(isMobile && pageType === PageType.slug) &&
+                    <Header
+                        isMobile={isMobile}
+                        pageType={pageType}
+                    />
+                }
                 {children}
                 <Footer isMobile={isMobile} />
             </main>

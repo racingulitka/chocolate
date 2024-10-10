@@ -30,7 +30,8 @@ const customStyles = {
         background: 'transparent',
     },
     overlay: {
-        background: 'rgba(0, 0, 0, 0.61)'
+        background: 'rgba(0, 0, 0, 0.61)',
+        zIndex:100,
     }
 };
 
