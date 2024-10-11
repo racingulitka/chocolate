@@ -62,7 +62,9 @@ export default function MapModal() {
                         <Image src={questionIcon} alt='clickme' fill />
                     </div>
                 </div>
+                <div className={styles.hint}>Укажите только город, куда хотите отправить подарок, остальное узнаем сами</div>
             </div>
+            <div className={styles.mapBlock}></div>
         </div>
     )
 }
