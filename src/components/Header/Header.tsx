@@ -15,6 +15,7 @@ import arrow from './assets/arrow.svg'
 import MapModal from './components/MapModal/MapModal'
 import Modal from 'react-modal'
 import { motion, AnimatePresence } from 'framer-motion'
+import SideMenu from './components/SideMenu/SideMenu'
 
 
 const customStyles = {
@@ -31,7 +32,7 @@ const customStyles = {
     },
     overlay: {
         background: 'rgba(0, 0, 0, 0.61)',
-        zIndex:100,
+        zIndex: 100,
     }
 };
 
@@ -50,6 +51,7 @@ export default function Header({
         const handleScroll = () => {
             if (window.scrollY > 0) {
                 setWindowScrolled(true)
+                setSideMenuActive(false)
             } else {
                 setWindowScrolled(false)
             }
@@ -75,6 +77,8 @@ export default function Header({
         console.log('modal open')
     }
 
+    const [isSideMenuActive, setSideMenuActive] = useState(false)
+
     return (
         <header className={cn(styles.mainWrapper, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.mainWrapperStartBackground)}>
             <Modal
@@ -86,6 +90,12 @@ export default function Header({
             >
                 <MapModal />
             </Modal>
+            <AnimatePresence>
+                {
+                    isSideMenuActive &&
+                    <SideMenu onClose={setSideMenuActive} />
+                }
+            </AnimatePresence>
             <div className={styles.wrapper}>
                 <div className={cn(styles.topBlock, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.topBlockStartBackground)}>
                     <div className={styles.topLeftBlock}>
@@ -125,17 +135,17 @@ export default function Header({
                         (!isWindowScrolled || isMobile) &&
                         <motion.div
                             className={cn(styles.bottomBlock, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.bottomBlockStartBackground)}
-                            initial={{translateY:-50, opacity:0, height:0}}
-                            animate={{translateY:0, opacity:1, height:'auto'}}
+                            initial={{ translateY: -50, opacity: 0, height: 0 }}
+                            animate={{ translateY: 0, opacity: 1, height: 'auto' }}
                             transition={{ duration: 0.2, ease: 'easeInOut' }}
-                            exit={{translateY:-50, opacity:0, height:0}}
+                            exit={{ translateY: -50, opacity: 0, height: 0 }}
                         >
                             <div className={styles.categories}>
                                 {
                                     categoriesArr.map(category => {
                                         return (
                                             <div className={styles.category} key={category.id}>
-                                                <div className={styles.categoryIcon}>
+                                                <div className={styles.categoryIcon} onClick={() => category.id === 1 && setSideMenuActive(prev => !prev)}>
                                                     <Image src={category.icon} alt='category icon' layout='fill' />
                                                 </div>
                                                 <div className={cn(styles.categoryTitle)}>{category.title}</div>

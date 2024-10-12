@@ -1,0 +1,76 @@
+@import "../../../../styles/variables.scss";
+
+.wrapper {
+  width: 640px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 6px 0px 16.8px -3px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 51;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .side {
+    position: relative;
+    padding: 80px 12px 0 20px;
+    width: fit-content;
+    height: 100%;
+    &:first-child {
+      border-right: 1px solid #E9E9E9;
+    }
+    .closeWrapper {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .mainTitle {
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .options {
+      margin: 46px 0 0 0;
+      width: fit-content;
+      height: auto;
+      .option {
+        width: 295px;
+        height: 40px;
+        border-radius: 7px;
+        padding:0 30px;
+        color: #636363;
+        font-family: "Corsica LX";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        &Active {
+          background: #EFEFEF;
+        }
+        &:hover{
+          cursor: pointer;
+          background: #EFEFEF;
+        }
+        .arrowContainer{
+          width:5px;
+          height:18px;
+          position:relative;
+        }
+      }
+    }
+  }
+}
