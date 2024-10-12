@@ -90,7 +90,7 @@ export default function SideMenu({
                     {
                         subcategoryArr?.map(item => {
                             return(
-                                <div className={styles.option}>
+                                <div className={styles.option} key={item.id}>
                                     {item.title}
                                 </div>
                             )
