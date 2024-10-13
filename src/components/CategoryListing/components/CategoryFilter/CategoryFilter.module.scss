@@ -1,0 +1,32 @@
+@import "../../../../styles/variables.scss";
+
+.wrapper {
+  width: fit-content;
+  height: 50px;
+  padding: 0 16px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  background: #ede8e2;
+  .filterIcon {
+    position: relative;
+    width: 17px;
+    height: 17px;
+  }
+  .selectedCategory {
+    color: #2a181a;
+    font-family: "Corsica LX";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .arrow {
+    position: relative;
+    width: 10px;
+    height: 5px;
+  }
+}

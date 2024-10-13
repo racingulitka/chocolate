@@ -36,6 +36,7 @@ export const goodsArr:GoodsArr[] = [
         isFavourite:true,
         dimensions:[10, 20],
         availableConfirm: new Date('2024-01-01:15:25'),
+        type:'Монобукеты',
         composition:[
           {
             id:1,
@@ -121,6 +122,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монобукеты',
       },
       {
         id:3,
@@ -133,6 +135,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Стереобукеты',
       },
       {
         id:4,
@@ -145,6 +148,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Стереобукеты',
       },
       {
         id:5,
@@ -157,6 +161,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Стереобукеты',
       },
       {
         id:6,
@@ -169,6 +174,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Небукеты',
       },
       {
         id:7,
@@ -181,6 +187,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Простобукеты',
       },
     ]
   },
@@ -201,6 +208,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Стереобукеты',
       },
       {
         id:2,
@@ -213,6 +221,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:3,
@@ -225,6 +234,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:4,
@@ -237,6 +247,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:5,
@@ -249,6 +260,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:6,
@@ -261,6 +273,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:7,
@@ -273,6 +286,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
     ]
   },
@@ -293,6 +307,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:2,
@@ -305,6 +320,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:3,
@@ -317,6 +333,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:4,
@@ -329,6 +346,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:5,
@@ -341,6 +359,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:6,
@@ -353,6 +372,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
       {
         id:7,
@@ -365,6 +385,7 @@ export const goodsArr:GoodsArr[] = [
         currentPrice:3300,
         isFavourite:false,
         availableConfirm: new Date('2024-01-01:20:25'),
+        type:'Монообукеты',
       },
     ]
   },

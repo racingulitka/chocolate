@@ -20,6 +20,7 @@ export interface ProductCard {
   currentPrice: number;
   dimensions?: [number, number];
   availableConfirm: Date;
+  type?:string,
   composition?: {
     id: number;
     title: string;
