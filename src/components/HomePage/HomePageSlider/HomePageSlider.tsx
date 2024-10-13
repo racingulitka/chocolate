@@ -5,6 +5,7 @@ import exampleCardImage from '../assets/exampleCardImage.png'
 import { sliderArr } from './HomePageSlider.config'
 import Image from 'next/image'
 import arrowRight from './assets/ArrowRight.svg'
+import Link from 'next/link'
 
 export default function HomePageSlider({
     isMobile,
@@ -62,7 +63,7 @@ export default function HomePageSlider({
                                 const slideOffset = slideWidth ?? 0
                                 const gap = index ? 10 * index : 0
                                 return (
-                                    <div
+                                    <Link
                                         className={styles.slide}
                                         key={slide.id}
                                         style={{
@@ -71,9 +72,11 @@ export default function HomePageSlider({
                                             left: isMobile? '0px' : `${index * slideOffset + gap + sliderShift}px`,
                                             transition: '0.5s ease-in-out',
                                             position:isMobile ? 'relative' : 'absolute'
-                                        }}>
+                                        }}
+                                        href={`/categories/${slide.slug}`}
+                                        >
                                         <Image src={slide.image} alt='slide image' fill />
-                                    </div>
+                                    </Link>
                                 )
                             })
                         }

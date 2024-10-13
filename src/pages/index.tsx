@@ -20,6 +20,7 @@ const exampleVideo = '/centrzrenija_desktop.mp4'
 export const goodsArr:GoodsArr[] = [
   {
     id:1,
+    slug:'Klubnichnie-boxi',
     title:'Эти товары часто покупают',
     isSeeAll:false,
     goodsCard:[
@@ -185,6 +186,7 @@ export const goodsArr:GoodsArr[] = [
   },
   {
     id:2,
+    slug:'gotovie-tovari',
     title:'Готовые товары',
     isSeeAll:true,
     goodsCard:[
@@ -276,6 +278,7 @@ export const goodsArr:GoodsArr[] = [
   },
   {
     id:3,
+    slug:'sedobnije-bucketi',
     title:'Съедобные букеты',
     isSeeAll:true,
     goodsCard:[
