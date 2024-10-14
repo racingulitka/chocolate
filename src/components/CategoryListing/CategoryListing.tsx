@@ -44,7 +44,7 @@ export default function CategoryListing({
                 </div>
                 <div className={styles.mainBlock}>
                     <aside className={styles.leftSide}>
-                        <div className={styles.mainLeftSideFilter}>
+                        <div className={cn(styles.mainLeftSideFilter, props.goodsCard.length === 0 && styles.mainLeftSideFilter)}>
                             {
                                 typesArr.map((item, index) => {
                                     return (

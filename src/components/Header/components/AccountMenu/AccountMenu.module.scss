@@ -1,0 +1,62 @@
+@import "../../../../styles/variables.scss";
+
+.wrapper {
+  width: 362px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-radius: 15px;
+  background: #fff;
+  z-index: 51;
+  padding: 21px 20px;
+  .cross {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .mainBlock {
+    margin: 52px 0 0 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    .menuItem {
+      width: fit-content;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      color: #9c9c9c;
+      &:hover{
+        cursor:pointer;
+        color:#2A181A;
+      }
+      &:hover .iconContainer .icon{
+        fill:#2A181A;
+        stroke:#2A181A;
+      }
+      .iconContainer {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        .icon{
+            fill:#9C9C9C;
+            stroke: #9C9C9C;
+        }
+      }
+      .menuItemText {
+        font-family: "Corsica LX";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+  }
+}

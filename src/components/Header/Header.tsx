@@ -16,6 +16,7 @@ import MapModal from './components/MapModal/MapModal'
 import Modal from 'react-modal'
 import { motion, AnimatePresence } from 'framer-motion'
 import SideMenu from './components/SideMenu/SideMenu'
+import AccountMenu from './components/AccountMenu/AccountMenu'
 
 
 const customStyles = {
@@ -78,6 +79,11 @@ export default function Header({
     }
 
     const [isSideMenuActive, setSideMenuActive] = useState(false)
+    const [isAccountMenuActive, setAccountMenuActive] = useState(false)
+
+    const handleAccountMenuPush = () => {
+        setAccountMenuActive(prev => !prev)
+    }
 
     return (
         <header className={cn(styles.mainWrapper, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.mainWrapperStartBackground)}>
@@ -94,6 +100,12 @@ export default function Header({
                 {
                     isSideMenuActive &&
                     <SideMenu onClose={setSideMenuActive} />
+                }
+                {
+                    isAccountMenuActive &&
+                    <AccountMenu
+                        onClose={setAccountMenuActive}
+                    />
                 }
             </AnimatePresence>
             <div className={styles.wrapper}>
@@ -114,13 +126,19 @@ export default function Header({
                     </div>
                     {
                         !isMobile &&
-                        <div className={styles.logo}>
+                        <Link href={'/'} className={styles.logo}>
                             <Image src={logo} alt='logo' layout='fill' />
-                        </div>
+                        </Link>
                     }
                     <div className={styles.topRightBlock}>
                         <GoodsSearch isMobile={isMobile} />
-                        <div className={cn(styles.sideMenuButton, pageType === PageType.main && !isWindowScrolled && styles.sideMenuButtonStartBackground)}>
+                        <div
+                            className={cn(
+                                styles.sideMenuButton,
+                                pageType === PageType.main && !isWindowScrolled && styles.sideMenuButtonStartBackground
+                                )}
+                            onClick={() => handleAccountMenuPush()}
+                            >
                             <div className={styles.sideMenuIconSortContainer}>
                                 <Image src={sideMenuIconSort} alt='sortIcon' layout='fill' />
                             </div>
