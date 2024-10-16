@@ -150,7 +150,7 @@ export default function Header({
                 </div>
                 <AnimatePresence>
                     {
-                        (!isWindowScrolled || isMobile) &&
+                        (!isWindowScrolled || isMobile) && pageType !== PageType.short &&
                         <motion.div
                             className={cn(styles.bottomBlock, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.bottomBlockStartBackground)}
                             initial={{ translateY: -50, opacity: 0, height: 0 }}

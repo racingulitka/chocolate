@@ -7,6 +7,7 @@ import { authnorizedArr, unauthnorizedArr } from './AccountMenu.config'
 import Modal from 'react-modal'
 import Profile from './components/Profile/Profile'
 import { Account } from './AccountMenu.typings'
+import { useRouter } from 'next/router'
 
 const customStyles = {
     content: {
@@ -32,11 +33,16 @@ export default function AccountMenu({
     onClose: React.Dispatch<React.SetStateAction<boolean>>,
 }) {
 
-    const isAuthnorized:Account | null = {
+    const router = useRouter()
+
+    const [isAuthnorized] = useState<Account | null>({
         name:'Alexandr',
         email:'alex@mail.ru',
         phone:'+7 999 999-99-99'
-    }
+    })
+
+    // const [isAuthnorized] = useState<Account | null>(null)
+
     const [isModalOpen, setModalOpen] = useState<boolean>(false)
 
     const closeModal = () => {
@@ -53,6 +59,14 @@ export default function AccountMenu({
             case 1:{
                 setModalOpen(true)
                 document.body.style.overflow = 'hidden';
+                break
+            }
+            case 4:{
+                router.push('/account/moi-sobitiya')
+                break
+            }
+            case 6:{
+                router.push('/account/upravlenie-rassilkami')
                 break
             }
         }
@@ -73,10 +87,10 @@ export default function AccountMenu({
                 contentLabel="Example Modal"
             >
                 <Profile
-                    avatar={isAuthnorized.avatar ?? null}
-                    name={isAuthnorized.name}
-                    email={isAuthnorized.email}
-                    phone={isAuthnorized.phone}
+                    avatar={isAuthnorized?.avatar ? isAuthnorized?.avatar : null}
+                    name={isAuthnorized ? isAuthnorized.name : ''}
+                    email={isAuthnorized ? isAuthnorized.email : ''}
+                    phone={isAuthnorized ? isAuthnorized.phone : ''}
                 />
             </Modal>
             <div

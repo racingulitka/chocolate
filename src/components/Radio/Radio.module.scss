@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+
+.wrapper{
+    width:55px;
+    height:31px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color:#B5B5B5;
+    position:relative;
+    transition:0.5s;
+    &Active{
+        background: #45BB90;
+        transition:0.5s;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    .flag{
+        position:absolute;
+        width:25px;
+        height:25px;
+        border-radius: 50%;
+        overflow: hidden;
+        background:#fff;
+        top:50%;
+        left:3px;
+        right:unset;
+        translate:0 -50%;
+        transition:0.5s;
+        &Active{
+            left:unset;
+            right:3px;
+            transition:0.5s;
+        }
+    }
+}

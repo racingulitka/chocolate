@@ -35,26 +35,31 @@ export const authnorizedArr = [
         icon:ReferalIcon,
         title:'За каждого друга + 3000 ₸',
     },
+    {
+        id:6,
+        icon:ReferalIcon,
+        title:'Управление рассылками',
+    },
 ]
 
 export const unauthnorizedArr = [
     {
-        id:6,
+        id:7,
         icon:HelpIcon,
         title:'Помощь',
     },
     {
-        id:7,
+        id:8,
         icon:CurrencyIcon,
         title:'Российский рубль',
     },
     {
-        id:8,
+        id:9,
         icon:LanguageIcon,
         title:'Русский',
     },
     {
-        id:9,
+        id:10,
         icon:LoginIcon,
         title:'Войти/Зарегестрироваться',
     },
