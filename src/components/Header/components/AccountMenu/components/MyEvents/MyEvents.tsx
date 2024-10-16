@@ -76,7 +76,7 @@ export default function MyEvents() {
                         {
                             eventsArr.map(item => {
                                 return(
-                                    <EventCard />
+                                    <EventCard key={item.id}/>
                                 )
                             })
                         }
