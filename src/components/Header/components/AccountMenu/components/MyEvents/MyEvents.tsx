@@ -125,7 +125,7 @@ export default function MyEvents() {
                             activeScreen === 2 && futureEvents &&
                             groupEventsByMonth(futureEvents).map(item => {
                                 return (
-                                    <div className={styles.eventCardsBlock}>
+                                    <div className={styles.eventCardsBlock} key={item.month}>
                                         <div className={styles.eventsTitle}>{months[item.month]}</div>
                                         {
                                             item.events.map(event => {
