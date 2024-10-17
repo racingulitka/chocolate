@@ -1,0 +1,61 @@
+@import "../../../../../../../styles/variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  .year {
+    margin-bottom: 10px;
+    .month {
+      margin: 10px 0 40px;
+      & h3 {
+        margin: 0 0 25px 0;
+        color: #2c1417;
+        font-family: "Corsica LX";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        row-gap: 15px;
+        .day {
+          width: 30px;
+          height: 30px;
+          color: #898989;
+          font-family: "Corsica LX";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .date {
+          width: 30px;
+          height: 30px;
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &Selected{
+            border-radius: 5px;
+            background: #898989;
+          }
+          &Today{
+            border-radius:5px;
+            border:1px solid #898989;
+          }
+        }
+      }
+    }
+  }
+}

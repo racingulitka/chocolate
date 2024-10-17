@@ -2,9 +2,9 @@
 
 .wrapper {
   width: 889px;
-  height: 860px;
-  padding: 115px 0 0 0;
+  height: auto;
   .main {
+    margin:115px 0 65px 0;
     width: 100%;
     height: 680px;
     border-radius: 5px;
@@ -79,7 +79,6 @@
         width: 389px;
         height: 100%;
         overflow: scroll;
-        border: 1px solid #001;
         scrollbar-width: none;
       }
       .eventsContainer {
@@ -99,6 +98,13 @@
           font-style: normal;
           font-weight: 600;
           line-height: normal;
+        }
+        .eventCardsBlock{
+            display:flex;
+            flex-flow:column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap:15px;
         }
       }
     }

@@ -8,5 +8,76 @@
   border-right: 1px solid #d8d8d8;
   border-bottom: 1px solid #d8d8d8;
   border-left: 10px solid #d8d8d8;
-  padding:15px 10px 15px 25px;
+  padding: 15px 10px 15px 25px;
+  .topBlock {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    .eventType {
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .editIconContainer {
+      width: 25px;
+      height: 25px;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .middleBlock {
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    .middleBlockItem {
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      & span {
+        font-family: Geometria;
+      }
+    }
+    .circle {
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background-color: #2c1417;
+    }
+  }
+  .bottomBlock {
+    margin: 15px 0 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    color: #724846;
+    font-family: "Corsica LX";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    .arrowContainer{
+        width:11px;
+        height:11px;
+        position:relative;
+    }
+    &:hover{
+        cursor:pointer;
+    }
+  }
 }
