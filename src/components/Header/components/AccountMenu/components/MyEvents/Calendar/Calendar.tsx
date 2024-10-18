@@ -2,19 +2,24 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './Calendar.module.scss';
 import cn from 'classnames';
 
-export default function Calendar() {
+export default function Calendar({
+    selectedDate,
+    setSelectedDate,
+}:{
+    selectedDate:Date | null,
+    setSelectedDate:React.Dispatch<React.SetStateAction<Date | null>>
+}) {
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
     const currentDay = new Date().getDate();
 
     const years = Array.from({ length: 5 }, (_, i) => currentYear - 1 + i);
-    const daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+    const daysOfWeek = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
     const months = [
         "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
         "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
     ];
 
-    const [selectedDate, setSelectedDate] = useState<Date | null>(null);
     const currentMonthRef = useRef<HTMLDivElement | null>(null);
 
     const handleSelectDate = (year: number, month: number, day: number) => {

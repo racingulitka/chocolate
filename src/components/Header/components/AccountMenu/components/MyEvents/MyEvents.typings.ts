@@ -1,6 +1,6 @@
 export enum EventType {
-    birthday = 'birthday',
-    holiday = 'holiday'
+    birthday = 'День рождения',
+    holiday = 'Праздник'
 }
 
 export interface Event{

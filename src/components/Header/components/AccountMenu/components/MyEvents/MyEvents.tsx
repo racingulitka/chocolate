@@ -1,51 +1,61 @@
-import React, { useState } from 'react'
-import styles from './MyEvents.module.scss'
-import cn from 'classnames'
-import { Event, EventType } from './MyEvents.typings'
-import EventCard from './EventCard/EventCard'
-import Calendar from './Calendar/Calendar'
-import NewEventScreen from './NewEventScreen/NewEventScreen'
+import React, { useState, useEffect } from 'react';
+import styles from './MyEvents.module.scss';
+import cn from 'classnames';
+import { Event, EventType } from './MyEvents.typings';
+import EventCard from './EventCard/EventCard';
+import Calendar from './Calendar/Calendar';
+import NewEventScreen from './NewEventScreen/NewEventScreen';
+import Modal from 'react-modal';
+import AddEvent from './AddEvent/AddEvent';
+
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        border: 'none',
+        padding: 0,
+        background: 'transparent',
+    },
+    overlay: {
+        background: 'rgba(0, 0, 0, 0.61)',
+        zIndex: 100,
+    }
+};
 
 export default function MyEvents() {
 
-    const [activeScreen, setActiveScreen] = useState<number>(1)
+    const [activeScreen, setActiveScreen] = useState<number>(1); // Изначально календарь
+    const [isLoading, setIsLoading] = useState<boolean>(true); // Загрузка данных
+    const [isModalOpen, setModalOpen] = useState<boolean>(false); // Состояние модального окна
+    const [eventsArr] = useState<Event[] | null>(null)
+    const [selectedDate, setSelectedDate] = useState<Date | null>(null)
 
-    //const [eventsArr] = useState<Event[] | null>(null)
+    // const [eventsArr] = useState<Event[] | null>([
+    //     {
+    //         id: 1,
+    //         type: EventType.birthday,
+    //         date: new Date('2024-12-20'),
+    //         person: 'Tldsfjs чтобы не злился',
+    //         phone: '',
+    //         city: '',
+    //         address: ''
+    //     }
+    // ]);
 
-    const [eventsArr] = useState<Event[] | null>([
-        {
-            id: 1,
-            type: EventType.birthday,
-            date: new Date('2024-12-20'),
-            person: 'Tldsfjs чтобы не злился',
-            phone: '',
-            city: '',
-            address: ''
-        },
-        {
-            id: 2,
-            type: EventType.birthday,
-            date: new Date('2024-11-20'),
-            person: 'Александра чтобы не злился',
-            phone: '',
-            city: '',
-            address: ''
-        },
-        {
-            id: 3,
-            type: EventType.birthday,
-            date: new Date('2024-11-11'),
-            person: 'lsjgjндра чтобы не злился',
-            phone: '',
-            city: '',
-            address: ''
-        },
-    ])
+    useEffect(() => {
+        if (!eventsArr) {
+            setActiveScreen(3); // Если событий нет, сразу переключаем на экран добавления
+        }
+        setIsLoading(false); // Завершаем загрузку
+    }, [eventsArr]);
 
-    const thisYearEvents = eventsArr && eventsArr.filter(item => item.date.getFullYear() === new Date().getFullYear())
-    const futureEvents = thisYearEvents && thisYearEvents.filter(item => item.date > new Date())
+    const thisYearEvents = eventsArr && eventsArr.filter(item => item.date.getFullYear() === new Date().getFullYear());
+    const futureEvents = thisYearEvents && thisYearEvents.filter(item => item.date > new Date());
 
-    // Функция для группировки событий по месяцам
     const groupEventsByMonth = (events: Event[]) => {
         const grouped = events.reduce((acc, event) => {
             const month = event.date.getMonth();
@@ -56,7 +66,6 @@ export default function MyEvents() {
             return acc;
         }, {} as { [key: number]: Event[] });
 
-        // Преобразуем объект в массив массивов
         return Object.entries(grouped).map(([month, events]) => ({
             month: parseInt(month),
             events
@@ -68,16 +77,45 @@ export default function MyEvents() {
         "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
     ];
 
+    // Логика для закрытия модального окна
+    const closeModal = () => {
+        setModalOpen(false);
+        document.body.style.overflow = 'unset';
+    };
+
+    const afterModalOpen = () => {
+        console.log('modal open');
+    };
+
+    // Пока isLoading true, показываем индикатор загрузки или null
+    if (isLoading) {
+        return <div>Загрузка...</div>;
+    }
+
     return (
         <div className={styles.wrapper}>
+            <Modal
+                isOpen={isModalOpen}
+                onAfterOpen={afterModalOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Добавить событие"
+            >
+                <AddEvent
+                    onClose={setModalOpen}
+                    selectedDate={selectedDate}
+                />
+            </Modal>
+
             {
-                eventsArr ?
-            <div className={styles.main}>
-                <div className={styles.header}>
-                    <div className={styles.selector}>
-                        {
-                            [{ id: 1, title: 'Календарь' }, { id: 2, title: 'Список' }].map(item => {
-                                return (
+                activeScreen !== 3 ? (
+                    <div className={styles.main}>
+                        <div className={styles.header}>
+                            <div className={styles.selector}>
+                                {[
+                                    { id: 1, title: 'Календарь' },
+                                    { id: 2, title: 'Список' }
+                                ].map(item => (
                                     <div
                                         className={cn(
                                             styles.selectorItem,
@@ -88,67 +126,63 @@ export default function MyEvents() {
                                     >
                                         {item.title}
                                     </div>
-                                )
-                            })
-                        }
-                    </div>
-                    <button className={styles.button}>
-                        Добавить событие
-                    </button>
-                </div>
-                <div className={styles.screen}>
-                    {
-                        activeScreen === 1 &&
-                        <div className={styles.calendarContainer}>
-                            <Calendar />
+                                ))}
+                            </div>
+                            <button
+                                className={styles.button}
+                                onClick={() => setModalOpen(true)} // Открываем модальное окно для добавления события
+                            >
+                                Добавить событие
+                            </button>
                         </div>
-                    }
-                    <div className={styles.eventsContainer}>
-                        {
-                            activeScreen === 1 &&
-                            <div className={styles.eventsTitle}>Ближайшие события</div>
-                        }
-                        {
-                            activeScreen === 1 &&
-                            eventsArr.map(item => {
-                                return (
-                                    <EventCard
-                                        key={item.id}
-                                        type={item.type}
-                                        date={item.date}
-                                        person={item.person}
-                                    />
-                                )
-                            })
-                        }
-                        {
-                            activeScreen === 2 && futureEvents &&
-                            groupEventsByMonth(futureEvents).map(item => {
-                                return (
-                                    <div className={styles.eventCardsBlock} key={item.month}>
-                                        <div className={styles.eventsTitle}>{months[item.month]}</div>
-                                        {
-                                            item.events.map(event => {
-                                                return(
-                                                    <EventCard
-                                                        key={event.id}
-                                                        type={event.type}
-                                                        date={event.date}
-                                                        person={event.person}
-                                                    />
-                                                )
-                                            })
-                                        }
-                                    </div>
-                                )
-                            })
-                        }
+
+                        <div className={styles.screen}>
+                            {activeScreen === 1 && <div className={styles.calendarContainer}>
+                                <Calendar
+                                    selectedDate={selectedDate}
+                                    setSelectedDate={setSelectedDate}
+                                />
+                            </div>}
+
+                            <div className={styles.eventsContainer}>
+                                {activeScreen === 1 && eventsArr && (
+                                    <>
+                                        <div className={styles.eventsTitle}>Ближайшие события</div>
+                                        {eventsArr.map(item => (
+                                            <EventCard
+                                                key={item.id}
+                                                type={item.type}
+                                                date={item.date}
+                                                person={item.person}
+                                            />
+                                        ))}
+                                    </>
+                                )}
+
+                                {activeScreen === 2 && futureEvents && (
+                                    groupEventsByMonth(futureEvents).map(item => (
+                                        <div className={styles.eventCardsBlock} key={item.month}>
+                                            <div className={styles.eventsTitle}>{months[item.month]}</div>
+                                            {item.events.map(event => (
+                                                <EventCard
+                                                    key={event.id}
+                                                    type={event.type}
+                                                    date={event.date}
+                                                    person={event.person}
+                                                />
+                                            ))}
+                                        </div>
+                                    ))
+                                )}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            :
-            <NewEventScreen />
+                ) : (
+                    <NewEventScreen
+                        setActiveScreen={setActiveScreen}
+                    />
+                )
             }
         </div>
-    )
+    );
 }

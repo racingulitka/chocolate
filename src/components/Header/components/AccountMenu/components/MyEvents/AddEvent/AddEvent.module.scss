@@ -1,0 +1,108 @@
+@import "../../../../../../../styles/variables.scss";
+
+.wrapper {
+  width: 534px;
+  height: 634px;
+  border-radius: 15px;
+  background: #fff;
+  padding: 50px;
+  position: relative;
+  .exitContainer {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .title {
+    color: #2c1417;
+    font-family: "Corsica LX";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .inputBlocks {
+    margin: 20px 0 0 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 13px;
+    .inputWrapper {
+      width: 100%;
+      height: 59px;
+      position: relative;
+      .text {
+        position: absolute;
+        top: 10px;
+        left: 18px;
+        color: #898989;
+        font-family: "Corsica LX";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+      .input {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: 2px solid #c5c5c5;
+        color: #2c1417;
+        font-family: "Corsica LX";
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 0 18px;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          color: #898989;
+        }
+        &WithText {
+          padding: 24px 18px 0 18px;
+        }
+      }
+      .selects {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        z-index: 10;
+        translate: 0 100%;
+        width: 434px;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-radius: 5px;
+        border: 1.5px solid #898989;
+        background: #fff;
+        .select {
+          width: 100%;
+          height: 59px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 0 0 0 20px;
+          font-family: "Corsica LX";
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          cursor: pointer;
+          &Selected {
+            color: #2c1417;
+            background: #efefef;
+          }
+        }
+      }
+    }
+  }
+}

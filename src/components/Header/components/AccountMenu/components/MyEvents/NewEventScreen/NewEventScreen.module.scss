@@ -68,16 +68,61 @@
       border-radius: 10px;
       background: #fff;
       box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.1);
-      display:flex;
-      flex-flow:column nowrap;
+      display: flex;
+      flex-flow: column nowrap;
       justify-content: flex-start;
       align-items: flex-start;
-      gap:15px;
-      .topBlock{
-        width:100%;
-        height:170px;
+      .topBlock {
+        width: 100%;
+        height: 170px;
         background: url(./assets/background.png) center / cover;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .number {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 25px;
+          height: 25px;
+          border-radius: 5px;
+          border: 1.5px solid #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          font-family: Geometria;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        .imageContainer {
+          width: 100px;
+          height: 100px;
+          position: relative;
+        }
       }
+    }
+    .title {
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin: 15px 0 0 20px;
+    }
+    .text {
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 8px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin: 5px 0 0 20px;
+      width:149px;
     }
   }
 }

@@ -1,18 +1,28 @@
-export const phoneMask = (inputValue:string) => {
-    let maskedValue = ''
-    if (inputValue.length <= 1) {
-        maskedValue = `+${inputValue}`;
-    } else if (inputValue.length <= 4) {
-        maskedValue = `+${inputValue.slice(0, 1)}(${inputValue.slice(1, 4)}`;
-    } else if (inputValue.length <= 7) {
-        maskedValue = `+${inputValue.slice(0, 1)}(${inputValue.slice(1, 4)}) ${inputValue.slice(4, 7)}`;
-    } else if (inputValue.length <= 9) {
-        maskedValue = `+${inputValue.slice(0, 1)}(${inputValue.slice(1, 4)}) ${inputValue.slice(4, 7)}-${inputValue.slice(7, 9)}`;
-    } else if (inputValue.length <= 11) {
-        maskedValue = `+${inputValue.slice(0, 1)}(${inputValue.slice(1, 4)}) ${inputValue.slice(4, 7)}-${inputValue.slice(7, 9)}-${inputValue.slice(9, 11)}`;
-    } else if (inputValue.length <= 12) {
-        maskedValue = `+${inputValue.slice(0, 1)}(${inputValue.slice(1, 4)}) ${inputValue.slice(4, 7)}-${inputValue.slice(7, 9)}-${inputValue.slice(9, 11)}-${inputValue.slice(11)}`;
+export const phoneMask = (inputValue: string) => {
+    // Удаляем все символы, кроме цифр
+    const sanitizedValue = inputValue.replace(/\D/g, '');
+
+    let maskedValue = '+';
+
+    if (sanitizedValue.length > 0) {
+        maskedValue += sanitizedValue.slice(0, 1); // Код страны
+    }
+
+    if (sanitizedValue.length > 1) {
+        maskedValue += `(${sanitizedValue.slice(1, 4)}`; // Код города
+    }
+
+    if (sanitizedValue.length > 4) {
+        maskedValue += `) ${sanitizedValue.slice(4, 7)}`; // Первые три цифры номера
+    }
+
+    if (sanitizedValue.length > 7) {
+        maskedValue += `-${sanitizedValue.slice(7, 9)}`; // Следующие две цифры
+    }
+
+    if (sanitizedValue.length > 9) {
+        maskedValue += `-${sanitizedValue.slice(9, 11)}`; // Последние две цифры
     }
 
     return maskedValue;
-}
+};
