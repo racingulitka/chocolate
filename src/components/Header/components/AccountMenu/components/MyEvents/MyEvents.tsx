@@ -7,6 +7,7 @@ import Calendar from './Calendar/Calendar';
 import NewEventScreen from './NewEventScreen/NewEventScreen';
 import Modal from 'react-modal';
 import AddEvent from './AddEvent/AddEvent';
+import { ModalType } from './AddEvent/AddEvent.typings';
 
 const customStyles = {
     content: {
@@ -30,21 +31,22 @@ export default function MyEvents() {
 
     const [activeScreen, setActiveScreen] = useState<number>(1); // Изначально календарь
     const [isLoading, setIsLoading] = useState<boolean>(true); // Загрузка данных
-    const [isModalOpen, setModalOpen] = useState<boolean>(false); // Состояние модального окна
-    const [eventsArr] = useState<Event[] | null>(null)
+    const [isModalOpen, setModalOpen] = useState<ModalType | null>(null); // Состояние модального окна
+    //const [eventsArr] = useState<Event[] | null>(null)
     const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+    const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
 
-    // const [eventsArr] = useState<Event[] | null>([
-    //     {
-    //         id: 1,
-    //         type: EventType.birthday,
-    //         date: new Date('2024-12-20'),
-    //         person: 'Tldsfjs чтобы не злился',
-    //         phone: '',
-    //         city: '',
-    //         address: ''
-    //     }
-    // ]);
+    const [eventsArr] = useState<Event[] | null>([
+        {
+            id: 1,
+            type: EventType.birthday,
+            date: new Date('2024-12-20'),
+            person: 'Tldsfjs чтобы не злился',
+            phone: '',
+            city: 'Таганрог',
+            address: 'ул. Сенная д.4'
+        }
+    ]);
 
     useEffect(() => {
         if (!eventsArr) {
@@ -79,8 +81,9 @@ export default function MyEvents() {
 
     // Логика для закрытия модального окна
     const closeModal = () => {
-        setModalOpen(false);
+        setModalOpen(null);
         document.body.style.overflow = 'unset';
+        setSelectedEvent(null)
     };
 
     const afterModalOpen = () => {
@@ -95,15 +98,17 @@ export default function MyEvents() {
     return (
         <div className={styles.wrapper}>
             <Modal
-                isOpen={isModalOpen}
+                isOpen={!!isModalOpen}
                 onAfterOpen={afterModalOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Добавить событие"
             >
                 <AddEvent
-                    onClose={setModalOpen}
+                    onClose={closeModal}
                     selectedDate={selectedDate}
+                    modalType={isModalOpen}
+                    selectedEvent={selectedEvent}
                 />
             </Modal>
 
@@ -130,7 +135,7 @@ export default function MyEvents() {
                             </div>
                             <button
                                 className={styles.button}
-                                onClick={() => setModalOpen(true)} // Открываем модальное окно для добавления события
+                                onClick={() => setModalOpen(ModalType.add)} // Открываем модальное окно для добавления события
                             >
                                 Добавить событие
                             </button>
@@ -151,9 +156,9 @@ export default function MyEvents() {
                                         {eventsArr.map(item => (
                                             <EventCard
                                                 key={item.id}
-                                                type={item.type}
-                                                date={item.date}
-                                                person={item.person}
+                                                info={item}
+                                                setModalOpen={setModalOpen}
+                                                setSelectedEvent={setSelectedEvent}
                                             />
                                         ))}
                                     </>
@@ -166,9 +171,9 @@ export default function MyEvents() {
                                             {item.events.map(event => (
                                                 <EventCard
                                                     key={event.id}
-                                                    type={event.type}
-                                                    date={event.date}
-                                                    person={event.person}
+                                                    info={event}
+                                                    setModalOpen={setModalOpen}
+                                                    setSelectedEvent={setSelectedEvent}
                                                 />
                                             ))}
                                         </div>

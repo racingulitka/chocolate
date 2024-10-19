@@ -105,4 +105,35 @@
       }
     }
   }
+  .buttonBlock {
+    margin: 16px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .save {
+      width: 182px;
+      height: 49px;
+      border-radius: 5px;
+      background: #724846;
+      color: #fff;
+      font-family: "Corsica LX";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+      }
+      &Delete {
+        background: none;
+        color: #989898;
+        font-weight: 400;
+      }
+    }
+  }
 }

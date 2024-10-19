@@ -1,18 +1,19 @@
 import React from 'react'
 import styles from './EventCard.module.scss'
-import { EventType } from '../MyEvents.typings'
+import { EventType, Event } from '../MyEvents.typings'
 import editIcon from './assets/editIcon.svg'
 import Image from 'next/image'
 import arrow from './assets/arrow.svg'
+import { ModalType } from '../AddEvent/AddEvent.typings'
 
 export default function EventCard({
-    type,
-    date,
-    person
+    info,
+    setModalOpen,
+    setSelectedEvent,
 }: {
-    type: EventType,
-    date: Date,
-    person: string,
+    info:Event,
+    setModalOpen:React.Dispatch<React.SetStateAction<ModalType | null>>,
+    setSelectedEvent:React.Dispatch<React.SetStateAction<Event | null>>,
 }) {
 
     const months = [
@@ -20,18 +21,23 @@ export default function EventCard({
         "июля", "августа", "сентября", "октября", "ноября", "декабря"
     ]
 
+    const onEdit = () => {
+        setSelectedEvent(info)
+        setModalOpen(ModalType.edit)
+    }
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.topBlock}>
-                <div className={styles.eventType}>{type === EventType.birthday ? 'День рождения' : 'Праздник'}</div>
-                <div className={styles.editIconContainer}>
+                <div className={styles.eventType}>{info.type === EventType.birthday ? 'День рождения' : 'Праздник'}</div>
+                <div className={styles.editIconContainer} onClick={() => onEdit()}>
                     <Image src={editIcon} alt='edit' fill />
                 </div>
             </div>
             <div className={styles.middleBlock}>
-                <div className={styles.middleBlockItem}><span>{date.getDate()} &nbsp;</span>{months[date.getMonth()]}</div>
+                <div className={styles.middleBlockItem}><span>{info.date.getDate()} &nbsp;</span>{months[info.date.getMonth()]}</div>
                 <div className={styles.circle}></div>
-                <div className={styles.middleBlockItem}>{person}</div>
+                <div className={styles.middleBlockItem}>{info.person}</div>
             </div>
             <div className={styles.bottomBlock}>
                 Подобрать подарок
