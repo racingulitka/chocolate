@@ -8,8 +8,10 @@ import useOnClickOutside from '@/utils/useOnClickOutside';
 
 export default function BreadCrumbs({
     currentPage,
+    marginTop,
 }: {
     currentPage: string,
+    marginTop?:number,
 }) {
 
     const [isSelectOpen, setSelectOpen] = useState<boolean>(false)
@@ -18,7 +20,7 @@ export default function BreadCrumbs({
     useOnClickOutside(wrapperRef, () => setSelectOpen(false));
 
     return (
-        <div className={styles.wrapper} ref={wrapperRef}>
+        <div className={styles.wrapper} ref={wrapperRef} style={{marginTop:`${marginTop}px`}}>
             <div className={styles.selector}>
                 <div className={styles.currentSelect} onClick={() => setSelectOpen(prev => !prev)}>
                     Клубника в шоколаде в Усть-Каменогорске

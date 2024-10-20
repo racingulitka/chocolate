@@ -1,0 +1,71 @@
+@import "../../../../../../styles/variables.scss";
+
+.wrapper {
+  width: var(--contentSize);
+  height: auto;
+  margin: 45px 0 45px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 140px;
+  .leftSide {
+    width: 234px;
+    height: 90px;
+    .city {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      cursor:pointer;
+      .pencilContainer {
+        width: 23px;
+        height: 23px;
+        position: relative;
+      }
+    }
+    .shareBlock {
+      width: 100%;
+      margin: 26px 0 0 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      color: #724846;
+      font-family: "Corsica LX";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      cursor:pointer;
+      .shareContainer{
+        width:34px;
+        height:34px;
+        position: relative;
+      }
+    }
+  }
+  .rightSide {
+    width: calc(100% - 234px - 140px);
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+    @media (max-width: $mobile-size) {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: var(--gap-xs);
+      row-gap: var(--gap-xs);
+    }
+  }
+}

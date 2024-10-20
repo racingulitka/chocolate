@@ -61,6 +61,9 @@ export default function AccountMenu({
                 document.body.style.overflow = 'hidden';
                 break
             }
+            case 2:{
+                router.push('/account/podborki')
+            }
             case 4:{
                 router.push('/account/moi-sobitiya')
                 break
