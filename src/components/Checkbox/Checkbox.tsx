@@ -15,7 +15,7 @@ export default function Checkbox({
 }){
     return(
         <div
-            className={cn(styles.wrapper, classname)}
+            className={cn(styles.wrapper, classname, checked && styles.wrapperChecked)}
             onClick={() => setChecked()}
         >
             <div className={styles.checkContainer}>

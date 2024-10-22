@@ -176,6 +176,9 @@
           &:hover {
             cursor: pointer;
           }
+          &:hover .categoryTitle{
+            color:#2a181a;
+          }
           .categoryIcon {
             position: relative;
             width: 22px;
@@ -209,6 +212,9 @@
           justify-content: flex-start;
           align-items: center;
           gap: var(--gap-2xs);
+          &:hover p{
+            color:#2a181a;
+          }
           .instagramIconContainer {
             width: 19px;
             aspect-ratio: 1/1;

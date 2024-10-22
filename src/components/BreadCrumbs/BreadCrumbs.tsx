@@ -5,6 +5,7 @@ import arrowDown from './assets/arrowDown.svg'
 import { selectArr } from './BreadCrumbs.config'
 import Link from 'next/link'
 import useOnClickOutside from '@/utils/useOnClickOutside';
+import cn from 'classnames'
 
 export default function BreadCrumbs({
     currentPage,
@@ -24,7 +25,7 @@ export default function BreadCrumbs({
             <div className={styles.selector}>
                 <div className={styles.currentSelect} onClick={() => setSelectOpen(prev => !prev)}>
                     Клубника в шоколаде в Усть-Каменогорске
-                    <div className={styles.arrowContainer}>
+                    <div className={cn(styles.arrowContainer, isSelectOpen && styles.arrowContainerOpen)}>
                         <Image src={arrowDown} alt='arrow' fill />
                     </div>
                 </div>

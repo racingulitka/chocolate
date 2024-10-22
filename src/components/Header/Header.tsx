@@ -136,9 +136,9 @@ export default function Header({
                             className={cn(
                                 styles.sideMenuButton,
                                 pageType === PageType.main && !isWindowScrolled && styles.sideMenuButtonStartBackground
-                                )}
+                            )}
                             onClick={() => handleAccountMenuPush()}
-                            >
+                        >
                             <div className={styles.sideMenuIconSortContainer}>
                                 <Image src={sideMenuIconSort} alt='sortIcon' layout='fill' />
                             </div>
@@ -162,8 +162,12 @@ export default function Header({
                                 {
                                     categoriesArr.map(category => {
                                         return (
-                                            <div className={styles.category} key={category.id}>
-                                                <div className={styles.categoryIcon} onClick={() => category.id === 1 && setSideMenuActive(prev => !prev)}>
+                                            <div
+                                                className={styles.category}
+                                                key={category.id}
+                                                onClick={() => category.id === 1 && setSideMenuActive(prev => !prev)}
+                                            >
+                                                <div className={styles.categoryIcon}>
                                                     <Image src={category.icon} alt='category icon' layout='fill' />
                                                 </div>
                                                 <div className={cn(styles.categoryTitle)}>{category.title}</div>

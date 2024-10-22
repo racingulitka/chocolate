@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from './SideMenu.module.scss'
 import crossIcon from './assets/crossIcon.svg'
 import arrowIcon from './assets/arrowIcon.svg'
 import Image from 'next/image'
 import cn from 'classnames'
 import {motion} from 'framer-motion'
+import useOnClickOutside from '@/utils/useOnClickOutside';
+
 export default function SideMenu({
     onClose,
 }: {
@@ -44,9 +46,12 @@ export default function SideMenu({
         ]
     }
 
+    const wrapperRef = useRef<HTMLDivElement | null>(null)
     const [activeCategory, setActiveCategory] = useState<number>(1)
     const activeCategoryTitle = sideMenuData.flowersAndGifts.find(item => item.id === activeCategory)?.title
     const subcategoryArr = sideMenuData.flowersAndGifts.find(item => item.id === activeCategory)?.subcategory
+
+    useOnClickOutside(wrapperRef, () => onClose(false))
 
     return (
         <motion.div
@@ -54,6 +59,7 @@ export default function SideMenu({
             initial={{translate:'-100%'}}
             animate={{translate:0}}
             exit={{translate:'-100%'}}
+            ref={wrapperRef}
         >
             <div className={styles.side}>
                 <div className={styles.closeWrapper} onClick={() => onClose(false)}>

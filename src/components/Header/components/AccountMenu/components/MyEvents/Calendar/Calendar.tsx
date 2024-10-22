@@ -13,7 +13,7 @@ export default function Calendar({
     const currentMonth = new Date().getMonth();
     const currentDay = new Date().getDate();
 
-    const years = Array.from({ length: 5 }, (_, i) => currentYear - 1 + i);
+    const years = [currentYear, currentYear + 1];
     const daysOfWeek = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
     const months = [
         "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",

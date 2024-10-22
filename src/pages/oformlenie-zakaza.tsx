@@ -3,6 +3,7 @@ import { getIsSsrMobile } from "@/utils/isSsrMobile";
 import { GetServerSidePropsContext } from "next";
 import { PageType } from "@/components/PageLayout/PageLayout.typings";
 import React from 'react'
+import Order from "@/components/Order/Order";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
@@ -30,7 +31,7 @@ export default function Home({
         pageType={PageType.short}
       >
         <>
-
+            <Order />
         </>
       </PageLayout>
     </>

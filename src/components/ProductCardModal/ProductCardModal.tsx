@@ -138,7 +138,6 @@ export default function ProductCardModal({
                             <div className={styles.priceAndCount}>
                                 <div className={styles.priceBlock}>{props.currentPrice} <span>{currency}</span></div>
                                 <Counter
-                                    size={130}
                                     value={counterValue}
                                     onChange={handleCounter}
                                 />
@@ -168,7 +167,7 @@ export default function ProductCardModal({
                             </div>
                             <div className={styles.additionalInfo}>
                                 <div className={styles.iconWrapper}>
-                                    <Image src={bonusIcon} alt='icon' />
+                                    <Image src={bonusIcon} alt='icon' fill />
                                 </div>
                                 <div className={styles.additionalText}>Получите 88 бонусов
                                     <div className={styles.questionIconContainer}>
@@ -268,7 +267,6 @@ export default function ProductCardModal({
                     <div className={styles.rightSide}>
                         <div className={styles.counter}>
                             <Counter
-                                size={130}
                                 value={counterValue}
                                 onChange={handleCounter}
                             />

@@ -1,0 +1,136 @@
+@import "../../styles/variables.scss";
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  margin: 99px 0 0 0;
+  border-top: 1px solid #d2d2d2;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  .wrapper {
+    width: var(--contentSize);
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .leftSide {
+      padding: 50px 0 0 0;
+      width: 704px;
+      height: auto;
+      .addings {
+        width: 100%;
+        height: 201px;
+        border-bottom: 1px solid #d2d2d2;
+        .addingsTitle {
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        .addingsCards {
+          margin: 25px 0 0 0;
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 35px;
+        }
+      }
+      .deliveryDetails {
+        width: 100%;
+        height: 255px;
+        border-bottom: 1px solid #d2d2d2;
+        padding: 35px 44px 35px 0;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .deliveryTitle {
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        .deliveryBlock {
+          width: 100%;
+          height: 55px;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          align-items: center;
+          .deliveryBlockLeft {
+            width: fit-content;
+            height: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            .deliveryBlockLeftTitle {
+              color: #2c1417;
+              font-family: "Corsica LX";
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+            }
+          }
+          .deliveryBlockRight {
+            color: #383838;
+            font-family: "Corsica LX";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-decoration-line: underline;
+            cursor: pointer;
+          }
+        }
+      }
+      .getter {
+        width: 100%;
+        height: 185px;
+        border-bottom: 1px solid #d2d2d2;
+        padding: 35px 0;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .getterTitle {
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        .getterCheckBlock {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 15px;
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+      }
+    }
+    .rightSide {
+      padding: 50px 0 0 0;
+      width: calc(var(--contentSize) - 704px);
+      border: 1px solid #d2d2d2;
+      align-self: stretch;
+    }
+  }
+}
