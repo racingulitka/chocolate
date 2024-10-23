@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import styles from './AccountMenu.module.scss'
 import { motion } from 'framer-motion'
 import cross from './assets/cross.svg'
@@ -8,6 +8,7 @@ import Modal from 'react-modal'
 import Profile from './components/Profile/Profile'
 import { Account } from './AccountMenu.typings'
 import { useRouter } from 'next/router'
+import useOnClickOutside from '@/utils/useOnClickOutside';
 
 const customStyles = {
     content: {
@@ -42,6 +43,9 @@ export default function AccountMenu({
     })
 
     // const [isAuthnorized] = useState<Account | null>(null)
+    
+    const wrapperRef = useRef<HTMLDivElement | null>(null)
+    useOnClickOutside(wrapperRef, () => onClose(false))
 
     const [isModalOpen, setModalOpen] = useState<boolean>(false)
 
@@ -81,6 +85,7 @@ export default function AccountMenu({
             initial={{ translate: '100%' }}
             animate={{ translate: 0 }}
             exit={{ translate: '100%' }}
+            ref={wrapperRef}
         >
             <Modal
                 isOpen={isModalOpen}

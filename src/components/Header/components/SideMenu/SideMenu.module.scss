@@ -27,8 +27,24 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      &:hover {
-        cursor: pointer;
+      cursor:pointer;
+      &:before{
+        content:'';
+        position:absolute;
+        top:50%;
+        left:50%;
+        width:0%;
+        height:0%;
+        translate:-50% -50%;
+        background: rgba(0, 0, 0, 0.06);
+        transition:0.2s;
+        border-radius: 5px;
+
+      }
+      &:hover:before{
+        width:200%;
+        height:200%;
+        transition:0.2s;
       }
     }
     .mainTitle {

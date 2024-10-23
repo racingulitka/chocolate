@@ -155,7 +155,7 @@ export default function Header({
                             className={cn(styles.bottomBlock, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.bottomBlockStartBackground)}
                             initial={{ translateY: -50, opacity: 0, height: 0 }}
                             animate={{ translateY: 0, opacity: 1, height: 'auto' }}
-                            transition={{ duration: 0.2, ease: 'easeInOut' }}
+                            transition={{ duration: 0.5, ease: 'easeInOut' }}
                             exit={{ translateY: -50, opacity: 0, height: 0 }}
                         >
                             <div className={styles.categories}>

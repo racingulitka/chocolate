@@ -6,6 +6,7 @@ import geolocation from './assets/geolocation.svg'
 import Image from 'next/image'
 import Checkbox from '@/components/Checkbox/Checkbox'
 import faqIcon from './assets/faq.svg'
+import {motion} from 'framer-motion'
 
 export default function HomePageHero() {
 
@@ -39,9 +40,14 @@ export default function HomePageHero() {
                             <Image src={faqIcon} alt='faq' fill />
                             {
                                 isFaq &&
-                                <div className={styles.tooltip}>
+                                <motion.div
+                                    className={styles.tooltip}
+                                    initial={{opacity:0}}
+                                    animate={{opacity:1}}
+                                    transition={{duration:0.3}}
+                                >
                                     Мы сами свяжемся с получателем и организуем доставку. После этого вам автоматически придет счёт на доплату за нее.
-                                </div>
+                                </motion.div>
                             }
                         </div>
                     </div>

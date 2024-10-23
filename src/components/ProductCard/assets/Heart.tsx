@@ -7,7 +7,7 @@ export default function Heart({
     isFavourite:boolean,
 }) {
 
-    const color = isFavourite ? '#FF0000' : '#AAAAAA'
+    const color = isFavourite ? '#e2264d' : '#AAAAAA'
 
     return (
         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.heart}>

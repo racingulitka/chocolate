@@ -21,8 +21,9 @@
       height: auto;
       .addings {
         width: 100%;
-        height: 201px;
+        height: /*201px*/ auto;
         border-bottom: 1px solid #d2d2d2;
+        padding: 0 0 35px 0;
         .addingsTitle {
           color: #2c1417;
           font-family: "Corsica LX";
@@ -40,6 +41,69 @@
           justify-content: flex-start;
           align-items: flex-start;
           gap: 35px;
+        }
+        .addingsTextBlock {
+          margin: 35px 0 0 0;
+          width: 100%;
+          height: auto;
+          padding: 0 25px 0 0;
+          .textHeader {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            .textHeaderTitle {
+              color: #2c1417;
+              font-family: "Corsica LX";
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+            }
+            .textHeaderRightBlock {
+              width: fit-content;
+              height: auto;
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              gap: 5px;
+              .signs {
+                color: #ababab;
+                font-family: "Corsica LX";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+              }
+              .editContainer {
+                width: 14px;
+                height: 14px;
+                margin: 1px 0 0 0;
+                position: relative;
+              }
+            }
+          }
+          .addingsTextInput {
+            margin:15px 0 0 0;
+            width: 100%;
+            height: 104px;
+            padding: 15px 20px;
+            color: #2c1417;
+            font-family: "Corsica LX";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border-radius: 10px;
+            border: 1px solid #ababab;
+            background: transparent;
+            resize: none;
+            &::placeholder {
+              color: #a7a7a7;
+            }
+          }
         }
       }
       .deliveryDetails {

@@ -70,7 +70,6 @@ export default function HomePageSlider({
                                             width: `${slideWidth}px`,
                                             height: `${slideWidth}px`,
                                             left: isMobile? '0px' : `${index * slideOffset + gap + sliderShift}px`,
-                                            transition: '0.5s ease-in-out',
                                             position:isMobile ? 'relative' : 'absolute'
                                         }}
                                         href={`/categories/${slide.slug}`}
