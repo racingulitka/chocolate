@@ -6,8 +6,8 @@ import { initReactI18next } from "react-i18next";
 import {resources} from '@/services/resources'
 
 interface ContextType {
-  currency: number;
-  setCurrency: React.Dispatch<React.SetStateAction<number>>;
+  currency: number,
+  setCurrency: React.Dispatch<React.SetStateAction<number>>,
 }
 
 export const context = createContext<ContextType>({

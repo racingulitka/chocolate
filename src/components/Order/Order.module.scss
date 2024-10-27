@@ -82,11 +82,14 @@
                 height: 14px;
                 margin: 1px 0 0 0;
                 position: relative;
+                &:focus-visible {
+                  outline: none;
+                }
               }
             }
           }
           .addingsTextInput {
-            margin:15px 0 0 0;
+            margin: 15px 0 0 0;
             width: 100%;
             height: 104px;
             padding: 15px 20px;
@@ -189,12 +192,351 @@
           line-height: normal;
         }
       }
+      .payWith {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #d2d2d2;
+        padding: 35px 0;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .payWithTitle {
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        .creditCard {
+          width: 679px;
+          height: 55px;
+          margin: 25px 0 0 0;
+          border-radius: 7px;
+          border: 1px solid #ababab;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 0 0 0 26px;
+          gap: 20px;
+          .creditCardImageContainer {
+            width: 40px;
+            height: 40px;
+            position: relative;
+          }
+          .creditCardText {
+            color: #2c1417;
+            font-family: "Corsica LX";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+        }
+        .creditCardInfo {
+          margin: 20px 0 0 0;
+          width: 679px;
+          height: auto;
+          border-radius: 7px;
+          border: 1px solid #ababab;
+          .cardNumber {
+            width: 100%;
+            height: 55px;
+            position: relative;
+            border-bottom: 1px solid #ababab;
+            &:focus-within .cardNumberTooltip {
+              top: 10px;
+              left: 20px;
+              font-size: 12px;
+              transition: 0.2s;
+              .lockIconContainer {
+                width: 16px;
+                height: 16px;
+              }
+            }
+            .cardNumberInput {
+              width: 100%;
+              height: 100%;
+              background: none;
+              border: none;
+              padding: 10px 0 0 20px;
+              color: #898989;
+              font-family: "Geometria";
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              &::placeholder {
+                opacity: 0;
+                transition: 0.2s;
+              }
+              &:focus-visible {
+                outline: none;
+              }
+              &:focus-visible::placeholder {
+                transition: 0.2s;
+                opacity: 1;
+              }
+            }
+            .cardNumberTooltip {
+              transition: 0.2s;
+              position: absolute;
+              top: 50%;
+              left: 20px;
+              translate: 0 -50%;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 10px;
+              color: #898989;
+              font-family: "Corsica LX";
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              .lockIconContainer {
+                width: 20px;
+                height: 20px;
+                position: relative;
+              }
+              &Fill{
+                top: 10px;
+                left: 20px;
+                font-size: 12px;
+              }
+            }
+          }
+          .cardHolder {
+            width: 100%;
+            height: 55px;
+            position: relative;
+            border-bottom: 1px solid #ababab;
+            &:focus-within .cardHolderTooltip {
+              top: 10px;
+              left: 20px;
+              font-size: 12px;
+              transition: 0.2s;
+            }
+            .cardHolderInput {
+              width: 100%;
+              height: 100%;
+              background: none;
+              border: none;
+              padding: 10px 0 0 20px;
+              color: #898989;
+              font-family: "Corsica LX";
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              &::placeholder {
+                opacity: 0;
+                transition: 0.2s;
+              }
+              &:focus-visible {
+                outline: none;
+              }
+              &:focus-visible::placeholder {
+                transition: 0.2s;
+                opacity: 1;
+              }
+            }
+            .cardHolderTooltip {
+              transition: 0.2s;
+              position: absolute;
+              top: 50%;
+              left: 20px;
+              translate: 0 -50%;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 10px;
+              color: #898989;
+              font-family: "Corsica LX";
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              &Fill{
+                top: 10px;
+                left: 20px;
+                font-size: 12px;
+              }
+            }
+          }
+          .bottomInputsBlock {
+            width: 100%;
+            height: 55px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .cardExpDate {
+              width: 301px;
+              height: 100%;
+              border-right: 1px solid #ababab;
+              position: relative;
+              &:focus-within .cardExpDateTooltip {
+                top: 10px;
+                left: 20px;
+                font-size: 12px;
+                transition: 0.2s;
+              }
+              .cardExpDateInput {
+                width: 100%;
+                height: 100%;
+                background: none;
+                border: none;
+                padding: 10px 0 0 20px;
+                color: #898989;
+                font-family: "Corsica LX";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                &::placeholder {
+                  opacity: 0;
+                  transition: 0.2s;
+                }
+                &:focus-visible {
+                  outline: none;
+                }
+                &:focus-visible::placeholder {
+                  transition: 0.2s;
+                  opacity: 1;
+                }
+              }
+              .cardExpDateTooltip {
+                transition: 0.2s;
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                translate: 0 -50%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+                color: #898989;
+                font-family: "Corsica LX";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                &Fill{
+                  top: 10px;
+                  left: 20px;
+                  font-size: 12px;
+                }
+              }
+            }
+            .cardCvv {
+              flex: 1 0 auto;
+              height: 100%;
+              position: relative;
+              &:focus-within .cardCvvTooltip {
+                top: 10px;
+                left: 20px;
+                font-size: 12px;
+                transition: 0.2s;
+              }
+              .cardCvvInput {
+                width: 100%;
+                height: 100%;
+                background: none;
+                border: none;
+                padding: 10px 0 0 20px;
+                color: #898989;
+                font-family: "Corsica LX";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                &::placeholder {
+                  opacity: 0;
+                  transition: 0.2s;
+                }
+                &:focus-visible {
+                  outline: none;
+                }
+                &:focus-visible::placeholder {
+                  transition: 0.2s;
+                  opacity: 1;
+                }
+              }
+              .cardCvvTooltip {
+                transition: 0.2s;
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                translate: 0 -50%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+                color: #898989;
+                font-family: "Corsica LX";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                text-decoration: underline;
+                &Fill{
+                  top: 10px;
+                  left: 20px;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+        .rememberCard {
+          margin: 25px 0 0 0;
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 15px;
+        }
+      }
+      .freeOrderCancel {
+        width: 100%;
+        height: auto;
+        padding: 35px 0;
+        &Title {
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        &Text {
+          margin:15px 0 0 0;
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          & span {
+            font-weight: 700;
+          }
+        }
+      }
     }
     .rightSide {
-      padding: 50px 0 0 0;
+      padding: 50px 14px 0 14px;
       width: calc(var(--contentSize) - 704px);
-      border: 1px solid #d2d2d2;
+      border-left: 1px solid #d2d2d2;
+      border-right: 1px solid #d2d2d2;
+      border-bottom: 1px solid #d2d2d2;
       align-self: stretch;
+      .goodsArea{
+        width:100%;
+        border-bottom: 1px solid #d2d2d2;
+
+      }
     }
   }
 }

@@ -4,4 +4,133 @@
   padding: 44px 66px;
   border-radius: 20px;
   background: #fff;
+  .title {
+    color: #2a181a;
+    font-family: "Corsica LX";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .timeZone {
+    margin: 15px 0 0 0;
+    color: #000;
+    font-family: "Corsica LX";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .checkboxes {
+    margin: 36px 0 0 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+    .wayWrapper {
+      width: 100%;
+      .wayHeader {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .way {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 15px;
+          cursor: pointer;
+          .wayTitle {
+            color: #2a181a;
+            font-family: "Corsica LX";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+        }
+        .wayHeaderRight {
+          color: #000;
+          font-family: "Corsica LX";
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+      .dateTimeSet {
+        margin: 25px 0 0 0;
+        width: 100%;
+        height: auto;
+        .daySet {
+          width: 100%;
+          height: auto;
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          column-gap: 10px;
+          .dayContainer {
+            width: 100%;
+            height: 80px;
+            border-radius: 7px;
+            border: 0.5px solid #898989;
+            cursor: pointer;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            &Selected {
+              background: #383838;
+              border: 0.5px solid transparent;
+            }
+            .weekday {
+              color: #383838;
+              font-family: "Corsica LX";
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              &Selected {
+                color: #fff;
+              }
+            }
+            .date {
+              color: #383838;
+              font-family: "Corsica LX";
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+              &Selected {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .save {
+    margin:36px 0 0 0;
+    display: flex;
+    width: 160px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #383838;
+    color: #fff;
+    font-family: "Corsica LX";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor:pointer;
+    &:hover{
+        opacity:0.9;
+    }
+  }
 }

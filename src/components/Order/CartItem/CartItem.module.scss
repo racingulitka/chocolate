@@ -1,0 +1,35 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 0 25px 0;
+  gap:18px;
+  .imageContainer {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .rightSide {
+    width:204px;
+    overflow-x: hidden;
+
+    .title {
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      white-space: nowrap;
+    }
+    .counterBlock{
+        width:100%;
+        height:auto;
+        margin:15px 0 0 0;
+    }
+  }
+}
