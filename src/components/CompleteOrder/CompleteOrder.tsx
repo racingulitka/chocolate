@@ -64,7 +64,7 @@ export default function CompleteOrder() {
                     {
                         orderStages.map(item => {
                             return (
-                                <React.Fragment>
+                                <React.Fragment key={item.id}>
                                     <div className={cn(styles.line, activeStage < item.id && styles.lineUncomplete)}></div>
                                     <div className={styles.stage}>
                                         <div className={styles.iconContainer}>
