@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styles from './CartItem.module.scss'
 import { ProductCard } from '@/components/ProductCard/ProductCard.typings'
 import Image from 'next/image'
 import CartCounter from './CartCounter/CartCounter'
+import { context } from '@/pages/_app'
+import { CurrencyArr } from '@/components/FooterHeaderSelect/FooterHeaderSelect.typings'
+import { currencyArr } from '@/components/FooterHeaderSelect/FooterHeaderSelect.config'
 
 export default function CartItem({
     data,
@@ -19,6 +22,9 @@ export default function CartItem({
     const handleChange = (operator:boolean) => {
         onChange(index, operator)
     }
+
+    const { currency, setCurrency } = useContext(context);
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.imageContainer}>
@@ -31,6 +37,7 @@ export default function CartItem({
                         value={value}
                         onChange={handleChange}
                     />
+                    <div className={styles.counterPrice}>{data.currentPrice * value} <span>{currencyArr.find(item => item.id === currency)?.title || 'USD'}</span></div>
                 </div>
             </div>
         </div>

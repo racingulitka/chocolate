@@ -15,6 +15,8 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+    position:relative;
+    padding:0 0 35px 0;
     .leftSide {
       padding: 50px 0 0 0;
       width: 704px;
@@ -300,7 +302,7 @@
                 height: 20px;
                 position: relative;
               }
-              &Fill{
+              &Fill {
                 top: 10px;
                 left: 20px;
                 font-size: 12px;
@@ -358,7 +360,7 @@
               font-style: normal;
               font-weight: 600;
               line-height: normal;
-              &Fill{
+              &Fill {
                 top: 10px;
                 left: 20px;
                 font-size: 12px;
@@ -422,7 +424,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: normal;
-                &Fill{
+                &Fill {
                   top: 10px;
                   left: 20px;
                   font-size: 12px;
@@ -480,7 +482,7 @@
                 font-weight: 600;
                 line-height: normal;
                 text-decoration: underline;
-                &Fill{
+                &Fill {
                   top: 10px;
                   left: 20px;
                   font-size: 12px;
@@ -512,7 +514,7 @@
           line-height: normal;
         }
         &Text {
-          margin:15px 0 0 0;
+          margin: 15px 0 0 0;
           color: #2c1417;
           font-family: "Corsica LX";
           font-size: 16px;
@@ -525,17 +527,181 @@
         }
       }
     }
-    .rightSide {
-      padding: 50px 14px 0 14px;
+    .rightContainer {
       width: calc(var(--contentSize) - 704px);
-      border-left: 1px solid #d2d2d2;
-      border-right: 1px solid #d2d2d2;
-      border-bottom: 1px solid #d2d2d2;
       align-self: stretch;
-      .goodsArea{
+      border-left: 1px solid #d2d2d2;
+      position:sticky;
+      top:0;
+      .rightSide {
         width:100%;
-        border-bottom: 1px solid #d2d2d2;
-
+        padding: 50px 14px 0 14px;
+        position:sticky;
+        top:0;
+        .goodsArea {
+          width: 100%;
+          border-bottom: 1px solid #d2d2d2;
+        }
+        .promoBlock {
+          width: 100%;
+          border-bottom: 1px solid #d2d2d2;
+          padding: 25px 0;
+          color: #383838;
+          font-family: "Corsica LX";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-decoration-line: underline;
+          cursor: pointer;
+          user-select: none;
+        }
+        .detailsBlock {
+          width: 100%;
+          padding: 25px 0 15px 0;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 15px;
+          border-bottom: 1px solid #d2d2d2;
+          .detailsBlockTitle {
+            color: #2c1417;
+            font-family: "Corsica LX";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+          .preSumm {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .preSummTitle {
+              color: #2c1417;
+              font-family: "Corsica LX";
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+            }
+            .preSummValue {
+              color: #2c1417;
+              font-family: "Geometria";
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              & span {
+                font-family: "Corsica LX";
+              }
+            }
+          }
+          .taxChocolate {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .taxChocolateTitleBlock {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 7px;
+              color: #2c1417;
+              font-family: "Corsica LX";
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+              .questionIconContainer {
+                width: 15px;
+                height: 15px;
+                position: relative;
+                cursor: pointer;
+              }
+            }
+          }
+          .deliveryBlock {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .deliveryTitle {
+              color: #2c1417;
+              font-family: "Corsica LX";
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+            }
+            .deliveryCost {
+              color: #2c1417;
+              font-family: "Corsica LX";
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+          }
+          .total {
+            width: 100%;
+            color: #2c1417;
+            font-family: "Corsica LX";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .totalValue {
+              color: #2c1417;
+              font-family: "Geometria";
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+            }
+          }
+        }
+        .bonus {
+          width: 100%;
+          padding: 15px 0 0 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .bonusTitle {
+            color: #2c1417;
+            font-family: "Corsica LX";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+          .bonusValueBlock {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 7px;
+            .bonusIcon {
+              width: 16px;
+              height: 16px;
+              position: relative;
+            }
+            .bonusValue {
+              color: #2c1417;
+              font-family: "Geometria";
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+            }
+          }
+        }
       }
     }
   }

@@ -1,0 +1,91 @@
+.wrapper {
+  width: var(--contentSize);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 115px 0 0 0;
+  .mainRectangle {
+    margin: 0 0 45px 0;
+    background: #fff;
+    width: 100%;
+    padding: 35px 50px 165px;
+    .header {
+      width: 100%;
+      padding: 0 0 30px 0;
+      border-bottom: 1.5px solid #cfcfcf;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .order {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        .checkIconContainer {
+          width: 35px;
+          height: 35px;
+          position: relative;
+        }
+        .info {
+          width: fit-content;
+          .orderTitle {
+            width: fit-content;
+            color: #2c1417;
+            font-family: "Corsica LX";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+          .orderNumber {
+            width: fit-content;
+            margin: 2px 0 0 0;
+            color: #505050;
+            text-align: right;
+            font-family: "Geometria";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+        }
+      }
+      .line {
+        width: 66px;
+        height: 3px;
+        background-color: #2c1417;
+        border-radius: 2px;
+        &Uncomplete {
+          background: linear-gradient(
+            to right,
+            #2c1417 0% 50%,
+            #898989 50% 100%
+          );
+        }
+      }
+      .stage {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        .iconContainer {
+          width: 25px;
+          height: 25px;
+          position: relative;
+        }
+        .stageTitle {
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          &Uncomplete {
+            color: #898989;
+          }
+        }
+      }
+    }
+  }
+}

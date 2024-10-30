@@ -1,0 +1,20 @@
+.wrapper {
+  width: 100%;
+  height: 47px;
+  border-radius: 5px;
+  border: 1.5px solid #898989;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2a181a;
+  font-family: "Corsica LX";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor:pointer;
+  background: none;
+  &:hover{
+    opacity: 0.9;
+  }
+}

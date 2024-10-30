@@ -1,0 +1,30 @@
+.wrapper {
+  width: fit-content;
+  height: auto;
+  color: #2a181a;
+  font-family: "Corsica LX";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  .title {
+    color: #2c1417;
+    font-weight: 600;
+  }
+  .items {
+    margin:15px 0 0 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    .orderItem {
+      color: #2a181a;
+      font-family: "Corsica LX";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+}

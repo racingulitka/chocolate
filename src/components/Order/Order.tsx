@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import styles from './Order.module.scss'
 import { CardType } from './Card/Card.typings'
 import Card from './Card/Card'
@@ -19,6 +19,11 @@ import { goodsArr } from '@/pages'
 import CartItem from './CartItem/CartItem'
 import { ProductCard } from '../ProductCard/ProductCard.typings'
 import cn from 'classnames'
+import { context } from '@/pages/_app'
+import { CurrencyArr } from '@/components/FooterHeaderSelect/FooterHeaderSelect.typings'
+import { currencyArr } from '@/components/FooterHeaderSelect/FooterHeaderSelect.config'
+import questionIcon from './assets/questionIcon.svg'
+import bonusIcon from './assets/bonusIcon.svg'
 
 const customStyles = {
     content: {
@@ -38,7 +43,11 @@ const customStyles = {
     }
 };
 
-export default function Order() {
+export default function Order({
+    changeScreen,
+}:{
+    changeScreen:(id:number) => void,
+}) {
 
     const [cardsArr] = useState<CardType[]>([
         {
@@ -62,10 +71,6 @@ export default function Order() {
             setSelectedAddings([...selectedAddings, id])
         }
     }
-
-    useEffect(() => {
-        console.log(selectedAddings)
-    }, [selectedAddings])
 
     const [isGetYourself, setGetYourself] = useState<boolean>(false)
     const handleGetYourself = () => {
@@ -155,7 +160,7 @@ export default function Order() {
         setCardRemember(prev => !prev)
     }
 
-    const cardFillExample = goodsArr.filter(item => item.id === 1)[0].goodsCard.filter(item => item.id === 1 || item.id === 2)
+    const cardFillExample = goodsArr.filter(item => item.id === 1)[0].goodsCard.filter(item => item.id === 1 || item.id === 2 || item.id === 3 || item.id === 4)
     const [cartFill, setCartFill] = useState<{ good: ProductCard, value: number }[]>([
         {
             good: cardFillExample[0],
@@ -164,7 +169,15 @@ export default function Order() {
         {
             good: cardFillExample[1],
             value: 1
-        }
+        },
+        {
+            good: cardFillExample[2],
+            value: 1
+        },
+        {
+            good: cardFillExample[3],
+            value: 1
+        },
     ])
 
     const handleChangeCartValue = (index: number, operator: boolean) => {
@@ -176,6 +189,18 @@ export default function Order() {
             )
         );
     }
+
+    const { currency, setCurrency } = useContext(context);
+    const [poditog, setPoditog] = useState<number>(0)
+    useEffect(() => {
+        setPoditog(cartFill.reduce((acc, current) => {
+            return acc + current.good.currentPrice * current.value
+        }, 0))
+    }, [cartFill])
+
+    const [deliveryCost, setDeliveryCost] = useState<number>(0)
+    const [taxChocolate, setTaxChocolate] = useState<number>(0)
+
 
     return (
         <div className={styles.mainWrapper}>
@@ -219,7 +244,7 @@ export default function Order() {
                             }
                         </div>
                         {
-                            selectedAddings.length > 0 &&
+                            selectedAddings.some(item => item === 1) &&
                             <div className={styles.addingsTextBlock}>
                                 <div className={styles.textHeader}>
                                     <div className={styles.textHeaderTitle}>Напишите текст открытки</div>
@@ -367,22 +392,61 @@ export default function Order() {
                             <span>2200 ₸</span> На вашей карте будут заморожены и спишутся только после доставки. Вы можете отменить заказ в любое время, пока курьер не назначен на доставку, ― вам вернутся 100% стоимости.
                         </div>
                     </div>
+                    <button className={styles.complete} onClick={() => changeScreen(2)}>Complete</button>
                 </div>
-                <div className={styles.rightSide}>
-                    <div className={styles.goodsArea}>
-                        {
-                            cartFill.map((item, index) => {
-                                return (
-                                    <CartItem
-                                        data={item.good}
-                                        value={item.value}
-                                        key={index}
-                                        index={index}
-                                        onChange={handleChangeCartValue}
-                                    />
-                                )
-                            })
-                        }
+                <div className={styles.rightContainer}>
+                    <div className={styles.rightSide}>
+                        <div className={styles.goodsArea}>
+                            {
+                                cartFill.map((item, index) => {
+                                    return (
+                                        <CartItem
+                                            data={item.good}
+                                            value={item.value}
+                                            key={index}
+                                            index={index}
+                                            onChange={handleChangeCartValue}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
+                        <div className={styles.promoBlock}>Промокод или карта лояльности</div>
+                        <div className={styles.detailsBlock}>
+                            <div className={styles.detailsBlockTitle}>Детали цены</div>
+                            <div className={styles.preSumm}>
+                                <div className={styles.preSummTitle}>Подытог</div>
+                                <div className={styles.preSummValue}>
+                                    {poditog} <span>{currencyArr.find(item => item.id === currency)?.title || 'USD'}</span>
+                                </div>
+                            </div>
+                            <div className={styles.taxChocolate}>
+                                <div className={styles.taxChocolateTitleBlock}>
+                                    Сбор “В шоколаде”
+                                    <div className={styles.questionIconContainer}>
+                                        <Image src={questionIcon} alt='icon' fill />
+                                    </div>
+                                </div>
+                                <div className={styles.taxChocolateValue}>0 <span>{currencyArr.find(item => item.id === currency)?.title || 'USD'}</span></div>
+                            </div>
+                            <div className={styles.deliveryBlock}>
+                                <div className={styles.deliveryTitle}>Доставка</div>
+                                <div className={styles.deliveryCost}>Уточним</div>
+                            </div>
+                            <div className={styles.total}>
+                                <div className={styles.totalTitle}>Итого</div>
+                                <div className={styles.totalValue}>{poditog + taxChocolate + deliveryCost} <span>{currencyArr.find(item => item.id === currency)?.title || 'USD'}</span></div>
+                            </div>
+                        </div>
+                        <div className={styles.bonus}>
+                            <div className={styles.bonusTitle}>Вы получите бонусов</div>
+                            <div className={styles.bonusValueBlock}>
+                                <div className={styles.bonusIcon}>
+                                    <Image src={bonusIcon} alt='bonus' fill />
+                                </div>
+                                <div className={styles.bonusValue}>66</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

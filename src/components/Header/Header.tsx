@@ -152,7 +152,7 @@ export default function Header({
                     {
                         (!isWindowScrolled || isMobile) && pageType !== PageType.short &&
                         <motion.div
-                            className={cn(styles.bottomBlock, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.bottomBlockStartBackground)}
+                            className={cn(styles.bottomBlock/*, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.bottomBlockStartBackground*/)}
                             initial={{ translateY: -50, opacity: 0, height: 0 }}
                             animate={{ translateY: 0, opacity: 1, height: 'auto' }}
                             transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -163,7 +163,7 @@ export default function Header({
                                     categoriesArr.map(category => {
                                         return (
                                             <div
-                                                className={styles.category}
+                                                className={cn(styles.category)}
                                                 key={category.id}
                                                 onClick={() => category.id === 1 && setSideMenuActive(prev => !prev)}
                                             >

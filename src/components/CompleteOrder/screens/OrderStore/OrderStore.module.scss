@@ -1,0 +1,32 @@
+.wrapper {
+  margin: 45px 0 0 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  .leftSide {
+    width: fit-content;
+    height: auto;
+    .title {
+      color: #2c1417;
+      font-family: "Corsica LX";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .orderInfo{
+        margin:35px 0 0 0;
+    }
+  }
+  .rightSide{
+    width:258px;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:15px;
+  }
+}
