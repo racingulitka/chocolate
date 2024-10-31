@@ -1,0 +1,23 @@
+.wrapper {
+  margin: 115px 0 0 0;
+  width:var(--contentSize);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:10px;
+  .main {
+    color: #383838;
+    font-family: 'Corsica LX';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    cursor:pointer;
+  }
+  .arrowContainer{
+    position:relative;
+    width:5px;
+    height:10px;
+  }
+}

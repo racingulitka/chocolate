@@ -40,6 +40,11 @@ export const authnorizedArr = [
         icon:ReferalIcon,
         title:'Управление рассылками',
     },
+    {
+        id:7,
+        icon:HelpIcon,
+        title:'Помощь',
+    },
 ]
 
 export const unauthnorizedArr = [

@@ -22,7 +22,7 @@ export const footerCategories = [
             {
                 id:1,
                 title:'FAQ',
-                link:'#',
+                link:'/help',
             },
             {
                 id:2,

@@ -1,0 +1,99 @@
+.wrapper {
+  width: var(--contentSize);
+  margin: 35px 0 0 0;
+  .searchBlock {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    margin: 0 0 35px 0;
+    .searchInput {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: #e9e9e9;
+      border: none;
+      color: #000;
+      font-family: "Corsica LX";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 0 0 74px;
+      &::placeholder {
+        font-size: 16px;
+        color: #636363;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .searchIconContainer {
+      width: 39px;
+      height: 39px;
+      position: absolute;
+      top: 50%;
+      left: 25px;
+      translate: 0 -50%;
+    }
+  }
+  .content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .leftSide {
+      width: 332px;
+      height: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 15px;
+      .chapterBlock {
+        width: 100%;
+        height: auto;
+        .chapterTitle {
+          width: 100%;
+          height: auto;
+          color: #2c1417;
+          font-family: "Corsica LX";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          cursor: pointer;
+        }
+        .chapterArticles {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 10px 0 0 25px;
+          .articleTitle {
+            color: #5d5d5d;
+            font-family: "Corsica LX";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            cursor:pointer;
+            &Active{
+                color: #4B2D2B;
+            }
+          }
+        }
+      }
+    }
+    .rightSide {
+      width: 613px;
+      height: auto;
+    }
+  }
+}

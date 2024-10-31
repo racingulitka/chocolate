@@ -76,6 +76,10 @@ export default function AccountMenu({
                 router.push('/account/upravlenie-rassilkami')
                 break
             }
+            case 7:{
+                router.push('/help')
+                break
+            }
         }
     }
 
