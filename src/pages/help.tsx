@@ -25,6 +25,36 @@ export default function Home({
     {
       id:1,
       chapterTitle:'Частые вопросы',
+      articles:[
+        {
+          id:1,
+          articleTitle:'Как зарегистрироваться и разместить свои товары?',
+        },
+        {
+          id:2,
+          articleTitle:'Как оформить заказ?',
+        },
+        {
+          id:3,
+          articleTitle:'Какой статус у моего заказа?',
+        },
+        {
+          id:4,
+          articleTitle:'Как можно оплатить заказ?',
+        },
+        {
+          id:5,
+          articleTitle:'Когда смогут доставить?',
+        },
+        {
+          id:6,
+          articleTitle:'Участвуете ли вы в благотворительности?',
+        },
+        {
+          id:7,
+          articleTitle:'Проблема с авторизацией',
+        },
+      ]
     },
     {
       id:2,
@@ -37,7 +67,24 @@ export default function Home({
         {
           id:1,
           articleTitle:'Возможна доставка на ближайшее время?',
-        }
+          articleText:'Среди товаров, представленных на Flowwow, всегда есть те, которые могут быть доставлены в максимально короткие сроки — от 30 минут с момента оформления заказа. Чтобы увидеть только такие товары, воспользуйтесь фильтрами «Менее 90 мин.» или «Уже собран».'
+        },
+        {
+          id:2,
+          articleTitle:'Сколько стоит доставка?',
+        },
+        {
+          id:3,
+          articleTitle:'Когда смогут доставить?',
+        },
+        {
+          id:4,
+          articleTitle:'Можно доставить к точному времени?',
+        },
+        {
+          id:5,
+          articleTitle:'Все вопросы...',
+        },
       ]
     },
     {
@@ -61,6 +108,29 @@ export default function Home({
       chapterTitle:'Больше полезного',
     },
   ])
+
+  const popularQuestions = [
+    {
+      id:1,
+      chapterId:3,
+      articleId:2,
+    },
+    {
+      id:2,
+      chapterId:3,
+      articleId:3,
+    },
+    {
+      id:3,
+      chapterId:1,
+      articleId:3,
+    },
+    {
+      id:4,
+      chapterId:1,
+      articleId:1,
+    },
+  ]
 
   const isMobile = isSSRMobile
 
@@ -90,6 +160,7 @@ export default function Home({
           helpArr={helpArr}
           setCurrent={handleChapterSelect}
           activeChapter={currentChapterId}
+          popularQuestions={popularQuestions}
         />
       </PageLayout>
     </>
