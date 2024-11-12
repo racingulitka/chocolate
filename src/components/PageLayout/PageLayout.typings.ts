@@ -3,4 +3,5 @@ export enum PageType{
     blog='blog',
     slug='slug',
     short='short',
+    events='events',
 }

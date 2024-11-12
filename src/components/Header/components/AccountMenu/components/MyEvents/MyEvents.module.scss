@@ -3,6 +3,9 @@
 .wrapper {
   width: 889px;
   height: auto;
+  @media(max-width:$mobile-size){
+    width:100%;
+  }
   .main {
     margin:115px 0 65px 0;
     width: 100%;
@@ -18,6 +21,9 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: flex-end;
+      @media(max-width:$mobile-size){
+        display:none;
+      }
       .selector {
         width: fit-content;
         height: auto;

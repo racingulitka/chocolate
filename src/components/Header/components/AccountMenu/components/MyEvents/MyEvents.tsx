@@ -27,9 +27,13 @@ const customStyles = {
     }
 };
 
-export default function MyEvents() {
+export default function MyEvents({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
 
-    const [activeScreen, setActiveScreen] = useState<number>(1); // Изначально календарь
+    const [activeScreen, setActiveScreen] = useState<number>(isMobile ? 2 : 1); // Изначально календарь
     const [isLoading, setIsLoading] = useState<boolean>(true); // Загрузка данных
     const [isModalOpen, setModalOpen] = useState<ModalType | null>(null); // Состояние модального окна
     //const [eventsArr] = useState<Event[] | null>(null)

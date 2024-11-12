@@ -28,9 +28,9 @@ export default function Home({
         isMobile={isMobile}
         title='Главная'
         description='description'
-        pageType={PageType.short}
+        pageType={isMobile ? PageType.slug : PageType.short}
       >
-        <MyEvents />
+        <MyEvents isMobile={isMobile}/>
       </PageLayout>
     </>
   );
