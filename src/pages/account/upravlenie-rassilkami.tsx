@@ -30,7 +30,7 @@ export default function Home({
         description='description'
         pageType={PageType.short}
       >
-        <MailingManage/>
+        <MailingManage isMobile={isMobile}/>
       </PageLayout>
     </>
   );

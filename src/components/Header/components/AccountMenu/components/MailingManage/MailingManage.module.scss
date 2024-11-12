@@ -4,6 +4,10 @@
   width: var(--contentSize);
   height: auto;
   padding: 130px 0 0 0;
+  @media (max-width: $mobile-size) {
+    width: 100%;
+    padding: 75px 10px 0 10px;
+  }
   .title {
     color: #2c1417;
     font-family: "Corsica LX";
@@ -11,6 +15,9 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    @media (max-width: $mobile-size) {
+      font-size: 22px;
+    }
   }
   .subtitle {
     color: #2c1417;
@@ -20,9 +27,15 @@
     font-weight: 400;
     line-height: normal;
     margin: 20px 0 0 0;
+    @media (max-width: $mobile-size) {
+      margin: 12px 0 0 0;
+    }
   }
   .categoriesBlock {
     margin: 50px 0 0 0;
+    @media(max-width:$mobile-size){
+      margin:25px 0 0 0;
+    }
     .categoryBlock {
       margin: 0 0 60px 0;
       .categoryTitle {
@@ -32,6 +45,9 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          font-size: 18px;
+        }
       }
       .categoryDescription {
         margin: 10px 0 0 0;
@@ -41,6 +57,9 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          width:235px;
+        }
       }
       .radioBlock {
         width: min(909px, 100%);
@@ -59,6 +78,9 @@
         line-height: normal;
         &:first-child {
           padding: 35px 44px 25px 0;
+        }
+        @media(max-width:$mobile-size){
+          padding:25px 0;
         }
         .radioWrapper {
           display: flex;
