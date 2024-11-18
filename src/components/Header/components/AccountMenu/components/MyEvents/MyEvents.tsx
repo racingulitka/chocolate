@@ -8,6 +8,9 @@ import NewEventScreen from './NewEventScreen/NewEventScreen';
 import Modal from 'react-modal';
 import AddEvent from './AddEvent/AddEvent';
 import { ModalType } from './AddEvent/AddEvent.typings';
+import Image from 'next/image';
+import arrowLeft from './assets/arrowLeft.svg'
+import { useRouter } from 'next/router';
 
 const customStyles = {
     content: {
@@ -29,10 +32,11 @@ const customStyles = {
 
 export default function MyEvents({
     isMobile,
-}:{
-    isMobile:boolean,
+}: {
+    isMobile: boolean,
 }) {
 
+    const router = useRouter()
     const [activeScreen, setActiveScreen] = useState<number>(isMobile ? 2 : 1); // Изначально календарь
     const [isLoading, setIsLoading] = useState<boolean>(true); // Загрузка данных
     const [isModalOpen, setModalOpen] = useState<ModalType | null>(null); // Состояние модального окна
@@ -113,12 +117,24 @@ export default function MyEvents({
                     selectedDate={selectedDate}
                     modalType={isModalOpen}
                     selectedEvent={selectedEvent}
+                    isMobile={isMobile}
                 />
             </Modal>
-
             {
                 activeScreen !== 3 ? (
                     <div className={styles.main}>
+                        {
+                            isMobile &&
+                            <div className={styles.mobileNav}>
+                                Мои события
+                                <div
+                                    className={styles.arrowContainer}
+                                    onClick={() => {router.back()}}
+                                >
+                                    <Image src={arrowLeft} alt='arrow' fill />
+                                </div>
+                            </div>
+                        }
                         <div className={styles.header}>
                             <div className={styles.selector}>
                                 {[
@@ -185,6 +201,15 @@ export default function MyEvents({
                                 )}
                             </div>
                         </div>
+                        {
+                            isMobile &&
+                            <button
+                                className={styles.mobileButton}
+                                onClick={() => setModalOpen(ModalType.add)} // Открываем модальное окно для добавления события
+                            >
+                                Добавить событие
+                            </button>
+                        }
                     </div>
                 ) : (
                     <NewEventScreen

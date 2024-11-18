@@ -9,6 +9,10 @@
   border-bottom: 1px solid #d8d8d8;
   border-left: 10px solid #d8d8d8;
   padding: 15px 10px 15px 25px;
+  @media(max-width:$mobile-size){
+    width:100%;
+    padding:10px 10px 10px 25px;
+  }
   .topBlock {
     width: 100%;
     height: auto;

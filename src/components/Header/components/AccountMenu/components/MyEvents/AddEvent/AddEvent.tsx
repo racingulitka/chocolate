@@ -8,17 +8,20 @@ import { phoneMask } from '@/utils/phoneMask'
 import { EventType } from '../MyEvents.typings'
 import { Inputs, ModalType } from './AddEvent.typings'
 import { Event } from '../MyEvents.typings'
+import arrowLeft from '../assets/arrowLeft.svg'
 
 export default function AddEvent({
     onClose,
     selectedDate,
     modalType,
     selectedEvent,
+    isMobile,
 }: {
     onClose: () => void,
     selectedDate: Date | null,
     modalType: ModalType | null,
     selectedEvent: Event | null,
+    isMobile: boolean,
 }) {
 
     const getSelectedDate = (date: Date | null) => {
@@ -32,14 +35,14 @@ export default function AddEvent({
 
     const [isSelectOpen, setSelectOpen] = useState<boolean>(false)
     const [inputValues, setInputValues] = useState<Inputs>(
-            {
-                type: selectedEvent ? selectedEvent.type : null,
-                date: selectedEvent ? getSelectedDate(selectedEvent.date) : getSelectedDate(selectedDate),
-                person: selectedEvent ? selectedEvent.person : '',
-                phone: selectedEvent ? selectedEvent.phone : '',
-                city: selectedEvent ? selectedEvent.city : '',
-                address: selectedEvent ? selectedEvent.address : ''
-            }
+        {
+            type: selectedEvent ? selectedEvent.type : null,
+            date: selectedEvent ? getSelectedDate(selectedEvent.date) : getSelectedDate(selectedDate),
+            person: selectedEvent ? selectedEvent.person : '',
+            phone: selectedEvent ? selectedEvent.phone : '',
+            city: selectedEvent ? selectedEvent.city : '',
+            address: selectedEvent ? selectedEvent.address : ''
+        }
     )
 
     const handleInputClick = (id: number) => {
@@ -152,10 +155,29 @@ export default function AddEvent({
 
     return (
         <div className={styles.wrapper}>
-            <div className={styles.exitContainer} onClick={() => onClose()}>
-                <Image src={cross} alt='exit' fill />
-            </div>
-            <div className={styles.title}>Ваше событие</div>
+            {
+                !isMobile &&
+                <div className={styles.exitContainer} onClick={() => onClose()}>
+                    <Image src={cross} alt='exit' fill />
+                </div>
+            }
+            {
+                !isMobile &&
+                <div className={styles.title}>Ваше событие</div>
+
+            }
+            {
+                isMobile &&
+                <div className={styles.mobileNav}>
+                    Информация о событии
+                    <div
+                        className={styles.arrowContainer}
+                        onClick={() => onClose()}
+                    >
+                        <Image src={arrowLeft} alt='arrow' fill />
+                    </div>
+                </div>
+            }
             <div className={styles.inputBlocks}>
                 {
                     inputArr.map(item => {
