@@ -80,7 +80,7 @@
       font-size: var(--font-size-s);
       font-weight: 600;
       @media(max-width:$mobile-size){
-        font-size: 8px;
+        font-size: 10px;
       }
     }
     .bottomDigitBlock {
@@ -105,8 +105,9 @@
         gap: var(--gap-xs);
         @media(max-width:$mobile-size){
           gap:var(--gap-2xs);
-          height:11px;
+          height:auto;
           width:fit-content;
+          align-items: flex-start;
         }
         &:hover{
             cursor:pointer;
@@ -122,15 +123,19 @@
         }
         .ratingMetric {
           display: flex;
+          flex-flow:row nowrap;
           justify-content: flex-start;
           align-items: center;
           gap: 3px;
+          @media(max-width:$mobile-size){
+            flex-flow:column nowrap;
+          }
           .rate {
             @include fontGeometria();
             color: #2a181a;
             font-size: var(--font-size-s);
             @media(max-width:$mobile-size){
-              font-size: 8px;
+              font-size: 12px;
             }
           }
           .reviewsNumber {
@@ -138,7 +143,7 @@
             color: #aaa;
             font-size: 8px;
             @media(max-width:$mobile-size){
-              font-size: 5px;
+              font-size: 8px;
             }
           }
         }
@@ -156,9 +161,9 @@
         overflow: hidden;
         position:relative;
         @media(max-width:$mobile-size){
-          height:19px;
+          height:33px;
           width:fit-content;
-          padding:0 var(--gap-s);
+          padding:0 4.5px;
         }
         &:hover .buy{
             display:flex;
@@ -185,7 +190,7 @@
           color: #2a181a;
           font-size: var(--font-size-s);
           @media(max-width:$mobile-size){
-            font-size:8px;
+            font-size:13px;
           }
         }
         .oldPrice {
@@ -194,7 +199,7 @@
           font-size: 8px;
           position: relative;
           @media(max-width:$mobile-size){
-            font-size:5px;
+            font-size:8px;
           }
           &:before {
             content: "";

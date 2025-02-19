@@ -32,7 +32,10 @@ export default function Home({
         pageType={PageType.short}
       >
         <>
-        <BreadCrumbs currentPage={'Подборки'} marginTop={129}/>
+        {
+          !isMobile &&
+          <BreadCrumbs currentPage={'Подборки'} marginTop={129}/>
+        }
         <Collections isMobile={isMobile} />
         </>
       </PageLayout>

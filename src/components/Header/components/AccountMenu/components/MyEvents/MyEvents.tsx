@@ -40,10 +40,10 @@ export default function MyEvents({
     const [activeScreen, setActiveScreen] = useState<number>(isMobile ? 2 : 1); // Изначально календарь
     const [isLoading, setIsLoading] = useState<boolean>(true); // Загрузка данных
     const [isModalOpen, setModalOpen] = useState<ModalType | null>(null); // Состояние модального окна
-    //const [eventsArr] = useState<Event[] | null>(null)
     const [selectedDate, setSelectedDate] = useState<Date | null>(null)
     const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
 
+    //const [eventsArr] = useState<Event[] | null>(null);
     const [eventsArr] = useState<Event[] | null>([
         {
             id: 1,

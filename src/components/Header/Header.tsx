@@ -111,12 +111,15 @@ export default function Header({
             <div className={styles.wrapper}>
                 <div className={cn(styles.topBlock, pageType === PageType.main && !isWindowScrolled && !isMobile && styles.topBlockStartBackground)}>
                     <div className={styles.topLeftBlock}>
-                        <div className={styles.hurryUp}>
-                            <p>Как можно скорее</p>
-                            <div className={styles.arrowContainer}>
-                                <Image src={arrow} alt='arrow' fill />
+                        {
+                            !isMobile &&
+                            <div className={styles.hurryUp}>
+                                <p>Как можно скорее</p>
+                                <div className={styles.arrowContainer}>
+                                    <Image src={arrow} alt='arrow' fill />
+                                </div>
                             </div>
-                        </div>
+                        }
                         <div className={styles.hurryUp} onClick={() => openModal()}>
                             <p>Укажите адрес доставки</p>
                             <div className={styles.arrowContainer}>

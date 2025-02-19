@@ -9,9 +9,23 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 140px;
+  @media(max-width:$mobile-size){
+    width:100%;
+    flex-flow:column nowrap;
+    gap:19px;
+    margin:85px 0 0 0;
+    padding:0 10px;
+  }
   .leftSide {
     width: 234px;
     height: 90px;
+    @media(max-width:$mobile-size){
+      width:100%;
+      height:auto;
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     .city {
       width: 100%;
       height: auto;
@@ -26,10 +40,17 @@
       font-weight: 600;
       line-height: normal;
       cursor:pointer;
+      @media(max-width:$mobile-size){
+        width:fit-content;
+      }
       .pencilContainer {
         width: 23px;
         height: 23px;
         position: relative;
+        @media(max-width:$mobile-size){
+          width:16px;
+          height:16px;
+        }
       }
     }
     .shareBlock {
@@ -47,6 +68,11 @@
       font-weight: 700;
       line-height: normal;
       cursor:pointer;
+      @media(max-width:$mobile-size){
+        margin:0;
+        gap:5px;
+        width:fit-content;
+      }
       .shareContainer{
         width:34px;
         height:34px;
@@ -66,6 +92,7 @@
       grid-template-columns: repeat(2, 1fr);
       column-gap: var(--gap-xs);
       row-gap: var(--gap-xs);
+      margin:0 0 30px 0;
     }
   }
 }
